@@ -1,7 +1,6 @@
 #aside-left {
   background-color: #000000;
   color: white;
-  height: 100vh;
 }
 #aside-left I {
   width: 20px;
@@ -10,6 +9,41 @@
 }
 #aside-left p {
   margin-bottom: 0px;
+}
+
+#aside-left {
+  height: 90vh;
+}
+
+#playlist {
+  height: 65vh;
+  overflow: auto;
+}
+
+#centro {
+  height: 90vh;
+  overflow: auto;
+}
+
+body > #container > .row {
+  width: 100%;
+}
+
+#aside-right {
+  background-color: #000000;
+  color: white;
+}
+#aside-right img {
+  border-radius: 50%;
+}
+#aside-right p {
+  margin-block: 0px;
+  font-size: x-small;
+}
+#aside-right #music-i {
+  width: 14px;
+  height: 14px;
+  margin-right: 3px;
 }
 
 #music-player {
