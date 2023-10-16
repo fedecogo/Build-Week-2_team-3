@@ -1,1 +1,6 @@
-/*# sourceMappingURL=style.css.map */
+footer {
+  font-size: 0.8rem;
+}
+footer .row:nth-of-type(2) {
+  font-size: 0.7rem;
+}/*# sourceMappingURL=style.css.map */
