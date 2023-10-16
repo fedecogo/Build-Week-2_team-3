@@ -17,9 +17,13 @@
     height: 90vh;
   }
   
-  #playlist{
+  #playlist{ 
     height: 65vh;
     overflow: auto;
+    p{
+        margin-top: 3px;
+        margin-left: 15px;
+    }
   }
   
   #centro {
@@ -62,3 +66,22 @@ body{
   ::-webkit-scrollbar-track {
     background-color: #e0e0e000;
   }
+
+
+  .volume-control {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#volume-range {
+    width: 100px;
+    margin: 0 10px;
+}
