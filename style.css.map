@@ -1,1 +1,1 @@
-{"version":3,"sources":["stili/_footer.scss","style.css"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,YAAA;ACCJ","file":"style.css"}
+{"version":3,"sources":["stili/_footer.scss","stili/_color.scss","style.css"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,yBCFS;EDGT,WAAA;AECJ","file":"style.css"}
