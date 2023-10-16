@@ -1,3 +1,8 @@
-h1{
-    color : red($color: #000000)
+#music-player {
+    color: white;
+    background-color: $gray-color;
+    width: 100%;
+    img{
+        border-radius: 5px;
+    }
 }
