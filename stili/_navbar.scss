@@ -47,19 +47,18 @@
     }
 }
 
+body{
+    background-color: black;
+}
 
-
-/* Modifica la barra di scorrimento */
 ::-webkit-scrollbar {
-    width: 10px; /* Larghezza della barra di scorrimento */
+    width: 10px; 
   }
   
-  /* Modifica il colore del "pulsante" di scorrimento */
   ::-webkit-scrollbar-thumb {
-    background-color: #6a6969; /* Colore della scrollbar thumb (pulsante) */
+    background-color: #6a6969; 
   }
   
-  /* Modifica il colore della "traccia" della barra di scorrimento */
   ::-webkit-scrollbar-track {
-    background-color: #e0e0e000; /* Colore della scrollbar track (traccia) */
+    background-color: #e0e0e000;
   }

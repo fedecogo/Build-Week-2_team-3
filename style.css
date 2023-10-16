@@ -46,19 +46,20 @@
   margin-right: 3px;
 }
 
-/* Modifica la barra di scorrimento */
+body {
+  background-color: black;
+}
+
 ::-webkit-scrollbar {
-  width: 10px; /* Larghezza della barra di scorrimento */
+  width: 10px;
 }
 
-/* Modifica il colore del "pulsante" di scorrimento */
 ::-webkit-scrollbar-thumb {
-  background-color: #6a6969; /* Colore della scrollbar thumb (pulsante) */
+  background-color: #6a6969;
 }
 
-/* Modifica il colore della "traccia" della barra di scorrimento */
 ::-webkit-scrollbar-track {
-  background-color: rgba(224, 224, 224, 0); /* Colore della scrollbar track (traccia) */
+  background-color: rgba(224, 224, 224, 0);
 }
 
 #music-player {
