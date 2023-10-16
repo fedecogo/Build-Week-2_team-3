@@ -1,3 +1,17 @@
+#aside-left {
+  background-color: #000000;
+  color: white;
+  height: 100vh;
+}
+#aside-left I {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+}
+#aside-left p {
+  margin-bottom: 0px;
+}
+
 #music-player {
   color: white;
   background-color: #161616;
