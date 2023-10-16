@@ -24,18 +24,34 @@
     />
   </head>
 
-  <body>
+  <body class="bg-dark text-white">
     <main>
-      <div class="d-flex flex-row-reverse mt-3 bg-secondary">
-        <i
-          class="far fa-user me-3 mt-3 rounded-circle badge-bg text-bg-dark ps-2 pe-2 pb-1 pt-2 text-white"
-        ></i>
-        <i
-          class="fas fa-users me-3 mt-3 rounded-circle badge-bg text-bg-dark ps-2 pe-2 pb-1 pt-2 text-white"
-        ></i>
-        <i
-          class="bi bi-bell me-3 mt-3 pe-2 rounded-circle badge-bg text-bg-dark ps-2 pb-1 pt-1 text-white"
-        ></i>
+      <div
+        class="d-flex flex-row-reverse justify-content-between mt-3 bg-secondary"
+      >
+
+      <div class="bg-dark d-flex align-items-center justify-content-center me-3 mt-2"
+           style="border-radius: 50%; width: 32px; height: 32px"
+    >
+         <i class="far fa-user text-white"> </i>
+      </div>
+
+     
+ 
+        <div class="d-flex mt-3 bg-secondary ms-4 mb-3">
+          <div
+            class="bg-dark d-flex align-items-center justify-content-center me-2"
+            style="border-radius: 50%; width: 32px; height: 32px"
+          >
+            <i class="bi bi-chevron-right text-white"></i>
+          </div>
+          <div
+            class="bg-dark d-flex align-items-center justify-content-center"
+            style="border-radius: 50%; width: 32px; height: 32px"
+          >
+            <i class="bi bi-chevron-left text-white"></i>
+          </div>
+        </div>
       </div>
 
       <div class="d-flex bg-secondary pb-4">
@@ -43,20 +59,29 @@
           class="ms-4 mt-4"
           src="https://static.qobuz.com/images/covers/jc/ma/oto8luarqmajc_600.jpg"
           width="230px"
+          alt="image"
         />
         <div class="ms-4 mt-5 pt-5">
           <h6 class="fw-normal text-white">Album</h6>
           <h1 class="fw-bolder text-white">Gioventù bruciata</h1>
-          <p class="text-white mt-4 ms-5">
-            <span class="fw-bold text-white">Pinguini Tattici Nucleari</span>
-            - 2017 - 12brani, 53 min 20 sec.
-          </p>
+          <div class="d-flex">
+            <img
+              class="mt-4"
+              src="https://static.qobuz.com/images/covers/jc/ma/oto8luarqmajc_600.jpg"
+              width="25px"
+              height="25px"
+              style="border-radius: 50%"
+              alt="image"
+            />
+            <p class="text-white mt-4 ms-1">
+              <span class="fw-bold text-white">Pinguini Tattici Nucleari</span>
+              - 2017 - 12brani, 53 min 20 sec.
+            </p>
+          </div>
         </div>
       </div>
-      <div>
-        <i
-          class="fas fa-play ms-5 mt-4 bg-success p-3 ps-3 pe-4 rounded-circle"
-        ></i>
+      <div class="ms-3 mt-2 d-flex align-items-center">
+        <i class="bi bi-play-circle-fill fs-1" style="color: #1ed760"></i>
         <i class="far fa-heart ms-2"></i>
         <i class="far fa-arrow-alt-circle-down ms-2"></i>
         <i class="fas fa-ellipsis-h ms-2"></i>
@@ -64,7 +89,8 @@
       <div>
         <div class="container text-center mt-3">
           <div class="row d-flex justify-content space-between">
-            <div class="col-6 text-start">#Titolo</div>
+            <div class="col-1">#</div>
+            <div class="col-5 text-start">Titolo</div>
             <div class="col-3">Riproduzioni</div>
             <div class="col-3"><i class="far fa-clock"></i></div>
           </div>
@@ -72,138 +98,174 @@
         </div>
       </div>
       <div class="container text-start">
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
-          <div class="col-3 ps-3">Column</div>
-          <div class="col-2 ps-4">Column</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
-          <div class="col-3 ps-3">Column</div>
-          <div class="col-2 ps-4">Column</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
-          <div class="col-3 ps-3">Column</div>
-          <div class="col-2 ps-4">Column</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
-          <div class="col-3 ps-3">Column</div>
-          <div class="col-2 ps-4">Column</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
-          <div class="col-3 ps-3">Column</div>
-          <div class="col-2 ps-4">Column</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
-          <div class="col-3 ps-3">Column</div>
-          <div class="col-2 ps-4">Column</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
-          <div class="col-3 ps-3">Column</div>
-          <div class="col-2 ps-4">Column</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
-          <div class="col-3 ps-3">Column</div>
-          <div class="col-2 ps-4">Column</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content space-between">
-          <div class="col-7">Montanelli-Intro</div>
+        <div class="row mb-3 d-flex justify-content-between align-items-center">
+          <div class="col-1 text-center">1</div>
+          <div class="col-6">
+            <p class="m-0">Montanelli-Intro</p>
+            <p class="m-0">Pinguini Tattici Nucleari</p>
+          </div>
           <div class="col-3 ps-3">Column</div>
           <div class="col-2 ps-4">Column</div>
         </div>
