@@ -11,6 +11,10 @@
   margin-bottom: 0px;
 }
 
+#container {
+  width: 99%;
+}
+
 #aside-left {
   height: 90vh;
 }
@@ -23,10 +27,6 @@
 #centro {
   height: 90vh;
   overflow: auto;
-}
-
-body > #container > .row {
-  width: 100%;
 }
 
 #aside-right {
@@ -44,6 +44,21 @@ body > #container > .row {
   width: 14px;
   height: 14px;
   margin-right: 3px;
+}
+
+/* Modifica la barra di scorrimento */
+::-webkit-scrollbar {
+  width: 10px; /* Larghezza della barra di scorrimento */
+}
+
+/* Modifica il colore del "pulsante" di scorrimento */
+::-webkit-scrollbar-thumb {
+  background-color: #6a6969; /* Colore della scrollbar thumb (pulsante) */
+}
+
+/* Modifica il colore della "traccia" della barra di scorrimento */
+::-webkit-scrollbar-track {
+  background-color: rgba(224, 224, 224, 0); /* Colore della scrollbar track (traccia) */
 }
 
 #music-player {
