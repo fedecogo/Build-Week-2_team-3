@@ -9,6 +9,7 @@ const main = document.getElementsByTagName("main")[0];
 const footer = document.getElementsByTagName("footer")[0];
 const profileNameNavbar = document.querySelector(".dropdown .fw-bold");
 const profileImageNavbar = document.querySelector(".dropdown img");
+const cancelButton = document.getElementById("cancel-button");
 
 // HOVER ICONE - IMMAGINE PROFILO
 personIcon.addEventListener("mouseover", () => {
@@ -75,8 +76,8 @@ const displaySelectedImage = function () {
 // FUNZIONE PER CAMBIARE NOME UTENTE
 const makeDivAppear = () => {
   div.classList.remove("d-none");
-  main.style.opacity = 0.4;
-  footer.style.opacity = 0.4;
+  main.style.opacity = 0.2;
+  footer.style.opacity = 0.2;
   div.style.opacity = 1;
 };
 
@@ -93,6 +94,14 @@ form.addEventListener("submit", function (e) {
   footer.style.opacity = 1;
   localStorage.setItem("username", userNameInput.value);
   profileNameNavbar.innerText = localStorage.getItem("username");
+});
+
+// BOTTONE PER ANNULLARE MODIFICA NOME PROFILO
+
+cancelButton.addEventListener("click", () => {
+  div.classList.add("d-none");
+  main.style.opacity = 1;
+  footer.style.opacity = 1;
 });
 
 // NOME PROFILO, se non c'è il local storage metterà "nome utente"
