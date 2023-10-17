@@ -67,13 +67,15 @@ const displaySelectedImage = function () {
 };
 
 // FUNZIONE PER CAMBIARE NOME UTENTE
-
-userName.addEventListener("click", () => {
+const makeDivAppear = () => {
   div.classList.remove("d-none");
-
   main.style.opacity = 0.4;
   footer.style.opacity = 0.4;
   div.style.opacity = 1;
+};
+
+userName.addEventListener("click", () => {
+  makeDivAppear();
 });
 
 form.addEventListener("submit", function (e) {
@@ -88,3 +90,9 @@ form.addEventListener("submit", function (e) {
 
 const usernameStorage = localStorage.getItem("username");
 userName.innerHTML = usernameStorage ? usernameStorage : "Nome utente";
+
+// PRENDO LA PRIMA OPZIONE DEL MENU A TENDINA
+const editProfile = document.getElementById("edit-profile");
+editProfile.addEventListener("click", () => {
+  makeDivAppear();
+});

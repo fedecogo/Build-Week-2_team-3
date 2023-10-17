@@ -66,7 +66,7 @@
         </div>
         <div class="row py-3">
           <div
-            class="col-12 col-md-3 text-white ms-md-3 me-0 d-flex justify-content-center"
+            class="col-12 col-md-5 col-lg-4 text-white ms-md-3 me-0 d-flex justify-content-center"
           >
             <div
               id="icons-container"
@@ -93,7 +93,7 @@
           </div>
 
           <div
-            class="col-7 text-white d-flex flex-column justify-content-center flex-grow-1 text-center text-md-start mt-3"
+            class="col-md-5 col-lg-7 text-white d-flex flex-column justify-content-center flex-grow-1 text-center text-md-start mt-3"
           >
             <p>Profilo</p>
             <h1 id="username" class="fw-bold" style="cursor: pointer">
@@ -102,7 +102,7 @@
           </div>
         </div>
         <div class="row pb-5 bg-dark">
-          <div class="col">
+          <div class="col py-4">
             <div class="dropdown">
               <div
                 class="text-center text-md-start"
@@ -116,7 +116,11 @@
                 ></i>
               </div>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Modifica profilo</a></li>
+                <li>
+                  <a id="edit-profile" class="dropdown-item" href="#"
+                    >Modifica profilo</a
+                  >
+                </li>
                 <li>
                   <a class="dropdown-item" href="#">Copia link al profilo</a>
                 </li>
@@ -185,7 +189,13 @@
 
     <div
       id="form-container"
-      class="w-50 position-absolute translate-middle-y top-50 start-50 bg-dark p-5 text-white d-none"
+      class="w-50 bg-dark p-5 text-white d-none"
+      style="
+        transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+      "
     >
       <form>
         <label for="nameInput" class="form-label">Nome utente</label>
@@ -197,7 +207,7 @@
         />
         <button
           type="submit"
-          class="btn btn-primary mt-2 py-2 rounded-pill px-5"
+          class="btn btn-success mt-3 py-2 rounded-pill px-5"
         >
           Salva
         </button>
