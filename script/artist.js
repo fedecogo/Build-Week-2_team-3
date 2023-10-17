@@ -96,7 +96,7 @@ const newRowHTML = `
     <div class="card-body">
       <img src="${data.data[0].album.cover_medium}" width="50px"  alt="..." />
         <h5 class="card-title">${data.data[0].album.title}</h5>
-        <a href="album.html/${data.data[0].album.id}" class="btn btn-primary">Go to Album</a>
+        <a href="album.html?query=${data.data[0].album.id}" class="btn btn-primary">Go to Album</a>
       </div>
     </div>
   </div>
@@ -105,7 +105,7 @@ const newRowHTML = `
     <div class="card-body">
       <img src="${data.data[1].album.cover_medium}" width="50px"  alt="..." />
         <h5 class="card-title">${data.data[1].album.title}</h5>
-        <a href="album.html/${data.data[1].album.id}" class="btn btn-primary">Go to Album</a>
+        <a href="album.html?query=${data.data[1].album.id}" class="btn btn-primary">Go to Album</a>
       </div>
     </div>
   </div>
@@ -114,7 +114,7 @@ const newRowHTML = `
     <div class="card-body">
       <img src="${data.data[2].album.cover_medium}" width="50px"  alt="..." />
         <h5 class="card-title">${data.data[2].album.title}</h5>
-        <a href="album.html${data.data[2].album.id}" class="btn btn-primary">Go to Album</a>
+        <a href="album.html?query=${data.data[2].album.id}" class="btn btn-primary">Go to Album</a>
       </div>
     </div>
   </div>
