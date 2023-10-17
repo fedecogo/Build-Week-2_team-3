@@ -1,7 +1,6 @@
 const pencilIcon = document.getElementById("pencil");
 const personIcon = document.getElementById("person");
 const iconsContainer = document.getElementById("icons-container");
-
 personIcon.addEventListener("mouseover", () => {
   pencilIcon.classList.remove("d-none");
   personIcon.classList.add("d-none");
@@ -15,6 +14,7 @@ pencilIcon.addEventListener("mouseleave", () => {
 const openImageUploader = function openImageUploader() {
   const imageUpload = document.getElementById("image-upload");
   imageUpload.click();
+  pencilIcon.click();
 };
 
 //
@@ -29,7 +29,11 @@ const displaySelectedImage = function () {
     reader.onload = function (event) {
       const dataURL = event.target.result;
       profileImageDataURL = dataURL; // Store the profile image data URL
-      iconsContainer.style.backgroundImage = `url('${profileImageDataURL}')`;
+      styleContainer = iconsContainer.style;
+      styleContainer.backgroundImage = `url('${profileImageDataURL}')`;
+      styleContainer.backgroundSize = "contain";
+      styleContainer.backgroundRepeat = "no-repeat";
+      styleContainer.backgroundPosition = "center center";
     };
     reader.readAsDataURL(selectedImage);
   }
