@@ -25,7 +25,7 @@
   </head>
   <body class="bg-secondary">
     <main>
-      <div class="container bg-secondary">
+      <div class="container bg-gradient bg-secondary">
         <div class="row justify-content-between align-items-center my-4 py-3">
           <div class="col-6">
             <!-- icone frecce -->
@@ -51,7 +51,9 @@
               </a>
 
               <ul class="dropdown-menu bg-white text-white">
-                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li>
+                  <a class="dropdown-item" href="profile.html">Profilo</a>
+                </li>
                 <li>
                   <a class="dropdown-item" href="#">Another action</a>
                 </li>
@@ -63,11 +65,13 @@
           </div>
         </div>
         <div class="row py-3">
-          <div class="col-3 text-white">
+          <div
+            class="col-12 col-md-3 text-white ms-md-3 me-0 d-flex justify-content-center"
+          >
             <div
               id="icons-container"
-              class="rounded-circle bg-black d-flex justify-content-center align-items-center"
-              style="width: 200px; height: 200px"
+              class="rounded-circle bg-dark d-flex justify-content-center align-items-center shadow-lg"
+              style="width: 250px; height: 250px"
             >
               <i id="person" class="bi bi-person fs-1"></i>
               <div
@@ -89,23 +93,43 @@
           </div>
 
           <div
-            class="col-6 text-white d-flex flex-column justify-content-center flex-grow-1"
+            class="col-7 text-white d-flex flex-column justify-content-center flex-grow-1 text-center text-md-start mt-3"
           >
             <p>Profilo</p>
-            <h1 class="fw-bold">Nome Utente</h1>
+            <h1 id="username" class="fw-bold">Nome Utente</h1>
           </div>
         </div>
-        <div class="row pb-5 mb-4">
+        <div class="row pb-5 bg-dark">
           <div class="col">
-            <i class="bi bi-three-dots fs-2 text-white-50"></i>
+            <div class="dropdown">
+              <div
+                class="text-center text-md-start"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i
+                  class="bi bi-three-dots fs-4 text-white-50"
+                  style="cursor: pointer"
+                ></i>
+              </div>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Modifica profilo</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Copia link al profilo</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </main>
     <footer>
       <div class="container bg-black">
-        <div class="row text-white pb-4 border-bottom border-secondary">
-          <div class="col-2">
+        <div
+          class="row text-white pb-4 pt-5 px-4 border-bottom border-secondary"
+        >
+          <div class="col-12 col-md-2 text-center text-md-start">
             <p class="mb-0 fw-bold">Azienda</p>
             <ul class="text-white-50 list-unstyled">
               <li>Chi siamo</li>
@@ -113,7 +137,7 @@
               <li>For the Record</li>
             </ul>
           </div>
-          <div class="col-2">
+          <div class="col-12 col-md-2 text-center text-md-start">
             <p class="mb-0 fw-bold">Community</p>
             <ul class="text-white-50 list-unstyled">
               <li>Per artisti</li>
@@ -123,7 +147,7 @@
               <li>Venditori</li>
             </ul>
           </div>
-          <div class="col-2">
+          <div class="col-12 col-md-2 text-center text-md-start">
             <p class="mb-0 fw-bold">Link utili</p>
             <ul class="text-white-50 list-unstyled">
               <li>Assistenza</li>
@@ -131,17 +155,17 @@
               <li>Diritti del consumatore</li>
             </ul>
           </div>
-          <div class="col fs-6 d-flex gap-4 justify-content-end">
-            <div class="">
-              <i class="bi bi-instagram"></i>
-            </div>
+          <div
+            class="col fs-6 d-flex gap-4 justify-content-md-end justify-content-center"
+          >
+            <i class="bi bi-instagram"></i>
             <i class="bi bi-twitter"></i>
             <i class="bi bi-facebook"></i>
           </div>
         </div>
         <div class="row text-secondary mt-4 g-0 pb-5">
           <div class="col">
-            <ul class="list-unstyled d-flex gap-3">
+            <ul class="list-unstyled d-flex gap-3 d-none d-md-flex">
               <li>Informazioni legali</li>
               <li>Centro sulla privacy</li>
               <li>Informativa sulla privacy</li>
@@ -150,12 +174,33 @@
               <li>Accessibilità</li>
             </ul>
           </div>
-          <div class="col-4 text-end">
+          <div class="col-12 col-md-4 text-center text-md-end">
             <p>© 2023 Spotify AB</p>
           </div>
         </div>
       </div>
     </footer>
+
+    <div
+      id="form-container"
+      class="w-50 position-absolute translate-middle-y top-50 start-50 bg-dark p-5 text-white d-none"
+    >
+      <form>
+        <label for="nameInput" class="form-label">Nome utente</label>
+        <input
+          id="username-input"
+          type="text"
+          class="form-control"
+          id="nameInput"
+        />
+        <button
+          type="submit"
+          class="btn btn-primary mt-2 py-2 rounded-pill px-5"
+        >
+          Salva
+        </button>
+      </form>
+    </div>
     <script src="script/profile.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
