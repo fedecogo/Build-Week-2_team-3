@@ -132,4 +132,5 @@ if (iconsContainer.style.backgroundImage !== "none") {
 const editProfile = document.getElementById("edit-profile");
 editProfile.addEventListener("click", () => {
   makeDivAppear();
+  openImageUploader();
 });
