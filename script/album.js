@@ -106,6 +106,8 @@ getAlbum(albumId);
 const cuore = document.getElementById("heart");
 cuore.addEventListener("click", () => {
   cuore.classList.toggle("text-success");
+  cuore.classList.toggle("bi-heart");
+  cuore.classList.toggle("bi-heart-fill");
 });
 const gruppo = document.getElementById("users");
 const asidegruppo = document.getElementById("aside-right");
