@@ -134,7 +134,7 @@
                 </div>
                 <div class="col-6 text-end">
                   <!-- icona profilo -->
-                  <div class="dropdown">
+                  <div class="dropdown d-none d-md-block">
                     <a
                       class="btn btn-dark rounded-pill dropdown-toggle py-0 ps-0"
                       href="#"
@@ -165,7 +165,7 @@
                 </div>
               </div>
               <!--  fine profilo e frecces -->
-              <div class="row justify-content-center">
+              <div class="row justify-content-center d-none d-md-block">
                 <div class="col-12">
                   <div
                     class="card mb-3 text-white bg-dark bg-gradient"
@@ -238,7 +238,40 @@
                 </div>
               </div>
               <!-- fine card -->
-              <h3 class="text-white">Playlists</h3>
+
+              <!--  inizio  elementi solo mobile -->
+              <div
+                class="d-md-none d-flex justify-content-between align-items-center text-white px-2 mb-2"
+              >
+                <div>
+                  <h4>Buonasera</h4>
+                </div>
+                <div class="fw-bold">
+                  <i class="bi bi-bell me-2"></i>
+                  <i class="bi bi-clock-history me-2"></i>
+                  <i class="bi bi-gear"></i>
+                </div>
+              </div>
+              <div
+                class="d-flex d-md-none justify-content-around align-items-center mb-3"
+              >
+                <img
+                  src="http://placekitten.com/30/30"
+                  alt="profilo"
+                  class="rounded-circle p-1"
+                />
+                <button class="rounded-pill btn text-black" id="tutti-mobile">
+                  Tutti
+                </button>
+                <button class="rounded-pill btn text-white bottone-mobile">
+                  Musica
+                </button>
+                <button class="rounded-pill btn text-white bottone-mobile">
+                  Podcast e show
+                </button>
+              </div>
+
+              <h3 class="text-white d-none d-md-block">Playlists</h3>
 
               <div class="row">
                 <!-- menu playlist con cards -->
@@ -340,16 +373,148 @@
               <div
                 class="row justify-content-between text-white align-items-baseline my-3"
               >
-                <div class="col-6"><h4>Altro di ciò che ti piace</h4></div>
-                <div class="col-6">
+                <div class="col-6 ms-2"><h4>Altro di ciò che ti piace</h4></div>
+                <div class="col-5 col-md-6">
                   <h6 class="text-white-50 text-end font-monospace">
                     VISUALIZZA TUTTO
                   </h6>
                 </div>
               </div>
               <!-- FIne titolo altro -->
+              <div
+                class="container d-md-none bg-secondary rounded-3 mb-3 me-3 ms-2"
+              >
+                <div class="row row-cols-2">
+                  <div class="col">
+                    <img
+                      src="assets/imgs/main/image-18.jpg"
+                      class="img-fluid rounded-3 m-3"
+                      alt="playlist altro"
+                    />
+                  </div>
+                  <div class="col pt-3">
+                    <p class="fw-bold mb-1">Nome playlist</p>
+                    <p class="mt-2 text-white-50">
+                      <small>Descrizione</small>
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center pb-2"
+                >
+                  <div class="d-flex">
+                    <i class="bi bi-suit-heart-fill text-success"></i>
+                    <i class="bi bi-three-dots-vertical ms-2 text-light"></i>
+                  </div>
+                  <div class="d-flex">
+                    <p class="mb-0 me-2 text-light">16 brani</p>
+                    <i
+                      class="bi bi-play-fill ms-2 rounded-circle bg-dark text-white px-1"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="container d-md-none bg-secondary rounded-3 mb-3 me-3 ms-2"
+              >
+                <div class="row row-cols-2">
+                  <div class="col">
+                    <img
+                      src="assets/imgs/main/image-18.jpg"
+                      class="img-fluid rounded-3 m-3"
+                      alt="playlist altro"
+                    />
+                  </div>
+                  <div class="col pt-3">
+                    <p class="fw-bold mb-1">Nome playlist</p>
+                    <p class="mt-2 text-white-50">
+                      <small>Descrizione</small>
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center pb-2"
+                >
+                  <div class="d-flex">
+                    <i class="bi bi-suit-heart-fill text-success"></i>
+                    <i class="bi bi-three-dots-vertical ms-2 text-light"></i>
+                  </div>
+                  <div class="d-flex">
+                    <p class="mb-0 me-2 text-light">16 brani</p>
+                    <i
+                      class="bi bi-play-fill ms-2 rounded-circle bg-dark text-white px-1"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="container d-md-none bg-secondary rounded-3 mb-3 me-3 ms-2"
+              >
+                <div class="row row-cols-2">
+                  <div class="col">
+                    <img
+                      src="assets/imgs/main/image-18.jpg"
+                      class="img-fluid rounded-3 m-3"
+                      alt="playlist altro"
+                    />
+                  </div>
+                  <div class="col pt-3">
+                    <p class="fw-bold mb-1">Nome playlist</p>
+                    <p class="mt-2 text-white-50">
+                      <small>Descrizione</small>
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center pb-2"
+                >
+                  <div class="d-flex">
+                    <i class="bi bi-suit-heart-fill text-success"></i>
+                    <i class="bi bi-three-dots-vertical ms-2 text-light"></i>
+                  </div>
+                  <div class="d-flex">
+                    <p class="mb-0 me-2 text-light">16 brani</p>
+                    <i
+                      class="bi bi-play-fill ms-2 rounded-circle bg-dark text-white px-1"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="container d-md-none bg-secondary rounded-3 mb-3 me-3 ms-2"
+              >
+                <div class="row row-cols-2">
+                  <div class="col">
+                    <img
+                      src="assets/imgs/main/image-18.jpg"
+                      class="img-fluid rounded-3 m-3"
+                      alt="playlist altro"
+                    />
+                  </div>
+                  <div class="col pt-3">
+                    <p class="fw-bold mb-1">Nome playlist</p>
+                    <p class="mt-2 text-white-50">
+                      <small>Descrizione</small>
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center pb-2"
+                >
+                  <div class="d-flex">
+                    <i class="bi bi-suit-heart-fill text-success"></i>
+                    <i class="bi bi-three-dots-vertical ms-2 text-light"></i>
+                  </div>
+                  <div class="d-flex">
+                    <p class="mb-0 me-2 text-light">16 brani</p>
+                    <i
+                      class="bi bi-play-fill ms-2 rounded-circle bg-dark text-white px-1"
+                    ></i>
+                  </div>
+                </div>
+              </div>
               <!--  cards altro -->
-              <div class="row row-cols-2 row-cols-md-5 mb-5">
+              <div class="row row-cols-1 g-4 ms-1 row-cols-md-5 mb-5">
                 <!-- card -->
                 <div class="col">
                   <div class="card bg-dark text-white">
@@ -445,7 +610,7 @@
                 </div>
               </div>
               <!--  -->
-              <div class="row row-cols-2 row-cols-md-5 mb-5">
+              <div class="row row-cols-2 row-cols-md-5 mb-5 g-3">
                 <!-- card -->
                 <div class="col">
                   <div class="card bg-dark text-white">
@@ -699,7 +864,10 @@
       </div>
     </div>
     <!-- parte fissa sotto -->
-    <div id="music-player" class="position-fixed bottom-0 color-danger">
+    <div
+      id="music-player"
+      class="position-fixed bottom-0 color-danger d-none d-md-block"
+    >
       <div class="d-flex justify-content-between align-items-center">
         <div id="current-song" class="d-flex p-2 align-items-center">
           <div id="current-song-image" class="p-2 d-flex align-items-center">
