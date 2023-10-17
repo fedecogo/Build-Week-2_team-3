@@ -118,21 +118,25 @@ button {
     }
 }
 
-
+.delete {
+  display: none; /* o altre regole per nascondere o eliminare l'elemento */
+}
 .hidden {
     display: none;
   }
   
   #searchBar {
     position: absolute;
-    top: 0;
-    width: 100%;
-    
+    top: 50%;
+    margin-top: -320px; /* Metà dell'altezza del div */
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 400px;
     background: linear-gradient(to bottom, #1ED760, #000000);
     padding: 10px;
     text-align: center;
     animation: slideDown 0.5s ease forwards;
-    z-index: 9999; /* Assicura che la barra di ricerca sia in primo piano */
+    z-index: 9;
   }
   
   @keyframes slideDown {

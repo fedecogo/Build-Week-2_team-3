@@ -2,7 +2,7 @@ const toggleButton = document.getElementById('toggleButton');
 const searchBar = document.getElementById('searchBar');
 const searchButton = document.getElementById('searchButton');
 
-toggleButton.addEventListener('dblclick', () => {
+toggleButton.addEventListener('click', () => {
   searchBar.classList.toggle('hidden');
 });
 
@@ -29,4 +29,14 @@ const getImages = function(query) {
       console.error('Si è verificato un errore:', error);
     });
 };
+
+const btn = document.getElementById('elimina_pubbl');
+btn.addEventListener('click', function() {
+  console.log('Pulsante cliccato');
+  let cardElement = document.getElementById('porcodio')
+  if (cardElement) {
+    cardElement.classList.add('delete');
+  }
+});
+
 
