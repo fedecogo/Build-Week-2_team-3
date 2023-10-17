@@ -7,6 +7,8 @@ const div = document.getElementById("form-container");
 const form = document.getElementsByTagName("form")[0];
 const main = document.getElementsByTagName("main")[0];
 const footer = document.getElementsByTagName("footer")[0];
+const profileNameNavbar = document.querySelector(".dropdown .fw-bold");
+const profileImageNavbar = document.querySelector(".dropdown img");
 
 // HOVER ICONE - IMMAGINE PROFILO
 personIcon.addEventListener("mouseover", () => {
@@ -47,6 +49,9 @@ const displaySelectedImage = function () {
       styleContainer.backgroundSize = "cover";
       styleContainer.backgroundRepeat = "no-repeat";
       styleContainer.backgroundPosition = "center center";
+      profileImageNavbar.src = profileImageDataURL;
+      profileImageNavbar.style.width = "30px";
+      profileImageNavbar.style.heigth = "30px";
     };
     reader.readAsDataURL(selectedImage);
   }
@@ -85,12 +90,14 @@ form.addEventListener("submit", function (e) {
   div.classList.add("d-none");
   main.style.opacity = 1;
   footer.style.opacity = 1;
-  localStorage.setItem("username", userName.innerHTML);
-  userNameInput.value = "";
+  localStorage.setItem("username", userNameInput.value);
+  profileNameNavbar.innerText = localStorage.getItem("username");
 });
 
 const usernameStorage = localStorage.getItem("username");
 userName.innerHTML = usernameStorage ? usernameStorage : "Nome utente";
+
+profileNameNavbar.innerText = usernameStorage ? usernameStorage : "Nome utente";
 
 // PRENDO LA PRIMA OPZIONE DEL MENU A TENDINA
 const editProfile = document.getElementById("edit-profile");
