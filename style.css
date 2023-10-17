@@ -96,8 +96,10 @@ button {
 
 #wallpaper-img {
   width: 100%;
-  background-image: url("assets/imgs/WALAPAPER.png"); /* Percorso dell'immagine */
-  background-size: cover; /* Adatta l'immagine alla dimensione del div */
+  background-image: url("assets/imgs/WALAPAPER.png");
+  /* Percorso dell'immagine */
+  background-size: cover;
+  /* Adatta l'immagine alla dimensione del div */
   background-repeat: no-repeat;
 }
 
@@ -115,7 +117,8 @@ button {
 }
 
 .delete {
-  display: none; /* o altre regole per nascondere o eliminare l'elemento */
+  display: none;
+  /* o altre regole per nascondere o eliminare l'elemento */
 }
 
 .hidden {
@@ -125,7 +128,8 @@ button {
 #searchBar {
   position: absolute;
   top: 50%;
-  margin-top: -320px; /* Metà dell'altezza del div */
+  margin-top: -320px;
+  /* Metà dell'altezza del div */
   left: 20%;
   transform: translate(-50%, -50%);
   width: 400px;
@@ -144,6 +148,12 @@ button {
     transform: translateY(0);
   }
 }
+@media screen and (max-width: 576px) {
+  #music-player {
+    display: none;
+  }
+}
+
 #music-player {
   color: white;
   background-color: #161616;
@@ -163,4 +173,12 @@ button {
 
 #iconVer {
   color: blue;
+}
+
+#tutti-mobile {
+  background-color: #1ED760;
+}
+
+.bottone-mobile {
+  background-color: #161616;
 }/*# sourceMappingURL=style.css.map */
