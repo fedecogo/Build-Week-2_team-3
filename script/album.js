@@ -103,20 +103,24 @@ const getAlbum = function (query) {
 
 getAlbum(albumId);
 
+// funzione cuoricino
 const cuore = document.getElementById("heart");
 cuore.addEventListener("click", () => {
   cuore.classList.toggle("text-success");
   cuore.classList.toggle("bi-heart");
   cuore.classList.toggle("bi-heart-fill");
 });
+
+// funzione aside amici display e non
 const gruppo = document.getElementById("users");
 const asidegruppo = document.getElementById("aside-right");
 gruppo.addEventListener("click", () => {
   asidegruppo.classList.toggle("col-2");
   asidegruppo.classList.toggle("m-0");
-  asidegruppo.classList.toggle("d-none");
+  asidegruppo.classList.add("d-none");
   asidegruppo.classList.toggle("d-lg-block");
 });
+
 //  FUNZIONE PER INSERIRE GLI ALBUM NELLA BARRA LATERALE SINISTRA
 
 const playlistMenu = document.getElementById("playlist");
