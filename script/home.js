@@ -40,3 +40,44 @@ btn.addEventListener('click', function() {
 });
 
 
+const playlistMenu = document.getElementById('playlist')
+
+const getAlbum = function (query) {
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${query}`)
+
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error('Errore nella response');
+      }
+    })
+    .then((data)=>{
+      const app = document.getElementById('playlist')
+      const card = document.createElement('div')
+      card.innerHTML=`<div class="d-flex align-items-center mt-2"><img src="${data.cover_medium}" width="30px" height="30px" /><p>${data.title}<p></div>`
+      app.appendChild(card)
+      console.log(data)
+      
+    })
+    .catch((error) => {
+      console.error('Si è verificato un errore:', error);
+    })
+  }
+
+
+
+
+const albumbtn = document.getElementById('azz')
+albumbtn.addEventListener('click',()=>{
+  
+  const numeriArrey = [6415260,1362101,12207660,455130,454043,]
+  invocagetalbum(numeriArrey)
+  
+}
+)
+function invocagetalbum(numeriArrey){
+  for (const id of numeriArrey)
+  getAlbum(id)
+}
+
