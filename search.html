@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spotify Clone</title>
+    <title>Search Spotify</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -73,7 +73,7 @@
                 </div>
               </div>
               <hr />
-              <div id="playlist" class="col-12">
+              <div id="playlist" class="col-12 ">
                 <button type="button" class="btn btn-outline-success" id="azz">
                   <small>Albums</small>
                 </button>
@@ -265,76 +265,117 @@
             </div>
           </div>
         </div>
-
         <div class="col m-0 p-0" id="centro">
           <main class="bg-black d-flex justify-content-center">
-            <!-- INIZIO PAGINA SEARCH -->
-            
-            <!--  -->
-            
-            
-            <!--  -->
-            
-            
-            
-            
-            <!-- INIZIO FOOTER, da spostare fuori dal main -->
-            <footer>
-              <div class="row text-white pb-4 border-bottom border-secondary">
-                <div class="col-2">
-                  <p class="mb-0 fw-bold">Azienda</p>
-                  <ul class="text-white-50 list-unstyled">
-                    <li>Chi siamo</li>
-                    <li>Opportunità di lavoro</li>
-                    <li>For the Record</li>
-                  </ul>
-                </div>
-                <div class="col-2">
-                  <p class="mb-0 fw-bold">Community</p>
-                  <ul class="text-white-50 list-unstyled">
-                    <li>Per artisti</li>
-                    <li>Sviluppatori</li>
-                    <li>Pubblicità</li>
-                    <li>Investitori</li>
-                    <li>Venditori</li>
-                  </ul>
-                </div>
-                <div class="col-2">
-                  <p class="mb-0 fw-bold">Link utili</p>
-                  <ul class="text-white-50 list-unstyled">
-                    <li>Assistenza</li>
-                    <li>App per cellulare gratuita</li>
-                    <li>Diritti del consumatore</li>
-                  </ul>
-                </div>
-                <div class="col fs-6 d-flex gap-4 justify-content-end">
-                  <div class="">
-                    <i class="bi bi-instagram"></i>
+            <div class="container mx-0">
+              <div class="row justify-content-between align-items-center my-4">
+                <div class="col-6 d-flex">
+                  <!-- icone frecce -->
+                  <div
+                    class="bg-dark d-flex align-items-center justify-content-center me-2"
+                    style="border-radius: 50%; width: 32px; height: 32px"
+                  >
+                    <i class="bi bi-chevron-left text-white"></i>
                   </div>
-                  <i class="bi bi-twitter"></i>
-                  <i class="bi bi-facebook"></i>
+                  <div
+                    class="bg-dark d-flex align-items-center justify-content-center"
+                    style="border-radius: 50%; width: 32px; height: 32px"
+                  >
+                    <i class="bi bi-chevron-right text-white"></i>
+                  </div>
                 </div>
-              </div>
-              <div class="row text-secondary mt-4 g-0 pb-5">
-                <div class="col">
-                  <ul class="list-unstyled d-flex gap-3">
-                    <li>Informazioni legali</li>
-                    <li>Centro sulla privacy</li>
-                    <li>Informativa sulla privacy</li>
-                    <li>Impostazioni cookie</li>
-                    <li>Info annunci</li>
-                    <li>Accessibilità</li>
-                  </ul>
-                </div>
-                <div class="col-4 text-end">
-                  <p>© 2023 Spotify AB</p>
-                </div>
-              </div>
-            </footer>
-            <!-- FINE FOOTER -->
-          </div>
-        </main>
+                <div class="col-6 text-end">
+                  <!-- icona profilo -->
+                  <div class="dropdown d-none d-md-block">
+                    <a
+                      class="btn btn-dark rounded-pill dropdown-toggle py-0 ps-0"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img
+                        src="http://placekitten.com/30/30"
+                        alt="profilo"
+                        class="rounded-circle p-1"
+                      />
+                      <small class="fw-bold">  Profilo</small>
+                    </a>
 
+                    <ul class="dropdown-menu bg-black  ">
+                      <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                      <li>
+                        <a class="dropdown-item text-white" href="#">Another action</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-white" href="#"
+                          >Something else here</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!--  fine profilo e frecces -->
+              <!-- INIZIO CARD RICERCA -->
+              
+              <!-- INIZIO FOOTER, da spostare fuori dal main -->
+              <footer>
+                <div class="row text-white pb-4 border-bottom border-secondary">
+                  <div class="col-2">
+                    <p class="mb-0 fw-bold">Azienda</p>
+                    <ul class="text-white-50 list-unstyled">
+                      <li>Chi siamo</li>
+                      <li>Opportunità di lavoro</li>
+                      <li>For the Record</li>
+                    </ul>
+                  </div>
+                  <div class="col-2">
+                    <p class="mb-0 fw-bold">Community</p>
+                    <ul class="text-white-50 list-unstyled">
+                      <li>Per artisti</li>
+                      <li>Sviluppatori</li>
+                      <li>Pubblicità</li>
+                      <li>Investitori</li>
+                      <li>Venditori</li>
+                    </ul>
+                  </div>
+                  <div class="col-2">
+                    <p class="mb-0 fw-bold">Link utili</p>
+                    <ul class="text-white-50 list-unstyled">
+                      <li>Assistenza</li>
+                      <li>App per cellulare gratuita</li>
+                      <li>Diritti del consumatore</li>
+                    </ul>
+                  </div>
+                  <div class="col fs-6 d-flex gap-4 justify-content-end">
+                    <div class="">
+                      <i class="bi bi-instagram"></i>
+                    </div>
+                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-facebook"></i>
+                  </div>
+                </div>
+                <div class="row text-secondary mt-4 g-0 pb-5">
+                  <div class="col">
+                    <ul class="list-unstyled d-flex gap-3">
+                      <li>Informazioni legali</li>
+                      <li>Centro sulla privacy</li>
+                      <li>Informativa sulla privacy</li>
+                      <li>Impostazioni cookie</li>
+                      <li>Info annunci</li>
+                      <li>Accessibilità</li>
+                    </ul>
+                  </div>
+                  <div class="col-4 text-end">
+                    <p>© 2023 Spotify AB</p>
+                  </div>
+                </div>
+              </footer>
+              <!-- FINE FOOTER -->
+            </div>
+          
+        </div>
         <div class="col-2 m-0 d-none d-lg-block" id="aside-right">
           <div class="container">
             <div class="row">

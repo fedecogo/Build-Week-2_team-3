@@ -1,4 +1,26 @@
+//  FUNZIONE PER INSERIRE GLI ALBUM NELLA BARRA LATERALE SINISTRA
 
+const playlistMenu = document.getElementById("playlist");
+const getAlbum = function (query) {
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${query}`)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Errore nella response");
+      }
+    })
+    .then((data) => {
+      const app = document.getElementById("albumlevate");
+      const card = document.createElement("div");
+      card.innerHTML = `<a class="text-decoration-none text-white" href="album.html?query=${data.id}"><div class="d-flex align-items-center mt-2"><img src="${data.cover_medium}" width="30px" height="30px" /><p>${data.title}<p></div><a>`;
+      app.appendChild(card);
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("Si è verificato un errore:", error);
+    });
+};
 
 // FUNZIONE BOTTONE ALBUM
 const albumbtn = document.getElementById("azz");
@@ -11,7 +33,7 @@ albumbtn.addEventListener("click", () => {
   fakeVia.classList.remove("d-none");
 });
 function invocagetalbum(numeriArrey) {
-  for (const id of numeriArrey) getAlbum2(id);
+  for (const id of numeriArrey) getAlbum(id);
 }
 
 // FUNZIONE BOTTONE PLAYLIST
