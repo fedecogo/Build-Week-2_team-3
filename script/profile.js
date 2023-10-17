@@ -86,6 +86,7 @@ form.addEventListener("submit", function (e) {
   main.style.opacity = 1;
   footer.style.opacity = 1;
   localStorage.setItem("username", userName.innerHTML);
+  userNameInput.value = "";
 });
 
 const usernameStorage = localStorage.getItem("username");
