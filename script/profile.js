@@ -126,9 +126,8 @@ if (iconsContainer.style.backgroundImage !== "none") {
   iconsContainer.addEventListener("mouseleave", () => {
     pencilIcon.classList.add("d-none");
   });
-} else {
-  console.log("The div does not have a background image.");
 }
+
 // PRENDO LA PRIMA OPZIONE DEL MENU A TENDINA
 const editProfile = document.getElementById("edit-profile");
 editProfile.addEventListener("click", () => {
