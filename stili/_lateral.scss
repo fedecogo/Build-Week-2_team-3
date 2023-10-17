@@ -43,12 +43,8 @@
 }
 
 #centro {
-  height: 90vh;
   overflow: auto;
 }
-
-
-
 
 #aside-right {
   background-color: $black-color;
@@ -60,7 +56,7 @@
 
   p {
     margin-block: 0px;
-    font-size: x-small
+    font-size: x-small;
   }
 
   #music-i {
@@ -86,7 +82,6 @@ body {
   background-color: #e0e0e000;
 }
 
-
 .volume-control {
   display: flex;
   align-items: center;
@@ -107,7 +102,7 @@ button {
 
 #wallpaper-img {
   width: 100%;
-  background-image: url('assets/imgs/WALAPAPER.png');
+  background-image: url("assets/imgs/WALAPAPER.png");
   /* Percorso dell'immagine */
   background-size: cover;
   /* Adatta l'immagine alla dimensione del div */
@@ -126,8 +121,6 @@ button {
   h1 {
     font-weight: bold;
     font-size: 70px;
-
-
   }
 }
 
@@ -148,7 +141,7 @@ button {
   left: 20%;
   transform: translate(-50%, -50%);
   width: 400px;
-  background: linear-gradient(to bottom, #1ED760, #000000);
+  background: linear-gradient(to bottom, #1ed760, #000000);
   padding: 10px;
   text-align: center;
   animation: slideDown 0.5s ease forwards;
@@ -166,7 +159,7 @@ button {
 }
 
 #music-player {
-  @media screen and (max-width:576px) {
-    display: none
+  @media screen and (max-width: 576px) {
+    display: none;
   }
 }

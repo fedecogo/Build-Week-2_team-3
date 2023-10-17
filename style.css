@@ -39,7 +39,6 @@
 }
 
 #centro {
-  height: 90vh;
   overflow: auto;
 }
 
@@ -133,7 +132,7 @@ button {
   left: 20%;
   transform: translate(-50%, -50%);
   width: 400px;
-  background: linear-gradient(to bottom, #1ED760, #000000);
+  background: linear-gradient(to bottom, #1ed760, #000000);
   padding: 10px;
   text-align: center;
   animation: slideDown 0.5s ease forwards;
