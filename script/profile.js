@@ -44,7 +44,7 @@ const displaySelectedImage = function () {
     reader.onload = function (event) {
       const dataURL = event.target.result;
       profileImageDataURL = dataURL; // Store the profile image data URL
-      styleContainer = iconsContainer.style;
+      const styleContainer = iconsContainer.style;
       styleContainer.backgroundImage = `url('${profileImageDataURL}')`;
       styleContainer.backgroundSize = "cover";
       styleContainer.backgroundRepeat = "no-repeat";
@@ -52,6 +52,7 @@ const displaySelectedImage = function () {
       profileImageNavbar.src = profileImageDataURL;
       profileImageNavbar.style.width = "30px";
       profileImageNavbar.style.heigth = "30px";
+      localStorage.setItem("profileImage", profileImageDataURL);
     };
     reader.readAsDataURL(selectedImage);
   }
@@ -94,11 +95,40 @@ form.addEventListener("submit", function (e) {
   profileNameNavbar.innerText = localStorage.getItem("username");
 });
 
+// NOME PROFILO, se non c'è il local storage metterà "nome utente"
 const usernameStorage = localStorage.getItem("username");
 userName.innerHTML = usernameStorage ? usernameStorage : "Nome utente";
 
 profileNameNavbar.innerText = usernameStorage ? usernameStorage : "Nome utente";
 
+// IMMAGINE PROFILO, se non c'è il local storage metterà "http://placekitten.com/30/30"
+const profileImageLocalStorage = localStorage.getItem("profileImage");
+profileImageNavbar.src = profileImageLocalStorage
+  ? profileImageLocalStorage
+  : "http://placekitten.com/30/30";
+profileImageNavbar.style.width = "30px";
+profileImageNavbar.style.heigth = "30px";
+const styleContainer = iconsContainer.style;
+
+styleContainer.backgroundImage = `url('${profileImageLocalStorage}')`;
+styleContainer.backgroundSize = "cover";
+styleContainer.backgroundRepeat = "no-repeat";
+styleContainer.backgroundPosition = "center center";
+
+if (iconsContainer.style.backgroundImage !== "none") {
+  console.log("The div has a background image.");
+  personIcon.classList.add("d-none");
+  personIcon.classList.remove("bi");
+  personIcon.classList.remove("bi-person");
+  iconsContainer.addEventListener("mouseover", () => {
+    pencilIcon.classList.remove("d-none");
+  });
+  iconsContainer.addEventListener("mouseleave", () => {
+    pencilIcon.classList.add("d-none");
+  });
+} else {
+  console.log("The div does not have a background image.");
+}
 // PRENDO LA PRIMA OPZIONE DEL MENU A TENDINA
 const editProfile = document.getElementById("edit-profile");
 editProfile.addEventListener("click", () => {
