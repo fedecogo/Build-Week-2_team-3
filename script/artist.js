@@ -122,14 +122,14 @@ const getArtist = function (query) {
 `;
 
       newRow.innerHTML = newRowHTML;
-      const divAudio = document.getElementById('appendi_qui')
-const newDiv = document.createElement("div");
-  newDiv.innerHTML = `
+      const divAudio = document.getElementById("appendi_qui");
+      const newDiv = document.createElement("div");
+      newDiv.innerHTML = `
   <audio controls>
 <source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
 </audio>
-  `
-  divAudio.appendChild(newDiv)
+  `;
+      divAudio.appendChild(newDiv);
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -215,7 +215,9 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  const numeriArrey = [6415260, 12207660, 455130, 454043,1262014,464515625,95829922];
+  const numeriArrey = [
+    6415260, 12207660, 455130, 454043, 1262014, 464515625, 95829922,
+  ];
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -225,7 +227,7 @@ function invocagetalbum(numeriArrey) {
 }
 
 // funzione aside amici display e non
-const btnx = document.getElementById("x")
+const btnx = document.getElementById("x");
 
 const asidegruppo = document.getElementById("aside-right");
 
@@ -236,7 +238,6 @@ btnx.addEventListener("click", () => {
   asidegruppo.classList.toggle("d-lg-block");
 });
 
-
 // FUNZIONE BOTTONE PLAYLIST
 const playlistbtn = document.getElementById("azz2");
 playlistbtn.addEventListener("click", () => {
@@ -245,3 +246,19 @@ playlistbtn.addEventListener("click", () => {
   const realVia = document.getElementById("levate");
   realVia.classList.remove("d-none");
 });
+
+// SELEZIONA IL NOME E L'IMMAGINE PROFILO
+
+const profileImageNavbar = document.querySelector(".dropdown img");
+const profileNameNavbar = document.querySelector(".dropdown .fw-bold");
+
+// NOME UTENTE E IMMAGINE PROFILO IN BASE AL LOCAL STORAGE
+const usernameStorage = localStorage.getItem("username");
+profileNameNavbar.innerText = usernameStorage ? usernameStorage : "Nome utente";
+
+const profileImageLocalStorage = localStorage.getItem("profileImage");
+profileImageNavbar.src = profileImageLocalStorage
+  ? profileImageLocalStorage
+  : "http://placekitten.com/30/30";
+profileImageNavbar.style.width = "30px";
+profileImageNavbar.style.heigth = "30px";
