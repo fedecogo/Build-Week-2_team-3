@@ -250,3 +250,19 @@ playlistbtn.addEventListener("click", () => {
   const realVia = document.getElementById("levate");
   realVia.classList.remove("d-none");
 });
+
+// SELEZIONA IL NOME E L'IMMAGINE PROFILO
+
+const profileImageNavbar = document.querySelector(".dropdown img");
+const profileNameNavbar = document.querySelector(".dropdown .fw-bold");
+
+// NOME UTENTE E IMMAGINE PROFILO IN BASE AL LOCAL STORAGE
+const usernameStorage = localStorage.getItem("username");
+profileNameNavbar.innerText = usernameStorage ? usernameStorage : "Nome utente";
+
+const profileImageLocalStorage = localStorage.getItem("profileImage");
+profileImageNavbar.src = profileImageLocalStorage
+  ? profileImageLocalStorage
+  : "http://placekitten.com/30/30";
+profileImageNavbar.style.width = "30px";
+profileImageNavbar.style.heigth = "30px";

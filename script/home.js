@@ -2,6 +2,7 @@ const toggleButton = document.getElementById("toggleButton");
 const searchBar = document.getElementById("searchBar");
 const searchButton = document.getElementById("searchButton");
 
+//
 toggleButton.addEventListener("click", () => {
   searchBar.classList.toggle("hidden");
 });
@@ -68,7 +69,9 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  const numeriArrey = [6415260, 12207660, 455130, 454043,1262014,464515625,95829922];
+  const numeriArrey = [
+    6415260, 12207660, 455130, 454043, 1262014, 464515625, 95829922,
+  ];
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -86,17 +89,16 @@ playlistbtn.addEventListener("click", () => {
   realVia.classList.remove("d-none");
 });
 
-
-// FUNZIONE TEMPORANE PER MUSICA 
+// FUNZIONE TEMPORANE PER MUSICA
 // DA SPOSTARE POI NELLA FATCH CON L'MP3
-const divAudio = document.getElementById('appendi_qui')
+const divAudio = document.getElementById("appendi_qui");
 const newDiv = document.createElement("div");
-  newDiv.innerHTML = `
+newDiv.innerHTML = `
   <audio controls>
 <source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
 </audio>
-  `
-  divAudio.appendChild(newDiv)
+  `;
+divAudio.appendChild(newDiv);
 
 // play canzone in evidenzia
 // FUNZIONE PER FAR SI CHE AL CLICK DELLE CANZONI PARTE LA MUSICA
@@ -113,52 +115,50 @@ const getBSong = function (query) {
       console.log(data);
       console.log(data.tracks.data[0].album.cover);
       // cambio le immagini della st
-      const getDivImg = document.getElementById('current-song-image')
-      getDivImg.innerHTML=``
-      const NewImgAlbum = document.createElement("div")
-      NewImgAlbum.innerHTML=`<img
+      const getDivImg = document.getElementById("current-song-image");
+      getDivImg.innerHTML = ``;
+      const NewImgAlbum = document.createElement("div");
+      NewImgAlbum.innerHTML = `<img
       src="assets/imgs/main/image-11.jpg"
       alt="song photo"
       width="60px"
-      />`
+      />`;
       // HO USATO QUELL'IMAGINE PERCHè E'LA FUNZIONE ESCLISIVAMENTE PER L'ALBUM IN HOME
-      getDivImg.appendChild(NewImgAlbum)
+      getDivImg.appendChild(NewImgAlbum);
 
-      // cambio h5 e h6 const 
-      const getDivText = document.getElementById('current-song-info')
-      getDivText.innerHTML=``
-      const newDivText  = document.createElement("div")
-      newDivText.innerHTML=`<h5>${data.tracks.data[0].title}</h5>
-      <h6>Mercury</h6>`
-      getDivText.appendChild(newDivText)
-      
+      // cambio h5 e h6 const
+      const getDivText = document.getElementById("current-song-info");
+      getDivText.innerHTML = ``;
+      const newDivText = document.createElement("div");
+      newDivText.innerHTML = `<h5>${data.tracks.data[0].title}</h5>
+      <h6>Mercury</h6>`;
+      getDivText.appendChild(newDivText);
+
       // parte centrale
-      const divAudio = document.getElementById('appendi_qui')
+      const divAudio = document.getElementById("appendi_qui");
       const newDiv = document.createElement("div");
-      console.log(data.tracks.data[0].preview)
-      divAudio.innerHTML=``
-        newDiv.innerHTML = `
+      console.log(data.tracks.data[0].preview);
+      divAudio.innerHTML = ``;
+      newDiv.innerHTML = `
         <audio controls autoplay>
   <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
 </audio>
-        `
-        divAudio.appendChild(newDiv)
+        `;
+      divAudio.appendChild(newDiv);
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
     });
-  };
+};
 
-
-  // invoco la funzione al click di play
-  const bonesBtn = document.getElementById('playBones')
-bonesBtn.addEventListener("click",()=>{getBSong(302204417)
-  
-
-})
+// invoco la funzione al click di play
+const bonesBtn = document.getElementById("playBones");
+bonesBtn.addEventListener("click", () => {
+  getBSong(302204417);
+});
 
 // funzione aside amici display e non
-const btnx = document.getElementById("x")
+const btnx = document.getElementById("x");
 
 const asidegruppo = document.getElementById("aside-right");
 
@@ -168,3 +168,19 @@ btnx.addEventListener("click", () => {
   asidegruppo.classList.add("d-none");
   asidegruppo.classList.toggle("d-lg-block");
 });
+
+// SELEZIONA IL NOME E L'IMMAGINE PROFILO
+
+const profileImageNavbar = document.querySelector(".dropdown img");
+const profileNameNavbar = document.querySelector(".dropdown .fw-bold");
+
+// NOME UTENTE E IMMAGINE PROFILO IN BASE AL LOCAL STORAGE
+const usernameStorage = localStorage.getItem("username");
+profileNameNavbar.innerText = usernameStorage ? usernameStorage : "Nome utente";
+
+const profileImageLocalStorage = localStorage.getItem("profileImage");
+profileImageNavbar.src = profileImageLocalStorage
+  ? profileImageLocalStorage
+  : "http://placekitten.com/30/30";
+profileImageNavbar.style.width = "30px";
+profileImageNavbar.style.heigth = "30px";
