@@ -239,7 +239,7 @@ const getSong = function (query) {
     });
 };
 // invoco la funzione GET SONG al click di play
-const playbtn = document.getElementById("gesu");
+const playbtn = document.getElementById("songIn");
 playbtn.addEventListener("click", function () {
   getSong(albumId);
 });

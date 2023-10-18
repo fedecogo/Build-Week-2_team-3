@@ -169,6 +169,12 @@ btnx.addEventListener("click", () => {
   asidegruppo.classList.toggle("d-lg-block");
 });
 
+const newHeart = document.getElementById("cuoricinoMio");
+newHeart.addEventListener("click", () => {
+  newHeart.classList.toggle("text-success");
+  newHeart.classList.toggle("bi-heart");
+  newHeart.classList.toggle("bi-heart-fill");
+});
 // SELEZIONA IL NOME E L'IMMAGINE PROFILO
 
 const profileImageNavbar = document.querySelector(".dropdown img");
@@ -184,3 +190,197 @@ profileImageNavbar.src = profileImageLocalStorage
   : "http://placekitten.com/30/30";
 profileImageNavbar.style.width = "30px";
 profileImageNavbar.style.heigth = "30px";
+
+// FUNZIONE CARDS HOME LINKATE Parte con playlist Laterali
+
+// const creaCardsHome = function (query) {
+//   fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
+//     .then((res) => {
+//       if (res.ok) {
+//         return res.json();
+//       } else {
+//         throw new Error("Errore nella response");
+//       }
+//     })
+//     .then((data) => {
+//       window.location.href = `artist.html?query=${query}`;
+//     })
+
+//     .catch((error) => {
+//       console.error("Si è verificato un errore:", error);
+//     });
+// };
+
+//LINK 10 CARDS
+const firstcard = document.getElementById("card1");
+firstcard.addEventListener("click", function () {
+  creaCardsHome("Summer Playlist");
+});
+const secondcard = document.getElementById("card2");
+secondcard.addEventListener("click", function () {
+  creaCardsHome("Friday Playlist");
+});
+const thirdcard = document.getElementById("card3");
+thirdcard.addEventListener("click", function () {
+  creaCardsHome("Lavoro da casa");
+});
+const fourthcard = document.getElementById("card4");
+fourthcard.addEventListener("click", function () {
+  creaCardsHome("Home sweet Home");
+});
+const fifthcard = document.getElementById("card5");
+fifthcard.addEventListener("click", function () {
+  creaCardsHome("Summer Body Workout");
+});
+const sixthcard = document.getElementById("card6");
+sixthcard.addEventListener("click", function () {
+  creaCardsHome("Musica per Pulizie di Casa");
+});
+const seventhcard = document.getElementById("card7");
+seventhcard.addEventListener("click", function () {
+  creaCardsHome("Jazz Vibes Music");
+});
+const eightcard = document.getElementById("card8");
+eightcard.addEventListener("click", function () {
+  creaCardsHome("Imagine Dragons");
+});
+const ninthcard = document.getElementById("card9");
+ninthcard.addEventListener("click", function () {
+  creaCardsHome("musica per il buonumore");
+});
+const tenthcard = document.getElementById("card10");
+tenthcard.addEventListener("click", function () {
+  creaCardsHome("Musica nella Doccia");
+});
+
+// Card a scomparsa
+
+const Wcard = document.getElementById("cardw");
+Wcard.addEventListener("click", function () {
+  creaCardsHome("Film Estivo");
+});
+const Xcard = document.getElementById("cardx");
+Xcard.addEventListener("click", function () {
+  creaCardsHome("Piano");
+});
+const Ycard = document.getElementById("cardy");
+Ycard.addEventListener("click", function () {
+  creaCardsHome("Young rap");
+});
+const Zcard = document.getElementById("cardz");
+Zcard.addEventListener("click", function () {
+  creaCardsHome("Street Music");
+});
+
+//CARD Iniziali
+
+const Acard = document.getElementById("cardA");
+Acard.addEventListener("click", function () {
+  creaCardsHome("Rock Playlist");
+});
+const Bcard = document.getElementById("cardB");
+Bcard.addEventListener("click", function () {
+  creaCardsHome("Dance Music");
+});
+const Ccard = document.getElementById("cardC");
+Ccard.addEventListener("click", function () {
+  creaCardsHome("Canzoni per Bambini");
+});
+const Dcard = document.getElementById("cardD");
+Dcard.addEventListener("click", function () {
+  creaCardsHome("Sleeping Music");
+});
+const Ecard = document.getElementById("cardE");
+Ecard.addEventListener("click", function () {
+  creaCardsHome("Focus Lo-fi");
+});
+const Fcard = document.getElementById("cardF");
+Fcard.addEventListener("click", function () {
+  creaCardsHome("Guitar Music");
+});
+
+// // Playlist laterali 21 righe
+// const PrimaRiga = document.getElementById("1riga");
+// PrimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const SecondaRiga = document.getElementById("2riga");
+// SecondaRigaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const TerzaRiga = document.getElementById("3riga");
+// TerzaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const QuartaRiga = document.getElementById("4riga");
+// QuartaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const QuintaRiga = document.getElementById("5riga");
+// QuintaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const SestaRiga = document.getElementById("6riga");
+// SestaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const SettimaRiga = document.getElementById("7riga");
+// SettimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const OttavaRiga = document.getElementById("8riga");
+// OttavaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const NonaRiga = document.getElementById("9riga");
+// NonaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const DecimaRiga = document.getElementById("10riga");
+// DecimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const UndicesimaRiga = document.getElementById("11riga");
+// UndicesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const DodicesimaRiga = document.getElementById("12riga");
+// DodicesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const TredicesimaRiga = document.getElementById("13riga");
+// TredicesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const QuattordicesimaRiga = document.getElementById("14riga");
+// QuattordicesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const QuindicesimaRiga = document.getElementById("15riga");
+// QuindicesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const SedicesimaRiga = document.getElementById("16riga");
+// SedicesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const DiciassettesimaRiga = document.getElementById("17riga");
+// DiciassettesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const DiciottesimaRiga = document.getElementById("18riga");
+// DiciottesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const DiciannovesimaRiga = document.getElementById("19riga");
+// DiciannovesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const VentesimaRiga = document.getElementById("20riga");
+// VentesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });
+// const VentunesimaRiga = document.getElementById("21riga");
+// VentesimaRiga.addEventListener("click", function () {
+//   creaCardsHome("Guitar Music");
+// });

@@ -33,7 +33,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[0].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[0].rank}</div>
-          <div class="col-2 ps-4">${data.data[0].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block">${data.data[0].duration}</div>
         </div>
         <div class="row mb-3 d-flex justify-content-between align-items-center">
           <div class="col-1 text-center">2</div>
@@ -44,7 +44,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[1].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[1].rank}</div>
-          <div class="col-2 ps-4">${data.data[1].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block">${data.data[1].duration}</div>
         </div>
         <div class="row mb-3 d-flex justify-content-between align-items-center">
           <div class="col-1 text-center">3</div>
@@ -55,7 +55,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[2].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[2].rank}</div>
-          <div class="col-2 ps-4">${data.data[2].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block">${data.data[2].duration}</div>
         </div>
         <div class="row mb-3 d-flex justify-content-between align-items-center">
           <div class="col-1 text-center">4</div>
@@ -66,7 +66,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[3].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[3].rank}</div>
-          <div class="col-2 ps-4">${data.data[3].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block ">${data.data[3].duration}</div>
         </div>
         <div class="row mb-3 d-flex justify-content-between align-items-center">
           <div class="col-1 text-center">5</div>
@@ -77,7 +77,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[4].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[4].rank}</div>
-          <div class="col-2 ps-4">${data.data[4].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block">${data.data[4].duration}</div>
         </div>
         `;
       songDetails.innerHTML = songDetailsHTML;
@@ -91,32 +91,36 @@ const getArtist = function (query) {
       const newRow = document.getElementById("appAlbum");
       newRow.innerHTML = "";
       const newRowHTML = `
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
-    <div class="card-body">
-      <img src="${data.data[0].album.cover_medium}" width="65px"  alt="..." />
-        <h5 class="card-title">${data.data[0].album.title}</h5>
-        <a href="album.html?query=${data.data[0].album.id}" class="btn btn-primary">Go to Album</a>
-      </div>
-    </div>
+      <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+      <a href="album.html?query=${data.data[0].album.id}" class="text-decoration-none" >
+        <div class="card bg-dark  text-white h-100 " id="cardalbum1">
+        <div class="card-body">
+          <img src="${data.data[0].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid" />
+            <h5 class="card-title mt-3">${data.data[0].album.title}</h5>
+                 </div>
+        </div>
+        </a>
   </div>
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
+  
+  <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+  <a href="album.html?query=${data.data[1].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum2">
     <div class="card-body">
-      <img src="${data.data[1].album.cover_medium}" width="65px"  alt="..." />
-        <h5 class="card-title">${data.data[1].album.title}</h5>
-        <a href="album.html?query=${data.data[1].album.id}" class="btn btn-primary">Go to Album</a>
-      </div>
+      <img src="${data.data[1].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+        <h5 class="card-title mt-3">${data.data[1].album.title}</h5>
+             </div>
     </div>
+    </a>
   </div>
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
+  <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+  <a href="album.html?query=${data.data[2].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum3">
     <div class="card-body">
-      <img src="${data.data[2].album.cover_medium}" width="65px"  alt="..." />
-        <h5 class="card-title">${data.data[2].album.title}</h5>
-        <a href="album.html?query=${data.data[2].album.id}" class="btn btn-primary">Go to Album</a>
-      </div>
+      <img src="${data.data[2].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+        <h5 class="card-title mt-3">${data.data[2].album.title}</h5>
+             </div>
     </div>
+    </a>
   </div>
  
 `;
@@ -245,6 +249,14 @@ playlistbtn.addEventListener("click", () => {
   via.classList.add("d-none");
   const realVia = document.getElementById("levate");
   realVia.classList.remove("d-none");
+});
+
+//CLICK BUTTON MUSIC AND EVENT
+
+const but = document.getElementById("butMusic");
+but.addEventListener("click", () => {
+  //but.classList.toggle("btn-outline-dark");
+  but.classList.toggle("btn-outline-success");
 });
 
 // SELEZIONA IL NOME E L'IMMAGINE PROFILO
