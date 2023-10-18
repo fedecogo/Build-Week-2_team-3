@@ -193,21 +193,13 @@ button {
 
 #album-tracks .row:hover {
   border-radius: 10px;
-  background: linear-gradient(
-    to right,
-    rgba(111, 111, 111, 0.492),
-    rgba(77, 77, 77, 0.4196078431)
-  );
+  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
 }
 
 #albumlevate div:hover {
   font-weight: bold;
   border-radius: 5px;
-  background: linear-gradient(
-    to right,
-    rgba(111, 111, 111, 0.492),
-    rgba(77, 77, 77, 0.4196078431)
-  );
+  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
 }
 #albumlevate div:hover p {
   font-weight: bold;
@@ -261,8 +253,21 @@ button {
   transition: background-color 1s ease;
 }
 
+#levate .mt-1:hover {
+  font-weight: bold;
+  border-radius: 5px;
+  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
+}
+#levate .mt-1:hover img {
+  cursor: pointer;
+}
+#levate .mt-1:hover p {
+  align-self: center;
+  font-weight: bold;
+}
+
 #tutti-mobile {
-  background-color: #1ed760;
+  background-color: #1ED760;
 }
 
 .bottone-mobile {
@@ -275,6 +280,7 @@ button {
   bottom: 0;
   z-index: 100;
 }
+
 #home-and-search {
   background-color: rgb(18, 18, 18);
 }
@@ -360,4 +366,4 @@ button {
   #form-container {
     width: 40%;
   }
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
