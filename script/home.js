@@ -94,7 +94,7 @@ playlistbtn.addEventListener("click", () => {
 const divAudio = document.getElementById("appendi_qui");
 const newDiv = document.createElement("div");
 newDiv.innerHTML = `
-  <audio controls>
+  <audio controls class="w-75">
 <source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
 </audio>
   `;
