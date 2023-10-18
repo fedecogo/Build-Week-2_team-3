@@ -94,7 +94,7 @@ const getArtist = function (query) {
   <div class="col-xs-6 col-md-4">
     <div class="card">
     <div class="card-body">
-      <img src="${data.data[0].album.cover_medium}" width="50px"  alt="..." />
+      <img src="${data.data[0].album.cover_medium}" width="65px"  alt="..." />
         <h5 class="card-title">${data.data[0].album.title}</h5>
         <a href="album.html?query=${data.data[0].album.id}" class="btn btn-primary">Go to Album</a>
       </div>
@@ -103,7 +103,7 @@ const getArtist = function (query) {
   <div class="col-xs-6 col-md-4">
     <div class="card">
     <div class="card-body">
-      <img src="${data.data[1].album.cover_medium}" width="50px"  alt="..." />
+      <img src="${data.data[1].album.cover_medium}" width="65px"  alt="..." />
         <h5 class="card-title">${data.data[1].album.title}</h5>
         <a href="album.html?query=${data.data[1].album.id}" class="btn btn-primary">Go to Album</a>
       </div>
@@ -112,7 +112,7 @@ const getArtist = function (query) {
   <div class="col-xs-6 col-md-4">
     <div class="card">
     <div class="card-body">
-      <img src="${data.data[2].album.cover_medium}" width="50px"  alt="..." />
+      <img src="${data.data[2].album.cover_medium}" width="65px"  alt="..." />
         <h5 class="card-title">${data.data[2].album.title}</h5>
         <a href="album.html?query=${data.data[2].album.id}" class="btn btn-primary">Go to Album</a>
       </div>
@@ -121,8 +121,15 @@ const getArtist = function (query) {
  
 `;
 
-      // Assegna la stringa HTML al tuo elemento
       newRow.innerHTML = newRowHTML;
+      const divAudio = document.getElementById('appendi_qui')
+const newDiv = document.createElement("div");
+  newDiv.innerHTML = `
+  <audio controls>
+<source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
+</audio>
+  `
+  divAudio.appendChild(newDiv)
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -178,3 +185,63 @@ const getImages = function (query) {
       console.error("Si è verificato un errore:", error);
     });
 };
+
+//  FUNZIONE PER INSERIRE GLI ALBUM NELLA BARRA LATERALE SINISTRA
+
+const playlistMenu = document.getElementById("playlist");
+const getAlbum = function (query) {
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${query}`)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Errore nella response");
+      }
+    })
+    .then((data) => {
+      const app = document.getElementById("albumlevate");
+      const card = document.createElement("div");
+      card.innerHTML = `<a class="text-decoration-none text-white" href="album.html?query=${data.id}"><div class="d-flex align-items-center mt-2"><img src="${data.cover_medium}" width="30px" height="30px" /><p>${data.title}<p></div><a>`;
+      app.appendChild(card);
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("Si è verificato un errore:", error);
+    });
+};
+
+// FUNZIONE BOTTONE ALBUM
+const albumbtn = document.getElementById("azz");
+albumbtn.addEventListener("click", () => {
+  const via = document.getElementById("levate");
+  via.classList.add("d-none");
+  const numeriArrey = [6415260, 12207660, 455130, 454043,1262014,464515625,95829922];
+  invocagetalbum(numeriArrey);
+  const fakeVia = document.getElementById("albumlevate");
+  fakeVia.classList.remove("d-none");
+});
+function invocagetalbum(numeriArrey) {
+  for (const id of numeriArrey) getAlbum(id);
+}
+
+// funzione aside amici display e non
+const btnx = document.getElementById("x")
+
+const asidegruppo = document.getElementById("aside-right");
+
+btnx.addEventListener("click", () => {
+  asidegruppo.classList.toggle("col-2");
+  asidegruppo.classList.toggle("m-0");
+  asidegruppo.classList.add("d-none");
+  asidegruppo.classList.toggle("d-lg-block");
+});
+
+
+// FUNZIONE BOTTONE PLAYLIST
+const playlistbtn = document.getElementById("azz2");
+playlistbtn.addEventListener("click", () => {
+  const via = document.getElementById("albumlevate");
+  via.classList.add("d-none");
+  const realVia = document.getElementById("levate");
+  realVia.classList.remove("d-none");
+});
