@@ -103,9 +103,6 @@ const getAlbum = function (query) {
 //         <audio controls>
 //   <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
 // </audio>
-
-
-        
 //         `
 //         // <audio controls><source src="${data.tracks.data[0].link}" type="audio/mpeg"></audio>
 //         divAudio.appendChild(newDiv)
@@ -236,11 +233,7 @@ const getSong = function (query) {
         <audio controls autoplay>
   <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
 </audio>
-
-
-        
         `
-        // <audio controls><source src="${data.tracks.data[0].link}" type="audio/mpeg"></audio>
         divAudio.appendChild(newDiv)
     
       
@@ -249,9 +242,8 @@ const getSong = function (query) {
       console.error("Si è verificato un errore:", error);
     });
   };
-  // invoco la funzione al click di play
+  // invoco la funzione GET SONG al click di play
   const playbtn = document.getElementById('gesu');
-
   playbtn.addEventListener('click', function() {getSong(albumId);
   });
   

@@ -27,20 +27,22 @@
     
         background: linear-gradient(to right, rgb(61, 61, 61), #161616);
         transition: background-color 1s ease;
+        p:hover{
+            font-size: bold;
+        }
       }
       .col-8:hover {
           background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
           transition: background-color 1s ease;
+          
+          
   }}
 
 #album-tracks{
     .row:hover{
         border-radius: 10px;
         background: linear-gradient(to right, rgba(111, 111, 111, 0.492), #4d4d4d6b);
-        p{
-
-            font-weight: bold;
-        }
+        
         
     }
 }
@@ -49,6 +51,9 @@
         font-weight: bold;
         border-radius: 5px;
         background: linear-gradient(to right, rgba(111, 111, 111, 0.492), #4d4d4d6b);
+        p{
+            font-weight: bold;
+        }
     }
 
 }

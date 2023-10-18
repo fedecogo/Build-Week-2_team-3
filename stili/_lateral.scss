@@ -105,9 +105,7 @@ button {
 #wallpaper-img {
   width: 100%;
   background-image: url("assets/imgs/WALAPAPER.png");
-  /* Percorso dell'immagine */
   background-size: cover;
-  /* Adatta l'immagine alla dimensione del div */
   background-repeat: no-repeat;
 }
 
@@ -138,7 +136,6 @@ button {
   position: absolute;
   top: 50%;
   margin-top: -320px;
-  /* Metà dell'altezza del div */
   left: 20%;
   transform: translate(-50%, -50%);
   width: 400px;
