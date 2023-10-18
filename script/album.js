@@ -130,7 +130,7 @@ const asidegruppo = document.getElementById("aside-right");
 gruppo.addEventListener("click", () => {
   asidegruppo.classList.toggle("col-2");
   asidegruppo.classList.toggle("m-0");
-  asidegruppo.classList.add("d-none");
+  // asidegruppo.classList.add("d-none");
   asidegruppo.classList.toggle("d-lg-block");
 });
 btnx.addEventListener("click", () => {
@@ -243,3 +243,22 @@ const playbtn = document.getElementById("songIn");
 playbtn.addEventListener("click", function () {
   getSong(albumId);
 });
+
+// SELEZIONA L'IMMAGINE DEL PROFILO
+
+const profileImageNavbar = document.querySelector(".dropdown img");
+const userIcon = document.querySelector(".dropdown i");
+
+// NOME IMMAGINE PROFILO IN BASE AL LOCAL STORAGE
+
+const profileImageLocalStorage = localStorage.getItem("profileImage");
+profileImageNavbar.src = profileImageLocalStorage
+  ? profileImageLocalStorage
+  : "http://placekitten.com/30/30";
+profileImageNavbar.style.width = "30px";
+profileImageNavbar.style.heigth = "30px";
+
+if (profileImageLocalStorage) {
+  userIcon.classList.add("d-none");
+  profileImageNavbar.classList.remove("d-none");
+}

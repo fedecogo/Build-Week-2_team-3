@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-secondary">
+    <main>
+      <div class="container bg-secondary bg-gradient">
+        <div class="row justify-content-between align-items-center my-4 py-3">
+          <div class="col-6">
+            <!-- icone frecce -->
+            <i class="fas fa-chevron-circle-left fs-3"></i>
+            <i class="fas fa-chevron-circle-right fs-3"></i>
+          </div>
+          <div class="col-6 text-end">
+            <!-- icona profilo -->
+            <div class="dropdown">
+              <a
+                class="btn btn-dark rounded-pill dropdown-toggle py-0 ps-0"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="http://placekitten.com/30/30"
+                  alt="profilo"
+                  class="rounded-circle p-1"
+                />
+                <small class="fw-bold"> Nome Profilo</small>
+              </a>
+
+              <ul class="dropdown-menu bg-black text-white">
+                <li>
+                  <a class="dropdown-item text-white" href="profile.html"
+                    >Profilo</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-white" href="#"
+                    >Another action</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-white" href="#"
+                    >Something else here</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row py-3">
+          <div
+            class="col-12 col-md-5 col-lg-4 text-white ms-md-3 me-0 d-flex justify-content-center"
+          >
+            <div
+              id="icons-container"
+              class="rounded-circle bg-dark d-flex justify-content-center align-items-center shadow-lg"
+              style="width: 250px; height: 250px"
+            >
+              <i id="person" class="bi bi-person fs-1"></i>
+              <div
+                id="pencil"
+                class="d-flex justify-content-center flex-column align-items-center d-none"
+                style="cursor: pointer"
+              >
+                <i class="bi bi-pencil fs-1" onclick="openImageUploader()"></i>
+                <p>Scegli foto</p>
+              </div>
+              <input
+                id="image-upload"
+                type="file"
+                accept="image/*"
+                style="display: none"
+                onchange="displaySelectedImage()"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-md-5 col-lg-7 text-white d-flex flex-column justify-content-center flex-grow-1 text-center text-md-start mt-3"
+          >
+            <p>Profilo</p>
+            <h1 id="username" class="fw-bold" style="cursor: pointer">
+              Nome Utente
+            </h1>
+          </div>
+        </div>
+        <div class="row pb-5 bg-dark">
+          <div class="col py-4">
+            <div class="dropdown">
+              <div
+                class="text-center text-md-start"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i
+                  class="bi bi-three-dots fs-4 text-white-50"
+                  style="cursor: pointer"
+                ></i>
+              </div>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <a id="edit-profile" class="dropdown-item" href="#"
+                    >Modifica profilo</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Copia link al profilo</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container bg-black">
+        <div
+          class="row text-white pb-4 pt-5 px-4 border-bottom border-secondary flex-column flex-md-row"
+        >
+          <div class="col-12 col-md-2 text-center text-md-start">
+            <p class="mb-0 fw-bold">Azienda</p>
+            <ul class="text-white-50 list-unstyled">
+              <li>Chi siamo</li>
+              <li>Opportunità di lavoro</li>
+              <li>For the Record</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-2 text-center text-md-start">
+            <p class="mb-0 fw-bold">Community</p>
+            <ul class="text-white-50 list-unstyled flex-column flex-md-row">
+              <li>Per artisti</li>
+              <li>Sviluppatori</li>
+              <li>Pubblicità</li>
+              <li>Investitori</li>
+              <li>Venditori</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-2 text-center text-md-start">
+            <p class="mb-0 fw-bold">Link utili</p>
+            <ul class="text-white-50 list-unstyled">
+              <li>Assistenza</li>
+              <li>App per cellulare gratuita</li>
+              <li>Diritti del consumatore</li>
+            </ul>
+          </div>
+          <div
+            class="col fs-6 d-flex gap-4 justify-content-md-end justify-content-center"
+          >
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-facebook"></i>
+          </div>
+        </div>
+        <div class="row text-secondary mt-4 g-0 pb-5">
+          <div class="col">
+            <ul class="list-unstyled d-flex gap-3 d-none d-md-flex">
+              <li>Informazioni legali</li>
+              <li>Centro sulla privacy</li>
+              <li>Informativa sulla privacy</li>
+              <li>Impostazioni cookie</li>
+              <li>Info annunci</li>
+              <li>Accessibilità</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 text-center text-md-end">
+            <p>© 2023 Spotify AB</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="form-container"
+      class="w-50 bg-dark p-5 text-white rounded d-none"
+      style="
+        transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+      "
+    >
+      <form>
+        <label for="nameInput" class="form-label">Nome utente</label>
+        <input
+          id="username-input"
+          type="text"
+          class="form-control"
+          id="nameInput"
+          data-autofocus
+          required
+        />
+        <div class="d-flex align-items-center mt-3 gap-2">
+          <button type="button" class="btn btn-success py-2 rounded-pill px-5">
+            Salva
+          </button>
+          <button
+            id="cancel-button"
+            class="btn btn-secondary rounded-pill py-2 px-5"
+          >
+            Annulla
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="script/profile.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

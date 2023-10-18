@@ -91,32 +91,36 @@ const getArtist = function (query) {
       const newRow = document.getElementById("appAlbum");
       newRow.innerHTML = "";
       const newRowHTML = `
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
-    <div class="card-body">
-      <img src="${data.data[0].album.cover_medium}" width="65px"  alt="..." />
-        <h5 class="card-title">${data.data[0].album.title}</h5>
-        <a href="album.html?query=${data.data[0].album.id}" class="btn btn-primary">Go to Album</a>
-      </div>
-    </div>
+      <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+      <a href="album.html?query=${data.data[0].album.id}" class="text-decoration-none" >
+        <div class="card bg-dark  text-white h-100 " id="cardalbum1">
+        <div class="card-body">
+          <img src="${data.data[0].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid" />
+            <h5 class="card-title mt-3">${data.data[0].album.title}</h5>
+                 </div>
+        </div>
+        </a>
   </div>
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
+  
+  <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+  <a href="album.html?query=${data.data[1].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum2">
     <div class="card-body">
-      <img src="${data.data[1].album.cover_medium}" width="65px"  alt="..." />
-        <h5 class="card-title">${data.data[1].album.title}</h5>
-        <a href="album.html?query=${data.data[1].album.id}" class="btn btn-primary">Go to Album</a>
-      </div>
+      <img src="${data.data[1].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+        <h5 class="card-title mt-3">${data.data[1].album.title}</h5>
+             </div>
     </div>
+    </a>
   </div>
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
+  <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+  <a href="album.html?query=${data.data[2].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum3">
     <div class="card-body">
-      <img src="${data.data[2].album.cover_medium}" width="65px"  alt="..." />
-        <h5 class="card-title">${data.data[2].album.title}</h5>
-        <a href="album.html?query=${data.data[2].album.id}" class="btn btn-primary">Go to Album</a>
-      </div>
+      <img src="${data.data[2].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+        <h5 class="card-title mt-3">${data.data[2].album.title}</h5>
+             </div>
     </div>
+    </a>
   </div>
  
 `;
@@ -251,6 +255,22 @@ playlistbtn.addEventListener("click", () => {
 
 const but = document.getElementById("butMusic");
 but.addEventListener("click", () => {
-  but.classList.toggle("btn-outline-trasparent");
-  but.classList.add("btn-outline-success");
+  //but.classList.toggle("btn-outline-dark");
+  but.classList.toggle("btn-outline-success");
 });
+
+// SELEZIONA IL NOME E L'IMMAGINE PROFILO
+
+const profileImageNavbar = document.querySelector(".dropdown img");
+const profileNameNavbar = document.querySelector(".dropdown .fw-bold");
+
+// NOME UTENTE E IMMAGINE PROFILO IN BASE AL LOCAL STORAGE
+const usernameStorage = localStorage.getItem("username");
+profileNameNavbar.innerText = usernameStorage ? usernameStorage : "Nome utente";
+
+const profileImageLocalStorage = localStorage.getItem("profileImage");
+profileImageNavbar.src = profileImageLocalStorage
+  ? profileImageLocalStorage
+  : "http://placekitten.com/30/30";
+profileImageNavbar.style.width = "30px";
+profileImageNavbar.style.heigth = "30px";

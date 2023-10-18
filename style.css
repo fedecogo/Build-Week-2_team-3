@@ -216,6 +216,21 @@ button {
   font-weight: bold;
 }
 
+#cardalbum3:hover {
+  background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
+  transition: background-color 1s ease;
+}
+
+#cardalbum1:hover {
+  background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
+  transition: background-color 1s ease;
+}
+
+#cardalbum2:hover {
+  background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
+  transition: background-color 1s ease;
+}
+
 #tutti-mobile {
   background-color: #1ED760;
 }
