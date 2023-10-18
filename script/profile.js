@@ -13,6 +13,8 @@ const cancelButton = document.getElementById("cancel-button");
 const homeButton = document.getElementById("home-button");
 const addPlaylistButton = document.getElementsByClassName("bi-plus-lg")[0];
 const playlistContainer = document.getElementById("playlist-container");
+const sidebarCol = document.getElementById("sidebarCol");
+const saveButton = document.getElementById("save-button");
 
 playlistContainer.innerHTML = localStorage.getItem("playlistHTML");
 
@@ -41,7 +43,7 @@ addPlaylistButton.addEventListener("click", () => {
     <i class="bi bi-music-note-beamed fs-3 text-white"></i>
   </div>
   <div class="d-flex flex-column text-white-50">
-   <p class="text-white fw-bold mb-0">La mia playlist n.${
+   <p class="playlist-title text-white fw-bold mb-0">La mia playlist n.${
      playlistNumber || "1"
    }</p>
     <small>
@@ -50,14 +52,13 @@ addPlaylistButton.addEventListener("click", () => {
   </div>
   <div class="item-menu text-white d-flex flex-column flex-start d-none">
           <p onclick="deletePlaylist(event)">Elimina playlist</p>
-          <p>Modifica</p>
+          <p onclick="modifyTitle(event)">Modifica</p>
           <p>Condividi</p>
           <p>Crea Playlist</p>
   </div>`;
 
   newDiv.addEventListener("contextmenu", function (e) {
     e.preventDefault();
-    console.log("ciao");
     openItemMenu(e);
   });
 
@@ -98,9 +99,40 @@ const deletePlaylist = function (e) {
 
   playlists.forEach((playlist) => {
     playlist.addEventListener("contextmenu", (e) => {
-      console.log("ciao");
       openItemMenu(e);
     });
+  });
+};
+
+// MODIFICA LA SINGOLA PLAYLIST
+
+const modifyTitle = (e) => {
+  const myDiv = e.target.closest(".playlist-item");
+  const playlistTitle = myDiv.querySelector(".playlist-title");
+  const inputElement = document.createElement("input");
+
+  inputElement.classList.add(
+    "input-element",
+    "form-control-sm",
+    "form-control"
+  );
+  inputElement.value = playlistTitle.innerText;
+  playlistTitle.replaceWith(inputElement);
+  inputElement.focus();
+  inputElement.select();
+
+  inputElement.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      const newTitle = document.createElement("p");
+      newTitle.innerText = inputElement.value;
+      newTitle.classList.add("text-white", "fw-bold", "mb-0", "playlist-title");
+      const itemMenu = myDiv.querySelector(".item-menu");
+
+      itemMenu.classList.add("d-none");
+      inputElement.replaceWith(newTitle);
+      localStorage.setItem("playlistHTML", playlistContainer.innerHTML);
+      renderPlaylist();
+    }
   });
 };
 
@@ -177,6 +209,7 @@ const makeDivAppear = () => {
   div.classList.remove("d-none");
   main.style.opacity = 0.2;
   footer.style.opacity = 0.2;
+  sidebarCol.style.opacity = 0.2;
   div.style.opacity = 1;
 };
 
@@ -184,16 +217,26 @@ userName.addEventListener("click", () => {
   makeDivAppear();
 });
 
-form.addEventListener("submit", function (e) {
+// FUNZIONE CHE SALVA IL CONTENUTO DEL FORM E LO METTE COME NOME PROFILO
+const saveForm = function (e) {
   e.preventDefault();
   const userNameInput = document.getElementById("username-input");
   userName.innerHTML = userNameInput.value;
   div.classList.add("d-none");
   main.style.opacity = 1;
   footer.style.opacity = 1;
+  sidebarCol.style.opacity = 1;
   localStorage.setItem("username", userNameInput.value);
   profileNameNavbar.innerText = localStorage.getItem("username");
   location.reload();
+};
+
+form.addEventListener("submit", function (e) {
+  saveForm(e);
+});
+
+saveButton.addEventListener("click", function (e) {
+  saveForm(e);
 });
 
 // BOTTONE PER ANNULLARE MODIFICA NOME PROFILO
@@ -249,7 +292,14 @@ const playlists = Array.from(document.getElementsByClassName("playlist-item"));
 
 playlists.forEach((playlist) => {
   playlist.addEventListener("contextmenu", (e) => {
-    console.log("ciao");
     openItemMenu(e);
   });
 });
+
+const renderPlaylist = () => {
+  playlistContainer.innerHTML = localStorage.getItem("playlistHTML");
+  const playlistsToRender = Array.from(
+    playlistContainer.querySelectorAll(".item-menu")
+  );
+  location.reload();
+};
