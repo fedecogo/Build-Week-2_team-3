@@ -10,6 +10,13 @@ const footer = document.getElementsByTagName("footer")[0];
 const profileNameNavbar = document.querySelector(".dropdown .fw-bold");
 const profileImageNavbar = document.querySelector(".dropdown img");
 const cancelButton = document.getElementById("cancel-button");
+const homeButton = document.getElementById("home-button");
+
+// HOME BUTTON
+
+homeButton.addEventListener("click", () => {
+  location.href = "home.html";
+});
 
 // HOVER ICONE - IMMAGINE PROFILO
 personIcon.addEventListener("mouseover", () => {
