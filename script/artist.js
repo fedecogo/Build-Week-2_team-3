@@ -253,10 +253,24 @@ playlistbtn.addEventListener("click", () => {
 
 //CLICK BUTTON MUSIC AND EVENT
 
-const but = document.getElementById("butMusic");
-but.addEventListener("click", () => {
-  //but.classList.toggle("btn-outline-dark");
-  but.classList.toggle("btn-outline-success");
+const butE = document.getElementById("butEvent");
+const butM = document.getElementById("butMusic");
+butM.addEventListener("click", () => {
+  // butE.classList.remove('btn-outline-success')
+  // butE.classList.add("btn-outline-dark")
+  // butM.classList.toggle("btn-outline-dark");
+  // butM.classList.toggle("btn-outline-success");
+  butM.classList.add('text-white', 'border-bottom', 'border-3', 'border-success')
+  butE.classList.remove('text-white', 'border-bottom', 'border-3', 'border-success')
+});
+
+butE.addEventListener("click", () => {
+  // butM.classList.remove('btn-outline-success')
+  // butM.classList.add("btn-outline-dark")
+  // butE.classList.toggle("btn-outline-dark");
+  // butE.classList.toggle("btn-outline-success");
+  butE.classList.add('text-white', 'border-bottom', 'border-3', 'border-success')
+  butM.classList.remove('text-white', 'border-bottom', 'border-3', 'border-success')
 });
 
 // SELEZIONA IL NOME E L'IMMAGINE PROFILO

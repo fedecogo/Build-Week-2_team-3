@@ -1,680 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Artist Spotify</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="container">
-      <div id="searchBar" class="hidden">
-        <input type="text" placeholder="Cerca..." />
-        <button id="searchButton">Cerca</button>
-      </div>
-      <div class="row">
-        <div class="col-3 m-0 d-none d-md-block" id="aside-left">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 mb-3" id="hover">
-                <div class="mt-1">
-                  <i class="bi bi-three-dots fs-5"></i>
-                </div>
-                <div class="mt-1" id="backtohome">
-                  <a href="home.html">
-                    <div><i class="bi bi-house mt-1"></i></div>
-                  </a>
-                  <a href="home.html">
-                    <div><p class="ms-2 mt-1 fs-5">Home</p></div>
-                  </a>
-                </div>
-                <div class="mt-1 d-flex" id="toggleButton">
-                  <i class="bi bi-search mt-1"></i>
-                  <p class="ms-2 fs-5">Cerca</p>
-                </div>
-                <div class="mt-1 d-flex">
-                  <i class="bi bi-list mt-1"></i>
-                  <p class="ms-2 fs-5">La tua libreria</p>
-                </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artist Spotify</title>
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+  crossorigin="anonymous"
+  />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+  />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="searchBar" class="hidden">
+      <input type="text" placeholder="Cerca..." />
+      <button id="searchButton">Cerca</button>
+    </div>
+    <div class="row">
+      <div class="col-3 m-0 d-none d-md-block" id="aside-left">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mb-3" id="hover">
+              <div class="mt-1">
+                <i class="bi bi-three-dots fs-5"></i>
               </div>
-              <div class="col-12 mb-3">
-                <div class="mt-1 d-flex">
-                  <img
-                    src="assets/imgs/plus.png"
-                    alt="Crea Playlist"
-                    width="20px"
-                    height="20px"
-                  />
-                  <p class="ms-2">Crea La Tua Playlist</p>
-                </div>
-                <div class="mt-1 d-flex">
-                  <img
-                    src="assets/imgs/cuore preferiti.png"
-                    alt="Crea Playlist"
-                    width="20px"
-                    height="20px"
-                  />
-                  <p class="ms-2">Brani che ti piacciono</p>
-                </div>
-                <div class="mt-1 d-flex">
-                  <img
-                    src="assets/imgs/podcast.png"
-                    alt="Crea Playlist"
-                    width="20px"
-                    height="20px"
-                  />
-                  <p class="ms-2">I Tuoi Episodi</p>
-                </div>
+              <div class="mt-1" id="backtohome">
+                <a href="home.html">
+                  <div><i class="bi bi-house mt-1"></i></div>
+                </a>
+                <a href="home.html">
+                  <div><p class="ms-2 mt-1 fs-5">Home</p></div>
+                </a>
               </div>
-              <hr />
-              <div id="playlist" class="col-12">
-                <button type="button" class="btn btn-outline-success" id="azz">
-                  <small>Albums</small>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-outline-success ms-2"
-                  id="azz2"
-                >
-                  <small>Playlists</small>
-                </button>
-                <div id="albumlevate" class="mt-3"></div>
-                <div id="levate" class="mt-3">
-                  <!-- spazio per playlist -->
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-10.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    stage emily sydrome
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-9.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    -- cit kimiko
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-18.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />Be The Young
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-19.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />Saggio Vibes
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-8.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />main charaters
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-7.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />That Fucking mOOOOOOd
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-1.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />2021 lol
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-16.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />mi sono stancato
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-12.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />di queste brutte playlist
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-6.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />early stage emily sydrome
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-2.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />-- cit kimiko
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-3.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />Be The Young
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-4.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />Saggio Vibes
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-8.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />main charaters
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-11.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />That Fucking mOOOOOOd
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-13.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />2021 lol
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-14.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />mi sono stancato
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-3.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />di queste brutte playlist
-                  </p>
-                  <p>
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-3.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />di queste brutte playlist
-                  </p>
-                </div>
+              <div class="mt-1 d-flex" id="toggleButton">
+                <i class="bi bi-search mt-1"></i>
+                <p class="ms-2 fs-5">Cerca</p>
               </div>
+              <div class="mt-1 d-flex">
+                <i class="bi bi-list mt-1"></i>
+                <p class="ms-2 fs-5">La tua libreria</p>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="mt-1 d-flex">
+                <img
+                src="assets/imgs/plus.png"
+                alt="Crea Playlist"
+                width="20px"
+                height="20px"
+                />
+                <p class="ms-2">Crea La Tua Playlist</p>
+              </div>
+              <div class="mt-1 d-flex">
+                <img
+                src="assets/imgs/cuore preferiti.png"
+                alt="Crea Playlist"
+                width="20px"
+                height="20px"
+                />
+                <p class="ms-2">Brani che ti piacciono</p>
+              </div>
+              <div class="mt-1 d-flex">
+                <img
+                src="assets/imgs/podcast.png"
+                alt="Crea Playlist"
+                width="20px"
+                height="20px"
+                />
+                <p class="ms-2">I Tuoi Episodi</p>
+              </div>
+            </div>
+            <hr />
+            <div id="playlist" class="col-12">
+              <button type="button" class="btn btn-outline-success" id="azz">
+                <small>Albums</small>
+              </button>
+              <button
+              type="button"
+              class="btn btn-outline-success ms-2"
+              id="azz2"
+              >
+              <small>Playlists</small>
+            </button>
+            <div id="albumlevate" class="mt-3"></div>
+            <div id="levate" class="mt-3">
+              <!-- spazio per playlist -->
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-10.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />
+                stage emily sydrome
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-9.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />
+                -- cit kimiko
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-18.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />Be The Young
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-19.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />Saggio Vibes
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-8.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />main charaters
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-7.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />That Fucking mOOOOOOd
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-1.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />2021 lol
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-16.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />mi sono stancato
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-12.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />di queste brutte playlist
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-6.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />early stage emily sydrome
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-2.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />-- cit kimiko
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-3.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />Be The Young
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-4.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />Saggio Vibes
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-8.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />main charaters
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-11.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />That Fucking mOOOOOOd
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-13.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />2021 lol
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-14.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />mi sono stancato
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-3.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />di queste brutte playlist
+              </p>
+              <p>
+                <img
+                class="me-2"
+                src="assets/imgs/main/image-3.jpg"
+                width="30px"
+                height="30px"
+                alt="playlistimg"
+                />di queste brutte playlist
+              </p>
             </div>
           </div>
         </div>
-        <div class="col m-0 p-0" id="centro">
-          <main>
-            <div class="container">
-              <div class="row">
-                <div class="col-12" id="wallpaper-img">
+      </div>
+    </div>
+    <div class="col m-0 p-0" id="centro">
+      <main>
+        <div class="container">
+          <div class="row">
+            <div class="col-12" id="wallpaper-img">
+              <div
+              class="row justify-content-between align-items-center my-4"
+              >
+              <div class="col-6">
+                <div class="d-flex mt-0 mt-md-3 ms-3">
                   <div
-                    class="row justify-content-between align-items-center my-4"
+                  class="bg-dark d-flex align-items-center justify-content-center me-2 d-none d-md-block"
+                  style="border-radius: 50%; width: 32px; height: 32px"
                   >
-                    <div class="col-6">
-                      <div class="d-flex mt-3 ms-3">
-                        <div
-                          class="bg-dark d-flex align-items-center justify-content-center me-2 d-none d-md-block"
-                          style="border-radius: 50%; width: 32px; height: 32px"
-                        >
-                          <i class="bi bi-chevron-left text-white ms-1"></i>
-                        </div>
-
-                        <div class="arrow d-md-none">
-                          <i
-                            class="bi bi-arrow-left-short text-white fs-1 ms-1"
-                          ></i>
-                        </div>
-
-                        <div
-                          class="bg-dark d-flex align-items-center justify-content-center d-none d-md-block"
-                          style="border-radius: 50%; width: 32px; height: 32px"
-                        >
-                          <i class="bi bi-chevron-right text-white ms-2"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 text-end">
-                      <!-- icona profilo -->
-                      <div class="dropdown d-none d-md-block">
-                        <a
-                          class="btn btn-dark rounded-pill dropdown-toggle py-0 ps-0"
-                          href="#"
-                          role="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <img
-                            src="http://placekitten.com/30/30"
-                            alt="profilo"
-                            class="rounded-circle p-1"
-                          />
-                          <small class="fw-bold"> Profilo</small>
-                        </a>
-
-                        <ul class="dropdown-menu bg-black text-white">
-                          <li>
-                            <a
-                              class="dropdown-item text-white"
-                              href="profile.html"
-                              >Profilo</a
-                            >
-                          </li>
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#"
-                              >Another action</a
-                            >
-                          </li>
-                          <li>
-                            <a class="dropdown-item text-white" href="#"
-                              >Something else here</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-start text-white">
-                    <div class="mt-5" id="content-row">
-                      <div
-                        class="d-flex justify-content-start align-items-center mt-4 d-none d-md-block"
-                      >
-                        <i class="bi bi-patch-check-fill me-2" id="iconVer"></i>
-                        <p class="m-0">Artista verificato</p>
-                      </div>
-
-                      <h1 id="h1_titolo">Titolo</h1>
-                      <p>2.300.000 ascoltatori mensili</p>
-                    </div>
-                  </div>
+                  <i class="bi bi-chevron-left text-white ms-1"></i>
                 </div>
-                <div class="col-12 text-white" id="parte_sotto_img">
-                  <div class="buttoni d-flex align-items-center ms-2 mt-2">
-                    <i
-                      class="bi bi-play-circle-fill fs-1 me-2"
-                      style="color: #1ed760"
-                    ></i>
-                    <button
-                      type="button"
-                      class="btn btn-outline-light me-2"
-                      id="toggleButton2"
-                    >
-                      Segui
-                    </button>
-
-                    <i class="bi bi-three-dots"></i>
-                  </div>
-                  <div class="d-md-none">
-                    <button
-                      id="butMusic"
-                      type="button"
-                      class="bg-transparent btn btn-outline-dark text-white mt-4 ms-2"
-                    >
-                      Musica
-                    </button>
-                    <button
-                      id="butEvent"
-                      type="button"
-                      class="bg-transparent btn btn-outline-dark text-white mt-4 ms-2"
-                    >
-                      Eventi
-                    </button>
-                  </div>
-                  <div class="scritte row mb-3">
-                    <div class="col-8 col-sm mt-3 ms-3">
-                      <h4>Popolari</h4>
-                    </div>
-                    <div class="col-4 d-none d-md-block">
-                      <h4>Brani che ti piacciono</h4>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-8 col-sm ms-4" id="appendi_song">
-                      <div
-                        class="row mb-3 d-flex justify-content-between align-items-center"
-                      >
-                        <div class="col-1 text-center">1</div>
-                        <div class="col-6">
-                          <p class="m-0">Montanelli-Intro</p>
-                          <p class="m-0">Pinguini Tattici Nucleari</p>
-                        </div>
-                        <div class="col-3 ps-3">Column</div>
-                        <div class="col-2 ps-4">Column</div>
-                      </div>
-                    </div>
-                    <div class="col-4">
-                      <!-- brani che ti piacciono -->
-                    </div>
-                    <div class="col-12 mb-5 mt-3">
-                      <button class="btn btn-outline-light col-sm ms-3">
-                        Visualizza altro
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-12 mt-3" id="parte_sotto_img_2">
-                  <h1 class="text-white-50 mt-2 d-md-block ms-sm-2">Album</h1>
-                  <div class="row" id="appAlbum"></div>
-                </div>
-                <div class="col-12 mt-3" id="parte_sotto_img_3">
-                  <footer>
-                    <div
-                      class="row flex-column flex-md-row text-white pb-4 border-bottom border-secondary"
-                    >
-                      <div class="col-2">
-                        <p class="mb-0 fw-bold">Azienda</p>
-                        <ul class="text-white-50 list-unstyled">
-                          <li>Chi siamo</li>
-                          <li>Opportunità di lavoro</li>
-                          <li>For the Record</li>
-                        </ul>
-                      </div>
-                      <div class="col-2">
-                        <p class="mb-0 fw-bold">Community</p>
-                        <ul class="text-white-50 list-unstyled">
-                          <li>Per artisti</li>
-                          <li>Sviluppatori</li>
-                          <li>Pubblicità</li>
-                          <li>Investitori</li>
-                          <li>Venditori</li>
-                        </ul>
-                      </div>
-                      <div class="col-2">
-                        <p class="mb-0 fw-bold">Link utili</p>
-                        <ul class="text-white-50 list-unstyled">
-                          <li>Assistenza</li>
-                          <li>App per cellulare gratuita</li>
-                          <li>Diritti del consumatore</li>
-                        </ul>
-                      </div>
-                      <div class="col fs-6 d-flex gap-4 justify-content-end">
-                        <div class="">
-                          <i class="bi bi-instagram"></i>
-                        </div>
-                        <i class="bi bi-twitter"></i>
-                        <i class="bi bi-facebook"></i>
-                      </div>
-                    </div>
-                    <div class="row text-secondary mt-4 g-0 pb-5">
-                      <div class="col">
-                        <ul
-                          class="list-unstyled d-flex gap-3 flex-column flex-md-row"
-                        >
-                          <li>Informazioni legali</li>
-                          <li>Centro sulla privacy</li>
-                          <li>Informativa sulla privacy</li>
-                          <li>Impostazioni cookie</li>
-                          <li>Info annunci</li>
-                          <li>Accessibilità</li>
-                        </ul>
-                      </div>
-                      <div class="col-4 text-end">
-                        <p>© 2023 Spotify AB</p>
-                      </div>
-                    </div>
-                  </footer>
-                </div>
-              </div>
-            </div>
-          </main>
-        </div>
-        <div class="col-2 m-0 d-none d-lg-block" id="aside-right">
-          <div class="container">
-            <div class="row">
-              <div
-                class="col-12 d-flex justify-content-between align-items-center"
-              >
-                <h6>Attività amici</h6>
-
-                <i class="bi bi-person-fill-add p-2"></i>
-                <i class="bi bi-x-lg me-2" id="x"></i>
-              </div>
-              <div
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-9.jpg"
-                      width="35px"
-                      alt="amici"
-                    />
-                  </div>
-                  <div class="ms-1">
-                    <p>Charlie Wookame</p>
-                    <p>Incamera-time zuma</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>Senza Pagare</p>
-                    </div>
-                  </div>
-                </div>
-                <div><p>4 ore</p></div>
-              </div>
-              <div
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-9.jpg"
-                      width="35px"
-                      alt="amici"
-                    />
-                  </div>
-                  <div class="ms-1">
-                    <p>Charlie Wookame</p>
-                    <p>Incamera-time zuma</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>Senza Pagare</p>
-                    </div>
-                  </div>
-                </div>
-                <div><p>4 ore</p></div>
-              </div>
-              <div
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-9.jpg"
-                      width="35px"
-                      alt="amici"
-                    />
-                  </div>
-                  <div class="ms-1">
-                    <p>Charlie Wookame</p>
-                    <p>Incamera-time zuma</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>Senza Pagare</p>
-                    </div>
-                  </div>
-                </div>
-                <div><p>4 ore</p></div>
-              </div>
-              <div
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
-                    <img
-                      src="assets/imgs/main/image-9.jpg"
-                      width="35px"
-                      alt="amici"
-                    />
-                  </div>
-                  <div class="ms-1">
-                    <p>Charlie Wookame</p>
-                    <p>Incamera-time zuma</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>Senza Pagare</p>
-                    </div>
-                  </div>
-                </div>
-                <div><p>4 ore</p></div>
+                
+                <a href="home.html" class="arrow mt-0 d-md-none">
+                  <i
+                  class="bi bi-arrow-left-short text-white fs-1 ms-1 mt-0"
+                  ></i>
+                </a>
+                
+                <div
+                class="bg-dark d-flex align-items-center justify-content-center d-none d-md-block"
+                style="border-radius: 50%; width: 32px; height: 32px"
+                >
+                <i class="bi bi-chevron-right text-white ms-2"></i>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- parte fissa sotto -->
-    <div id="music-player" class="position-fixed bottom-0 color-danger">
-      <div class="d-flex justify-content-between align-items-center">
-        <div id="current-song" class="d-flex p-2 align-items-center">
-          <div id="current-song-image" class="p-2 d-flex align-items-center">
-            <img
-              src="assets/imgs/main/image-12.jpg"
-              alt="song photo"
-              width="65px"
-            />
-          </div>
-          <div id="current-song-info">
-            <h5>Viva la vida</h5>
-            <h6>Ciao caro</h6>
-          </div>
-          <div id="cuoricino" class="ms-3">
-            <i class="bi bi-heart"></i>
-          </div>
-        </div>
-
-        <div id="appendi_qui">
-          <!-- <div class="d-flex align-items-center">
-            <i class="bi bi-shuffle p-1"></i>
-            <i class="bi bi-chevron-double-left p-1"></i>
-            <div class="fs-3 mx-2">
-              <i class="bi bi-play-circle"></i>
-            </div>
-            <i class="bi bi-chevron-double-right p-1"></i>
-            <i class="bi bi-arrow-repeat p-1"></i>
-          </div>
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Animated striped example"
-            aria-valuenow="75"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            <div
-              class="progress-bar progress-bar-striped progress-bar-animated"
-              style="width: 75%"
-            ></div>
-          </div> -->
-        </div>
-        <div class="d-flex p-2 align-items-center">
-          <i class="bi bi-brush p-1"></i>
-          <i class="bi bi-list p-1"></i>
-          <i class="bi bi-pc-display p-1"></i>
-          <i class="bi bi-volume-up-fill p-1"></i>
-          <div class="volume-control">
-            <div class="volume-slider">
-              <input
-                type="range"
-                id="volume-range"
-                min="0"
-                max="100"
-                step="1"
-                value="30"
+          <div class="col-6 text-end">
+            <!-- icona profilo -->
+            <div class="dropdown d-none d-md-block">
+              <a
+              class="btn btn-dark rounded-pill dropdown-toggle py-0 ps-0"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              >
+              <img
+              src="http://placekitten.com/30/30"
+              alt="profilo"
+              class="rounded-circle p-1"
               />
-            </div>
+              <small class="fw-bold"> Profilo</small>
+            </a>
+            
+            <ul class="dropdown-menu bg-black text-white">
+              <li>
+                <a
+                class="dropdown-item text-white"
+                href="profile.html"
+                >Profilo</a
+                >
+              </li>
+              
+              <li>
+                <a class="dropdown-item text-white" href="#"
+                >Another action</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item text-white" href="#"
+                >Something else here</a
+                >
+              </li>
+            </ul>
           </div>
-          <i class="bi bi-arrows-angle-expand p-1"></i>
+        </div>
+      </div>
+      <div class="d-flex justify-content-start text-white">
+        <div class="mt-5" id="content-row">
+          <div
+          class="d-flex justify-content-start align-items-center mt-4 d-none d-md-block"
+          >
+          <i class="bi bi-patch-check-fill me-2" id="iconVer"></i>
+          <p class="m-0">Artista verificato</p>
+        </div>
+        
+        <h1 id="h1_titolo">Titolo</h1>
+        <p class="d-none d-md-block">2.300.000 ascoltatori mensili</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 text-white" id="parte_sotto_img">
+    <p class="d-md-none text-secondary ms-1 mt-2">2.300.000 ascoltatori mensili</p>
+    <div class="buttoni d-flex align-items-center ms-2 mt-2 justify-content-between justify-content-md-start">
+      <div class="d-flex align-items-center order-1 order-md-0">
+        <i class="bi bi-shuffle d-md-none text-secondary"></i>
+        <i
+        class="bi bi-play-circle-fill fs-1 me-2"
+        style="color: #1ed760"
+        ></i>
+      </div>
+      <div>
+        <button
+          type="button"
+          class="btn btn-outline-light me-2"
+          id="toggleButton2"
+          >
+          Segui
+        </button>
+        <i class="bi bi-three-dots d-none d-md-inline"></i>
+        <i class="bi bi-three-dots-vertical d-md-none"></i>
+      </div>
+    </div>  
+  <div class="d-md-none d-flex ">
+    <div
+    id="butMusic"
+    type="button"
+    class="bg-transparent pb-2 text-secondary mt-4 ms-2"
+    >
+    Musica
+  </div>
+  <div
+  id="butEvent"
+  type="button"
+  class="bg-transparent pb-2 text-secondary mt-4 ms-2"
+  >
+  Eventi
+</div>
+</div>
+<div class="scritte row mb-3">
+  <div class="col-8 col-sm mt-3 ms-3">
+    <h4>Popolari</h4>
+  </div>
+  <div class="col-4 d-none d-md-block">
+    <h4>Brani che ti piacciono</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-8 col-sm ms-4" id="appendi_song">
+    <div
+    class="row mb-3 d-flex justify-content-between align-items-center"
+    >
+    <div class="col-1 text-center">1</div>
+    <div class="col-6">
+      <p class="m-0">Montanelli-Intro</p>
+      <p class="m-0">Pinguini Tattici Nucleari</p>
+    </div>
+    <div class="col-3 ps-3">Column</div>
+    <div class="col-2 ps-4">Column</div>
+  </div>
+</div>
+<div class="col-4">
+  <!-- brani che ti piacciono -->
+</div>
+<div class="col-12 mb-5 mt-3">
+  <button class="btn btn-outline-light col-sm ms-3">
+    Visualizza altro
+  </button>
+</div>
+</div>
+</div>
+
+<div class="col-12 mt-3" id="parte_sotto_img_2">
+  <h1 class="text-white-50 mt-2 d-md-block ms-sm-2">Album</h1>
+  <div class="row" id="appAlbum"></div>
+</div>
+<div class="col-12 mt-3" id="parte_sotto_img_3">
+  <footer>
+    <div
+    class="row flex-column flex-md-row text-white pb-4 border-bottom border-secondary"
+    >
+    <div class="col-2">
+      <p class="mb-0 fw-bold">Azienda</p>
+      <ul class="text-white-50 list-unstyled">
+        <li>Chi siamo</li>
+        <li>Opportunità di lavoro</li>
+        <li>For the Record</li>
+      </ul>
+    </div>
+    <div class="col-2">
+      <p class="mb-0 fw-bold">Community</p>
+      <ul class="text-white-50 list-unstyled">
+        <li>Per artisti</li>
+        <li>Sviluppatori</li>
+        <li>Pubblicità</li>
+        <li>Investitori</li>
+        <li>Venditori</li>
+      </ul>
+    </div>
+    <div class="col-2">
+      <p class="mb-0 fw-bold">Link utili</p>
+      <ul class="text-white-50 list-unstyled">
+        <li>Assistenza</li>
+        <li>App per cellulare gratuita</li>
+        <li>Diritti del consumatore</li>
+      </ul>
+    </div>
+    <div class="col fs-6 d-flex gap-4 justify-content-end">
+      <div class="">
+        <i class="bi bi-instagram"></i>
+      </div>
+      <i class="bi bi-twitter"></i>
+      <i class="bi bi-facebook"></i>
+    </div>
+  </div>
+  <div class="row text-secondary mt-4 g-0 pb-5">
+    <div class="col">
+      <ul
+      class="list-unstyled d-flex gap-3 flex-column flex-md-row"
+      >
+      <li>Informazioni legali</li>
+      <li>Centro sulla privacy</li>
+      <li>Informativa sulla privacy</li>
+      <li>Impostazioni cookie</li>
+      <li>Info annunci</li>
+      <li>Accessibilità</li>
+    </ul>
+  </div>
+  <div class="col-4 text-end">
+    <p>© 2023 Spotify AB</p>
+  </div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</main>
+</div>
+<div class="col-2 m-0 d-none d-lg-block" id="aside-right">
+  <div class="container">
+    <div class="row">
+      <div
+      class="col-12 d-flex justify-content-between align-items-center"
+      >
+      <h6>Attività amici</h6>
+      
+      <i class="bi bi-person-fill-add p-2"></i>
+      <i class="bi bi-x-lg me-2" id="x"></i>
+    </div>
+    <div
+    class="col-12 d-flex justify-content-between align-items-start mb-3"
+    >
+    <div class="d-flex">
+      <div>
+        <img
+        src="assets/imgs/main/image-9.jpg"
+        width="35px"
+        alt="amici"
+        />
+      </div>
+      <div class="ms-1">
+        <p>Charlie Wookame</p>
+        <p>Incamera-time zuma</p>
+        <div class="d-flex align-items-center">
+          <div>
+            <i id="music-i" class="bi bi-music-note-beamed"></i>
+          </div>
+          <p>Senza Pagare</p>
         </div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script/artist.js"></script>
-  </body>
+    <div><p>4 ore</p></div>
+  </div>
+  <div
+  class="col-12 d-flex justify-content-between align-items-start mb-3"
+  >
+  <div class="d-flex">
+    <div>
+      <img
+      src="assets/imgs/main/image-9.jpg"
+      width="35px"
+      alt="amici"
+      />
+    </div>
+    <div class="ms-1">
+      <p>Charlie Wookame</p>
+      <p>Incamera-time zuma</p>
+      <div class="d-flex align-items-center">
+        <div>
+          <i id="music-i" class="bi bi-music-note-beamed"></i>
+        </div>
+        <p>Senza Pagare</p>
+      </div>
+    </div>
+  </div>
+  <div><p>4 ore</p></div>
+</div>
+<div
+class="col-12 d-flex justify-content-between align-items-start mb-3"
+>
+<div class="d-flex">
+  <div>
+    <img
+    src="assets/imgs/main/image-9.jpg"
+    width="35px"
+    alt="amici"
+    />
+  </div>
+  <div class="ms-1">
+    <p>Charlie Wookame</p>
+    <p>Incamera-time zuma</p>
+    <div class="d-flex align-items-center">
+      <div>
+        <i id="music-i" class="bi bi-music-note-beamed"></i>
+      </div>
+      <p>Senza Pagare</p>
+    </div>
+  </div>
+</div>
+<div><p>4 ore</p></div>
+</div>
+<div
+class="col-12 d-flex justify-content-between align-items-start mb-3"
+>
+<div class="d-flex">
+  <div>
+    <img
+    src="assets/imgs/main/image-9.jpg"
+    width="35px"
+    alt="amici"
+    />
+  </div>
+  <div class="ms-1">
+    <p>Charlie Wookame</p>
+    <p>Incamera-time zuma</p>
+    <div class="d-flex align-items-center">
+      <div>
+        <i id="music-i" class="bi bi-music-note-beamed"></i>
+      </div>
+      <p>Senza Pagare</p>
+    </div>
+  </div>
+</div>
+<div><p>4 ore</p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- parte fissa sotto -->
+<div id="music-player" class="position-fixed bottom-0 color-danger">
+  <div class="d-flex justify-content-between align-items-center">
+    <div id="current-song" class="d-flex p-2 align-items-center">
+      <div id="current-song-image" class="p-2 d-flex align-items-center">
+        <img
+        src="assets/imgs/main/image-12.jpg"
+        alt="song photo"
+        width="65px"
+        />
+      </div>
+      <div id="current-song-info">
+        <h5>Viva la vida</h5>
+        <h6>Ciao caro</h6>
+      </div>
+      <div id="cuoricino" class="ms-3">
+        <i class="bi bi-heart"></i>
+      </div>
+    </div>
+    
+    <div id="appendi_qui">
+      <!-- <div class="d-flex align-items-center">
+        <i class="bi bi-shuffle p-1"></i>
+        <i class="bi bi-chevron-double-left p-1"></i>
+        <div class="fs-3 mx-2">
+          <i class="bi bi-play-circle"></i>
+        </div>
+        <i class="bi bi-chevron-double-right p-1"></i>
+        <i class="bi bi-arrow-repeat p-1"></i>
+      </div>
+      <div
+      class="progress"
+      role="progressbar"
+      aria-label="Animated striped example"
+      aria-valuenow="75"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      >
+      <div
+      class="progress-bar progress-bar-striped progress-bar-animated"
+      style="width: 75%"
+      ></div>
+    </div> -->
+  </div>
+  <div class="d-flex p-2 align-items-center">
+    <i class="bi bi-brush p-1"></i>
+    <i class="bi bi-list p-1"></i>
+    <i class="bi bi-pc-display p-1"></i>
+    <i class="bi bi-volume-up-fill p-1"></i>
+    <div class="volume-control">
+      <div class="volume-slider">
+        <input
+        type="range"
+        id="volume-range"
+        min="0"
+        max="100"
+        step="1"
+        value="30"
+        />
+      </div>
+    </div>
+    <i class="bi bi-arrows-angle-expand p-1"></i>
+  </div>
+</div>
+</div>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+crossorigin="anonymous"
+></script>
+<script src="script/artist.js"></script>
+</body>
 </html>
