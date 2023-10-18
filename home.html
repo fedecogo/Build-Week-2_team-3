@@ -26,7 +26,7 @@
         <div class="col-3 m-0 d-none d-md-block" id="aside-left">
           <div class="container">
             <div class="row">
-              <div class="col-12 mb-3">
+              <div class="col-12 mb-3" id="hover">
                 <div class="mt-1">
                   <i class="bi bi-three-dots fs-5"></i>
                 </div>
@@ -355,12 +355,10 @@
                             >
                           </h1>
                           <p class="card-text">
-                            <a class="text-decoration-none text-white" href="#"
+                            <a
+                              class="text-decoration-none text-white"
+                              href="/artist.html?query=imagine%20dragons"
                               >Imagine Dragons</a
-                            >
-                            ,
-                            <a class="text-decoration-none text-white" href="#"
-                              >Mercury</a
                             >
                           </p>
                           <p class="card-text">Ascolta il nuovo singolo!!!</p>
@@ -431,7 +429,7 @@
 
               <h3 class="text-white d-none d-md-block">Playlists</h3>
 
-              <div class="row">
+              <div class="row" id="sos">
                 <!-- menu playlist con cards -->
                 <div class="col-6 col-md-4">
                   <div class="row g-0 m-1">
@@ -443,7 +441,7 @@
                         width="100%"
                       />
                     </div>
-                    <div class="col-8 bg-dark d-flex align-items-center">
+                    <div class="col-8 d-flex align-items-center">
                       <p class="text-white ms-3">La PlayList ROCK</p>
                     </div>
                   </div>
@@ -458,7 +456,7 @@
                         width="100%"
                       />
                     </div>
-                    <div class="col-8 bg-dark d-flex align-items-center">
+                    <div class="col-8 d-flex align-items-center">
                       <p class="text-white ms-3">It's time to dance</p>
                     </div>
                   </div>
@@ -473,7 +471,7 @@
                         width="100%"
                       />
                     </div>
-                    <div class="col-8 bg-dark d-flex align-items-center">
+                    <div class="col-8 d-flex align-items-center">
                       <p class="text-white ms-3">Pop 4 KIDS</p>
                     </div>
                   </div>
@@ -488,7 +486,7 @@
                         width="100%"
                       />
                     </div>
-                    <div class="col-8 bg-dark d-flex align-items-center">
+                    <div class="col-8 d-flex align-items-center">
                       <p class="text-white ms-3">It's time to Sleep?</p>
                     </div>
                   </div>
@@ -503,7 +501,7 @@
                         width="100%"
                       />
                     </div>
-                    <div class="col-8 bg-dark d-flex align-items-center">
+                    <div class="col-8 d-flex align-items-center">
                       <p class="text-white ms-3">STAY FOCUS</p>
                     </div>
                   </div>
@@ -518,7 +516,7 @@
                         width="100%"
                       />
                     </div>
-                    <div class="col-8 bg-dark d-flex align-items-center">
+                    <div class="col-8 d-flex align-items-center">
                       <p class="text-white ms-3">Play with the guitar</p>
                     </div>
                   </div>
@@ -916,7 +914,7 @@
                 <h6>Attività amici</h6>
 
                 <i class="bi bi-person-fill-add p-2"></i>
-                <i class="bi bi-x-lg me-2"></i>
+                <i class="bi bi-x-lg me-2" id="x"></i>
               </div>
               <div
                 class="col-12 d-flex justify-content-between align-items-start mb-3"
@@ -1022,12 +1020,12 @@
     <!-- parte fissa sotto -->
     <div id="music-player" class="position-fixed bottom-0 color-danger">
       <div class="d-flex justify-content-between align-items-center">
-        <div id="current-song" class="d-flex p-2 align-items-center">
+        <div id="current-song" class="ms-2 d-flex align-items-center">
           <div id="current-song-image" class="p-2 d-flex align-items-center">
             <img
               src="assets/imgs/main/image-12.jpg"
               alt="song photo"
-              width="50px"
+              width="65px"
             />
           </div>
           <div id="current-song-info">

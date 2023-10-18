@@ -117,7 +117,6 @@ button {
 
 .delete {
   display: none;
-  /* o altre regole per nascondere o eliminare l'elemento */
 }
 
 .hidden {
@@ -176,10 +175,46 @@ button {
 
 #cardIn {
   background: linear-gradient(to right, black, #161616);
+  transition: background-color 1s ease;
+}
+
+#cardIn:hover {
+  background: linear-gradient(to right, #161616, #4d4d4d);
+  transition: background-color 1s ease;
+}
+
+#sos .col-8 {
+  background: linear-gradient(to right, rgb(61, 61, 61), #161616);
+  transition: background-color 1s ease;
+}
+#sos .col-8:hover {
+  background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
+  transition: background-color 1s ease;
+}
+
+#album-tracks .row:hover {
+  border-radius: 10px;
+  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
+}
+#album-tracks .row:hover p {
+  font-weight: bold;
+}
+
+#albumlevate div:hover {
+  font-weight: bold;
+  border-radius: 5px;
+  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
 }
 
 #title {
   font-size: 80px;
+}
+
+#hover .mt-1:hover i {
+  font-size: 25px;
+}
+#hover .mt-1:hover p {
+  font-weight: bold;
 }
 
 #tutti-mobile {

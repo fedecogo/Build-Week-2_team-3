@@ -33,7 +33,7 @@ const getImages = function (query) {
 const btn = document.getElementById("elimina_pubbl");
 btn.addEventListener("click", function () {
   console.log("Pulsante cliccato");
-  let cardElement = document.getElementById("porcodio");
+  let cardElement = document.getElementById("cardIn");
   if (cardElement) {
     cardElement.classList.add("delete");
   }
@@ -119,7 +119,7 @@ const getBSong = function (query) {
       NewImgAlbum.innerHTML=`<img
       src="assets/imgs/main/image-11.jpg"
       alt="song photo"
-      width="50px"
+      width="60px"
       />`
       // HO USATO QUELL'IMAGINE PERCHè E'LA FUNZIONE ESCLISIVAMENTE PER L'ALBUM IN HOME
       getDivImg.appendChild(NewImgAlbum)
@@ -156,3 +156,15 @@ bonesBtn.addEventListener("click",()=>{getBSong(302204417)
   
 
 })
+
+// funzione aside amici display e non
+const btnx = document.getElementById("x")
+
+const asidegruppo = document.getElementById("aside-right");
+
+btnx.addEventListener("click", () => {
+  asidegruppo.classList.toggle("col-2");
+  asidegruppo.classList.toggle("m-0");
+  asidegruppo.classList.add("d-none");
+  asidegruppo.classList.toggle("d-lg-block");
+});

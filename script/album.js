@@ -130,8 +130,16 @@ cuore.addEventListener("click", () => {
 
 // funzione aside amici display e non
 const gruppo = document.getElementById("users");
+const btnx = document.getElementById("x")
+
 const asidegruppo = document.getElementById("aside-right");
 gruppo.addEventListener("click", () => {
+  asidegruppo.classList.toggle("col-2");
+  asidegruppo.classList.toggle("m-0");
+  asidegruppo.classList.add("d-none");
+  asidegruppo.classList.toggle("d-lg-block");
+});
+btnx.addEventListener("click", () => {
   asidegruppo.classList.toggle("col-2");
   asidegruppo.classList.toggle("m-0");
   asidegruppo.classList.add("d-none");
@@ -206,7 +214,7 @@ const getSong = function (query) {
       NewImgAlbum.innerHTML=`<img
       src="${data.tracks.data[0].album.cover}"
       alt="song photo"
-      width="50px"
+      width="65px"
       />`
       getDivImg.appendChild(NewImgAlbum)
 

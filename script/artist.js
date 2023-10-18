@@ -94,7 +94,7 @@ const getArtist = function (query) {
   <div class="col-xs-6 col-md-4">
     <div class="card">
     <div class="card-body">
-      <img src="${data.data[0].album.cover_medium}" width="50px"  alt="..." />
+      <img src="${data.data[0].album.cover_medium}" width="65px"  alt="..." />
         <h5 class="card-title">${data.data[0].album.title}</h5>
         <a href="album.html?query=${data.data[0].album.id}" class="btn btn-primary">Go to Album</a>
       </div>
@@ -103,7 +103,7 @@ const getArtist = function (query) {
   <div class="col-xs-6 col-md-4">
     <div class="card">
     <div class="card-body">
-      <img src="${data.data[1].album.cover_medium}" width="50px"  alt="..." />
+      <img src="${data.data[1].album.cover_medium}" width="65px"  alt="..." />
         <h5 class="card-title">${data.data[1].album.title}</h5>
         <a href="album.html?query=${data.data[1].album.id}" class="btn btn-primary">Go to Album</a>
       </div>
@@ -112,7 +112,7 @@ const getArtist = function (query) {
   <div class="col-xs-6 col-md-4">
     <div class="card">
     <div class="card-body">
-      <img src="${data.data[2].album.cover_medium}" width="50px"  alt="..." />
+      <img src="${data.data[2].album.cover_medium}" width="65px"  alt="..." />
         <h5 class="card-title">${data.data[2].album.title}</h5>
         <a href="album.html?query=${data.data[2].album.id}" class="btn btn-primary">Go to Album</a>
       </div>
@@ -223,6 +223,19 @@ albumbtn.addEventListener("click", () => {
 function invocagetalbum(numeriArrey) {
   for (const id of numeriArrey) getAlbum(id);
 }
+
+// funzione aside amici display e non
+const btnx = document.getElementById("x")
+
+const asidegruppo = document.getElementById("aside-right");
+
+btnx.addEventListener("click", () => {
+  asidegruppo.classList.toggle("col-2");
+  asidegruppo.classList.toggle("m-0");
+  asidegruppo.classList.add("d-none");
+  asidegruppo.classList.toggle("d-lg-block");
+});
+
 
 // FUNZIONE BOTTONE PLAYLIST
 const playlistbtn = document.getElementById("azz2");
