@@ -193,13 +193,21 @@ button {
 
 #album-tracks .row:hover {
   border-radius: 10px;
-  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
+  background: linear-gradient(
+    to right,
+    rgba(111, 111, 111, 0.492),
+    rgba(77, 77, 77, 0.4196078431)
+  );
 }
 
 #albumlevate div:hover {
   font-weight: bold;
   border-radius: 5px;
-  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
+  background: linear-gradient(
+    to right,
+    rgba(111, 111, 111, 0.492),
+    rgba(77, 77, 77, 0.4196078431)
+  );
 }
 #albumlevate div:hover p {
   font-weight: bold;
@@ -231,6 +239,10 @@ button {
   transition: background-color 1s ease;
 }
 
+#wallpaper-img {
+  background-position-y: 27%;
+}
+
 #card1:hover,
 #card2:hover,
 #card3:hover,
@@ -250,13 +262,19 @@ button {
 }
 
 #tutti-mobile {
-  background-color: #1ED760;
+  background-color: #1ed760;
 }
 
 .bottone-mobile {
   background-color: #161616;
 }
 
+#footer-mobile {
+  background-color: rgba(10, 10, 10, 0.125);
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
 #home-and-search {
   background-color: rgb(18, 18, 18);
 }
@@ -342,4 +360,4 @@ button {
   #form-container {
     width: 40%;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

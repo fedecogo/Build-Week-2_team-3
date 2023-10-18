@@ -4,3 +4,9 @@ background-color:$green-color ;
 .bottone-mobile{
 background-color: $gray-color;
 }
+#footer-mobile{
+background-color:rgba(10, 10, 10, 0.125);
+position: fixed;
+bottom: 0;
+z-index:100;
+}
