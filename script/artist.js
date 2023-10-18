@@ -91,45 +91,49 @@ const getArtist = function (query) {
       const newRow = document.getElementById("appAlbum");
       newRow.innerHTML = "";
       const newRowHTML = `
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
-    <div class="card-body">
-      <img src="${data.data[0].album.cover_medium}" width="65px"  alt="..." />
-        <h5 class="card-title">${data.data[0].album.title}</h5>
-        <a href="album.html?query=${data.data[0].album.id}" class="btn btn-primary">Go to Album</a>
-      </div>
-    </div>
+      <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+      <a href="album.html?query=${data.data[0].album.id}" class="text-decoration-none" >
+        <div class="card bg-dark  text-white h-100 " id="cardalbum1">
+        <div class="card-body">
+          <img src="${data.data[0].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid" />
+            <h5 class="card-title mt-3">${data.data[0].album.title}</h5>
+                 </div>
+        </div>
+        </a>
   </div>
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
+  
+  <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+  <a href="album.html?query=${data.data[1].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum2">
     <div class="card-body">
-      <img src="${data.data[1].album.cover_medium}" width="65px"  alt="..." />
-        <h5 class="card-title">${data.data[1].album.title}</h5>
-        <a href="album.html?query=${data.data[1].album.id}" class="btn btn-primary">Go to Album</a>
-      </div>
+      <img src="${data.data[1].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+        <h5 class="card-title mt-3">${data.data[1].album.title}</h5>
+             </div>
     </div>
+    </a>
   </div>
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
+  <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+  <a href="album.html?query=${data.data[2].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum3">
     <div class="card-body">
-      <img src="${data.data[2].album.cover_medium}" width="65px"  alt="..." />
-        <h5 class="card-title">${data.data[2].album.title}</h5>
-        <a href="album.html?query=${data.data[2].album.id}" class="btn btn-primary">Go to Album</a>
-      </div>
+      <img src="${data.data[2].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+        <h5 class="card-title mt-3">${data.data[2].album.title}</h5>
+             </div>
     </div>
+    </a>
   </div>
  
 `;
 
       newRow.innerHTML = newRowHTML;
-      const divAudio = document.getElementById('appendi_qui')
-const newDiv = document.createElement("div");
-  newDiv.innerHTML = `
+      const divAudio = document.getElementById("appendi_qui");
+      const newDiv = document.createElement("div");
+      newDiv.innerHTML = `
   <audio controls>
 <source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
 </audio>
-  `
-  divAudio.appendChild(newDiv)
+  `;
+      divAudio.appendChild(newDiv);
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -215,7 +219,9 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  const numeriArrey = [6415260, 12207660, 455130, 454043,1262014,464515625,95829922];
+  const numeriArrey = [
+    6415260, 12207660, 455130, 454043, 1262014, 464515625, 95829922,
+  ];
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -225,7 +231,7 @@ function invocagetalbum(numeriArrey) {
 }
 
 // funzione aside amici display e non
-const btnx = document.getElementById("x")
+const btnx = document.getElementById("x");
 
 const asidegruppo = document.getElementById("aside-right");
 
@@ -235,7 +241,6 @@ btnx.addEventListener("click", () => {
   asidegruppo.classList.add("d-none");
   asidegruppo.classList.toggle("d-lg-block");
 });
-
 
 // FUNZIONE BOTTONE PLAYLIST
 const playlistbtn = document.getElementById("azz2");
