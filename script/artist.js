@@ -33,7 +33,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[0].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[0].rank}</div>
-          <div class="col-2 ps-4">${data.data[0].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block">${data.data[0].duration}</div>
         </div>
         <div class="row mb-3 d-flex justify-content-between align-items-center">
           <div class="col-1 text-center">2</div>
@@ -44,7 +44,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[1].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[1].rank}</div>
-          <div class="col-2 ps-4">${data.data[1].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block">${data.data[1].duration}</div>
         </div>
         <div class="row mb-3 d-flex justify-content-between align-items-center">
           <div class="col-1 text-center">3</div>
@@ -55,7 +55,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[2].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[2].rank}</div>
-          <div class="col-2 ps-4">${data.data[2].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block">${data.data[2].duration}</div>
         </div>
         <div class="row mb-3 d-flex justify-content-between align-items-center">
           <div class="col-1 text-center">4</div>
@@ -66,7 +66,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[3].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[3].rank}</div>
-          <div class="col-2 ps-4">${data.data[3].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block ">${data.data[3].duration}</div>
         </div>
         <div class="row mb-3 d-flex justify-content-between align-items-center">
           <div class="col-1 text-center">5</div>
@@ -77,7 +77,7 @@ const getArtist = function (query) {
             <p class="m-0">${data.data[4].title}</p>
           </div>
           <div class="col-2 ps-3">${data.data[4].rank}</div>
-          <div class="col-2 ps-4">${data.data[4].duration}</div>
+          <div class="col-2 ps-4 d-none d-md-block">${data.data[4].duration}</div>
         </div>
         `;
       songDetails.innerHTML = songDetailsHTML;
@@ -122,14 +122,14 @@ const getArtist = function (query) {
 `;
 
       newRow.innerHTML = newRowHTML;
-      const divAudio = document.getElementById('appendi_qui')
-const newDiv = document.createElement("div");
-  newDiv.innerHTML = `
+      const divAudio = document.getElementById("appendi_qui");
+      const newDiv = document.createElement("div");
+      newDiv.innerHTML = `
   <audio controls>
 <source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
 </audio>
-  `
-  divAudio.appendChild(newDiv)
+  `;
+      divAudio.appendChild(newDiv);
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -215,7 +215,9 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  const numeriArrey = [6415260, 12207660, 455130, 454043,1262014,464515625,95829922];
+  const numeriArrey = [
+    6415260, 12207660, 455130, 454043, 1262014, 464515625, 95829922,
+  ];
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -225,7 +227,7 @@ function invocagetalbum(numeriArrey) {
 }
 
 // funzione aside amici display e non
-const btnx = document.getElementById("x")
+const btnx = document.getElementById("x");
 
 const asidegruppo = document.getElementById("aside-right");
 
@@ -236,7 +238,6 @@ btnx.addEventListener("click", () => {
   asidegruppo.classList.toggle("d-lg-block");
 });
 
-
 // FUNZIONE BOTTONE PLAYLIST
 const playlistbtn = document.getElementById("azz2");
 playlistbtn.addEventListener("click", () => {
@@ -244,4 +245,12 @@ playlistbtn.addEventListener("click", () => {
   via.classList.add("d-none");
   const realVia = document.getElementById("levate");
   realVia.classList.remove("d-none");
+});
+
+//CLICK BUTTON MUSIC AND EVENT
+
+const but = document.getElementById("butMusic");
+but.addEventListener("click", () => {
+  but.classList.toggle("btn-outline-trasparent");
+  but.classList.add("btn-outline-success");
 });
