@@ -287,4 +287,12 @@ button {
 
 #library {
   overflow: auto;
+}
+
+#rowProfile {
+  height: 100vh;
+}
+#rowProfile .col-12 {
+  height: 95.5%;
+  overflow-y: scroll;
 }/*# sourceMappingURL=style.css.map */

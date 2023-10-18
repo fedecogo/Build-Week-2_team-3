@@ -66,3 +66,11 @@
 #library {
   overflow: auto;
 }
+
+#rowProfile {
+  height: 100vh;
+  .col-12 {
+    height: 95.5%;
+    overflow-y: scroll;
+  }
+}
