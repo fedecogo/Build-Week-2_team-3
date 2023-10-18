@@ -215,7 +215,7 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  const numeriArrey = [6415260, 1362101, 12207660, 455130, 454043];
+  const numeriArrey = [6415260, 12207660, 455130, 454043,1262014,464515625,95829922];
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");

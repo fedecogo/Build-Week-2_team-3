@@ -68,7 +68,7 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  const numeriArrey = [6415260, 1362101, 12207660, 455130, 454043];
+  const numeriArrey = [6415260, 12207660, 455130, 454043,1262014,464515625,95829922];
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -98,3 +98,61 @@ const newDiv = document.createElement("div");
   `
   divAudio.appendChild(newDiv)
 
+// play canzone in evidenzia
+// FUNZIONE PER FAR SI CHE AL CLICK DELLE CANZONI PARTE LA MUSICA
+const getBSong = function (query) {
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${query}`)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Errore nella response");
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      console.log(data.tracks.data[0].album.cover);
+      // cambio le immagini della st
+      const getDivImg = document.getElementById('current-song-image')
+      getDivImg.innerHTML=``
+      const NewImgAlbum = document.createElement("div")
+      NewImgAlbum.innerHTML=`<img
+      src="assets/imgs/main/image-11.jpg"
+      alt="song photo"
+      width="50px"
+      />`
+      // HO USATO QUELL'IMAGINE PERCHè E'LA FUNZIONE ESCLISIVAMENTE PER L'ALBUM IN HOME
+      getDivImg.appendChild(NewImgAlbum)
+
+      // cambio h5 e h6 const 
+      const getDivText = document.getElementById('current-song-info')
+      getDivText.innerHTML=``
+      const newDivText  = document.createElement("div")
+      newDivText.innerHTML=`<h5>${data.tracks.data[0].title}</h5>
+      <h6>Mercury</h6>`
+      getDivText.appendChild(newDivText)
+      
+      // parte centrale
+      const divAudio = document.getElementById('appendi_qui')
+      const newDiv = document.createElement("div");
+      console.log(data.tracks.data[0].preview)
+      divAudio.innerHTML=``
+        newDiv.innerHTML = `
+        <audio controls autoplay>
+  <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
+</audio>
+        `
+        divAudio.appendChild(newDiv)
+    })
+    .catch((error) => {
+      console.error("Si è verificato un errore:", error);
+    });
+  };
+
+
+  // invoco la funzione al click di play
+  const bonesBtn = document.getElementById('playBones')
+bonesBtn.addEventListener("click",()=>{getBSong(302204417)
+  
+
+})
