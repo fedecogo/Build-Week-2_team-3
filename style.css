@@ -179,6 +179,10 @@ button {
   transition: background-color 1s ease;
 }
 
+#playBones {
+  background-color: #1ED760;
+}
+
 #sos .col-8 {
   background: linear-gradient(to right, rgb(61, 61, 61), #161616);
   transition: background-color 1s ease;
@@ -253,13 +257,13 @@ button {
   transition: background-color 1s ease;
 }
 
+#levate {
+  cursor: pointer;
+}
 #levate .mt-1:hover {
   font-weight: bold;
   border-radius: 5px;
   background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
-}
-#levate .mt-1:hover img {
-  cursor: pointer;
 }
 #levate .mt-1:hover p {
   align-self: center;
