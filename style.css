@@ -2,19 +2,23 @@
   background-color: #000000;
   color: white;
 }
+
 #aside-left I {
   width: 20px;
   height: 20px;
   padding: 0px;
 }
+
 #aside-left p {
   margin-bottom: 0px;
 }
+
 #aside-left #backtohome {
   display: flex;
   align-items: center;
   flex-direction: row;
 }
+
 #aside-left #backtohome a {
   color: inherit;
   text-decoration: none;
@@ -32,6 +36,7 @@
   height: 65vh;
   overflow: auto;
 }
+
 #playlist p {
   margin-top: 3px;
   margin-left: 15px;
@@ -45,13 +50,16 @@
   background-color: #000000;
   color: white;
 }
+
 #aside-right img {
   border-radius: 50%;
 }
+
 #aside-right p {
   margin-block: 0px;
   font-size: x-small;
 }
+
 #aside-right #music-i {
   width: 14px;
   height: 14px;
@@ -138,10 +146,12 @@ button {
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0);
   }
 }
+
 @media screen and (max-width: 576px) {
   #music-player {
     display: none;
@@ -153,6 +163,7 @@ button {
   background-color: #161616;
   width: 100%;
 }
+
 #music-player img {
   border-radius: 5px;
 }
@@ -160,6 +171,7 @@ button {
 .row .col-4 {
   align-items: center;
 }
+
 .row .col-4 p {
   font-weight: bold;
   margin-left: 3px;
@@ -183,9 +195,11 @@ button {
   background: linear-gradient(to right, rgb(61, 61, 61), #161616);
   transition: background-color 1s ease;
 }
+
 #sos .col-8 p:hover {
   font-size: bold;
 }
+
 #sos .col-8:hover {
   background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
   transition: background-color 1s ease;
@@ -193,22 +207,19 @@ button {
 
 #album-tracks .row:hover {
   border-radius: 10px;
-  background: linear-gradient(
-    to right,
-    rgba(111, 111, 111, 0.492),
-    rgba(77, 77, 77, 0.4196078431)
-  );
+  background: linear-gradient(to right,
+      rgba(111, 111, 111, 0.492),
+      rgba(77, 77, 77, 0.4196078431));
 }
 
 #albumlevate div:hover {
   font-weight: bold;
   border-radius: 5px;
-  background: linear-gradient(
-    to right,
-    rgba(111, 111, 111, 0.492),
-    rgba(77, 77, 77, 0.4196078431)
-  );
+  background: linear-gradient(to right,
+      rgba(111, 111, 111, 0.492),
+      rgba(77, 77, 77, 0.4196078431));
 }
+
 #albumlevate div:hover p {
   font-weight: bold;
 }
@@ -220,6 +231,7 @@ button {
 #hover .mt-1:hover i {
   font-size: 25px;
 }
+
 #hover .mt-1:hover p {
   font-weight: bold;
 }
@@ -275,6 +287,7 @@ button {
   bottom: 0;
   z-index: 100;
 }
+
 #home-and-search {
   background-color: rgb(18, 18, 18);
 }
@@ -290,6 +303,7 @@ button {
 .playlist-item:hover {
   background-color: rgb(40, 40, 40);
 }
+
 .playlist-item .div-item {
   background-color: rgb(40, 40, 40);
 }
@@ -304,15 +318,18 @@ button {
   bottom: 10px;
   border-radius: 0.1em;
 }
+
 .item-menu p:nth-of-type(1) {
   margin-top: 0.6em;
 }
+
 .item-menu p {
   margin-bottom: 0.4em;
   padding: 0.2em 1em;
   display: inline-block;
   cursor: pointer;
 }
+
 .item-menu p:hover {
   background-color: rgb(79, 79, 79);
 }
@@ -320,9 +337,11 @@ button {
 #footer-profile {
   background-color: rgb(18, 18, 18);
 }
+
 #footer-profile #copyright {
   font-size: 0.8rem;
 }
+
 #footer-profile #second-ul li {
   font-size: 0.8rem;
   margin-bottom: 0.3em;
@@ -343,6 +362,7 @@ button {
 #rowProfile {
   height: 100vh;
 }
+
 #rowProfile .col-12 {
   height: 95.5%;
   overflow-y: scroll;
@@ -351,13 +371,55 @@ button {
 #form-container {
   width: 75%;
 }
+
 @media screen and (min-width: 576px) {
   #form-container {
     width: 50%;
   }
 }
+
 @media screen and (min-width: 1108px) {
   #form-container {
     width: 40%;
   }
-} /*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
+
+
+audio::-webkit-media-controls-panel {
+  background-color: rgb(34, 35, 36);
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: rgb(25, 26, 27);
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-current-time-display {
+  color: #848484;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+  color: #848484;
+}
+
+audio::-webkit-media-controls-timeline {
+  border-radius: 40px;
+  background-color: rgb(25, 26, 27);
+  ;
+}
+
+audio::-webkit-media-controls-volume-slider {
+  background-color: rgb(25, 26, 27);
+  ;
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+audio::-webkit-media-controls-mute-button {
+  background-color: rgb(25, 26, 27);
+  ;
+  border-radius: 50%;
+}

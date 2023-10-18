@@ -6,6 +6,52 @@ const toggleButton = document.getElementById("toggleButton");
 const searchBar = document.getElementById("searchBar");
 const searchButton = document.getElementById("searchButton");
 
+
+//Funzione che serve a far partire la canzone al click sul div
+let currentSongIndex = 0
+const singThisSong = function (i) {
+  currentSongIndex = i
+  getSong(albumId, currentSongIndex)
+}
+
+
+//funzione per riempire correttamente il div current song al caricamento della pagina
+const currentSongDiv = document.getElementById('current-song')
+const pageOnLoad = async (query) => {
+  try {
+    const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${query}`)
+    const data = await res.json()
+    const onloadImg = data.tracks.data[0].album.cover
+    const onloadSongTitle = data.title
+    const onloadArtistName = data.tracks.data[0].artist.name
+    console.log(data.tracks.data[0])
+
+    currentSongDiv.innerHTML = `
+<div id="current-song-image" class="p-2 d-flex align-items-center">
+<img
+  src="${onloadImg}"
+  alt="song photo"
+  width="65px"
+/>
+</div>
+<div id="current-song-info">
+<h5>${onloadSongTitle}</h5>
+<h6>${onloadArtistName}</h6>
+</div>
+<div class="ms-3" id="cuoricino">
+<i class="bi bi-heart" onclick=miPiace(event)></i>
+</div>`
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
+const miPiace = function (e) {
+  e.target.classList.toggle('bi-heart')
+  e.target.classList.toggle('bi-heart-fill')
+}
+
 toggleButton.addEventListener("click", () => {
   searchBar.classList.toggle("hidden");
 });
@@ -51,9 +97,9 @@ const getAlbum = function (query) {
       const logoImage = document.getElementById("logo-image");
       image.innerHTML = ``;
       image.innerHTML = `<img
-      class="ms-4 mt-4"
-      src="${data.cover_big}"
-      width="230px"
+    class="ms-4 mt-4"
+    src="${data.cover_big}"
+    width="230px"
       alt="image"
     />`;
       logoImage.innerHTML = ``;
@@ -64,7 +110,7 @@ const getAlbum = function (query) {
       height="25px"
       style="border-radius: 50%"
       alt="image"
-    />`;
+      />`;
       const titolo = document.getElementById("titolo-album");
       titolo.innerHTML = ``;
       titolo.innerHTML = `${data.title}`;
@@ -74,25 +120,25 @@ const getAlbum = function (query) {
 
       nomegruppo.innerHTML = ``;
       nomegruppo.innerHTML = ` <span class="fw-bold text-white"
-    >${data.artist.name}</span
-  >
-  -${data.release_date} - ${data.nb_tracks} brani, ${time}min`;
+      >${data.artist.name}</span
+      >
+      -${data.release_date} - ${data.nb_tracks} brani, ${time}min`;
 
       tracksContainer.innerHTML = "";
       data.tracks.data.forEach((song, i) => {
         const canzone = document.createElement("div");
         const time2 = (song.duration / 60).toFixed(2);
-        canzone.innerHTML = `<div
-      class="row mb-3 d-flex justify-content-between align-items-center"
-    >
-      <div class="col-1 text-center">${i + 1}</div>
-      <div class="col-6">
+        canzone.innerHTML = `<div onclick=singThisSong(${i})
+        class="row mb-3 d-flex justify-content-between align-items-center"
+        >
+        <div class="col-1 text-center">${i + 1}</div>
+        <div class="col-6">
         <p class="m-0">${song.title}</p>
         <p class="m-0">${song.artist.name}</p>
-      </div>
-      <div class="col-3 ps-3">${song.rank}</div>
-      <div class="col-2 ps-4">${time2} min</div>
-    </div>`;
+        </div>
+        <div class="col-3 ps-3">${song.rank}</div>
+        <div class="col-2 ps-4">${time2} min</div>
+        </div>`;
         tracksContainer.appendChild(canzone);
       });
       //       // prova
@@ -190,7 +236,7 @@ playlistbtn.addEventListener("click", () => {
 });
 
 // FUNZIONE PER FAR SI CHE AL CLICK DELLE CANZONI PARTE LA MUSICA
-const getSong = function (query) {
+const getSong = function (query, i) {
   fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${query}`)
     .then((res) => {
       if (res.ok) {
@@ -201,13 +247,13 @@ const getSong = function (query) {
     })
     .then((data) => {
       console.log(data);
-      console.log(data.tracks.data[0].album.cover);
+      console.log(data.tracks.data[i].album.cover);
       // cambio le immagini della st
       const getDivImg = document.getElementById("current-song-image");
       getDivImg.innerHTML = ``;
       const NewImgAlbum = document.createElement("div");
       NewImgAlbum.innerHTML = `<img
-      src="${data.tracks.data[0].album.cover}"
+      src="${data.tracks.data[i].album.cover}"
       alt="song photo"
       width="65px"
       />`;
@@ -217,20 +263,20 @@ const getSong = function (query) {
       const getDivText = document.getElementById("current-song-info");
       getDivText.innerHTML = ``;
       const newDivText = document.createElement("div");
-      newDivText.innerHTML = `<h5>${data.tracks.data[0].title}</h5>
-      <h6>${data.title}</h6>`;
+      newDivText.innerHTML = `<h5>${data.tracks.data[i].title}</h5>
+      <h6>${data.tracks.data[i].artist.name}</h6>`;
       getDivText.appendChild(newDivText);
 
       // parte centrale
       // prova
       const divAudio = document.getElementById("appendi_qui");
       const newDiv = document.createElement("div");
-      console.log(data.tracks.data[0].preview);
+      console.log(data.tracks.data[i].preview);
       divAudio.innerHTML = ``;
       newDiv.innerHTML = `
-        <audio controls autoplay>
-  <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
-</audio>
+      <audio controls autoplay>
+  <source src="${data.tracks.data[i].preview}" type="audio/mpeg">
+  </audio>
         `;
       divAudio.appendChild(newDiv);
     })
@@ -241,7 +287,7 @@ const getSong = function (query) {
 // invoco la funzione GET SONG al click di play
 const playbtn = document.getElementById("songIn");
 playbtn.addEventListener("click", function () {
-  getSong(albumId);
+  getSong(albumId, currentSongIndex);
 });
 
 // SELEZIONA L'IMMAGINE DEL PROFILO
@@ -262,3 +308,5 @@ if (profileImageLocalStorage) {
   userIcon.classList.add("d-none");
   profileImageNavbar.classList.remove("d-none");
 }
+
+pageOnLoad(albumId)

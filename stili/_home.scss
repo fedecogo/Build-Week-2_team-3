@@ -1,6 +1,7 @@
 .row {
   .col-4 {
     align-items: center;
+
     p {
       font-weight: bold;
       margin-left: 3px;
@@ -16,6 +17,7 @@
   background: linear-gradient(to right, black, #161616);
   transition: background-color 1s ease;
 }
+
 #cardIn:hover {
   background: linear-gradient(to right, #161616, #4d4d4d);
   transition: background-color 1s ease;
@@ -25,10 +27,12 @@
   .col-8 {
     background: linear-gradient(to right, rgb(61, 61, 61), #161616);
     transition: background-color 1s ease;
+
     p:hover {
       font-size: bold;
     }
   }
+
   .col-8:hover {
     background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
     transition: background-color 1s ease;
@@ -38,27 +42,26 @@
 #album-tracks {
   .row:hover {
     border-radius: 10px;
-    background: linear-gradient(
-      to right,
-      rgba(111, 111, 111, 0.492),
-      #4d4d4d6b
-    );
+    background: linear-gradient(to right,
+        rgba(111, 111, 111, 0.492),
+        #4d4d4d6b);
   }
 }
+
 #albumlevate {
   div:hover {
     font-weight: bold;
     border-radius: 5px;
-    background: linear-gradient(
-      to right,
-      rgba(111, 111, 111, 0.492),
-      #4d4d4d6b
-    );
+    background: linear-gradient(to right,
+        rgba(111, 111, 111, 0.492),
+        #4d4d4d6b);
+
     p {
       font-weight: bold;
     }
   }
 }
+
 #title {
   font-size: 80px;
 }
@@ -68,6 +71,7 @@
     i {
       font-size: 25px;
     }
+
     p {
       font-weight: bold;
     }
@@ -78,16 +82,19 @@
   background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
   transition: background-color 1s ease;
 }
+
 #cardalbum1:hover {
   background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
   transition: background-color 1s ease;
 }
+
 #cardalbum2:hover {
   background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
   transition: background-color 1s ease;
 }
-#wallpaper-img{
-background-position-y:27%;
+
+#wallpaper-img {
+  background-position-y: 27%;
 }
 
 #card1,
