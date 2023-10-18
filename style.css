@@ -295,4 +295,18 @@ button {
 #rowProfile .col-12 {
   height: 95.5%;
   overflow-y: scroll;
+}
+
+#form-container {
+  width: 75%;
+}
+@media screen and (min-width: 576px) {
+  #form-container {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1108px) {
+  #form-container {
+    width: 40%;
+  }
 }/*# sourceMappingURL=style.css.map */
