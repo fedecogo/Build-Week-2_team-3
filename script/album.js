@@ -133,7 +133,7 @@ const asidegruppo = document.getElementById("aside-right");
 gruppo.addEventListener("click", () => {
   asidegruppo.classList.toggle("col-2");
   asidegruppo.classList.toggle("m-0");
-  asidegruppo.classList.add("d-none");
+  // asidegruppo.classList.add("d-none");
   asidegruppo.classList.toggle("d-lg-block");
 });
 btnx.addEventListener("click", () => {
