@@ -11,7 +11,99 @@ const profileNameNavbar = document.querySelector(".dropdown .fw-bold");
 const profileImageNavbar = document.querySelector(".dropdown img");
 const cancelButton = document.getElementById("cancel-button");
 const homeButton = document.getElementById("home-button");
+const addPlaylistButton = document.getElementsByClassName("bi-plus-lg")[0];
+const playlistContainer = document.getElementById("playlist-container");
 
+playlistContainer.innerHTML = localStorage.getItem("playlistHTML");
+
+// ADD PLAYLIST
+
+addPlaylistButton.addEventListener("click", () => {
+  playlistContainer.innerHTML = localStorage.getItem("playlistHTML");
+  const playlistNumber = localStorage.getItem("playlistCounter");
+  let playlistCounter = playlistNumber || 1;
+  playlistCounter++;
+
+  const newDiv = document.createElement("div");
+
+  newDiv.classList.add(
+    "playlist-item",
+    "d-flex",
+    "gap-2",
+    "mb-1",
+    "pb-0",
+    "pointer",
+    "pt-2"
+  );
+  newDiv.innerHTML = `
+  <div  class="div-item d-flex justify-content-center rounded align-items-center " style="width:45px; height:45px">
+  
+    <i class="bi bi-music-note-beamed fs-3 text-white"></i>
+  </div>
+  <div class="d-flex flex-column text-white-50">
+   <p class="text-white fw-bold mb-0">La mia playlist n.${
+     playlistNumber || "1"
+   }</p>
+    <small>
+      <p>Playlist &#8226; ${usernameStorage || "Nome utente"}</p>
+   </small>
+  </div>
+  <div class="item-menu text-white d-flex flex-column flex-start d-none">
+          <p onclick="deletePlaylist(event)">Elimina playlist</p>
+          <p>Modifica</p>
+          <p>Condividi</p>
+          <p>Crea Playlist</p>
+  </div>`;
+  newDiv.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+    console.log("ciao");
+    openItemMenu(e);
+  });
+
+  playlistContainer.appendChild(newDiv);
+  localStorage.setItem("playlistCounter", playlistCounter);
+  localStorage.setItem("playlistHTML", playlistContainer.innerHTML);
+});
+
+// APRE IL MENU NEL SINGOLO ELEMENTO PLAYLIST
+
+const openItemMenu = function (e) {
+  e.preventDefault();
+  const myDiv = e.target.closest(".playlist-item");
+  const itemMenu = myDiv.querySelector(".item-menu");
+  itemMenu.classList.remove("d-none");
+  itemMenu.style.top = `${e.clientY}px`;
+  itemMenu.style.left = `${e.clientX}px`;
+};
+
+// ELIMINA LA SINGOLA PLAYLIST
+
+const deletePlaylist = function (e) {
+  const myDiv = e.target.closest(".playlist-item");
+  myDiv.remove();
+  localStorage.setItem("playlistHTML", playlistContainer.innerHTML);
+
+  const playlists = Array.from(
+    playlistContainer.querySelectorAll(".playlist-item")
+  );
+
+  for (const playlist of playlists) {
+    playlist.addEventListener("contextmenu", function (e) {
+      openItemMenu(e);
+    });
+  }
+};
+
+window.onload = (e) => {
+  const playlists = Array.from(
+    playlistContainer.querySelectorAll(".playlist-item")
+  );
+  for (const playlist of playlists) {
+    playlist.addEventListener("contextmenu", function (e) {
+      openItemMenu(e);
+    });
+  }
+};
 // HOME BUTTON
 
 homeButton.addEventListener("click", () => {

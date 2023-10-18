@@ -236,13 +236,55 @@ button {
   background-color: rgb(79, 79, 79);
 }
 
+.playlist-item:hover {
+  background-color: rgb(40, 40, 40);
+}
+.playlist-item .div-item {
+  background-color: rgb(40, 40, 40);
+}
+
+.item-menu {
+  background-color: rgb(40, 40, 40);
+  position: absolute;
+  height: 160px;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  bottom: 10px;
+  border-radius: 0.1em;
+}
+.item-menu p:nth-of-type(1) {
+  margin-top: 0.6em;
+}
+.item-menu p {
+  margin-bottom: 0.4em;
+  padding: 0.2em 1em;
+  display: inline-block;
+  cursor: pointer;
+}
+.item-menu p:hover {
+  background-color: rgb(79, 79, 79);
+}
+
 #footer-profile {
   background-color: rgb(18, 18, 18);
 }
-#footer-profile ul li {
+#footer-profile #copyright {
   font-size: 0.8rem;
+}
+#footer-profile #second-ul li {
+  font-size: 0.8rem;
+  margin-bottom: 0.3em;
 }
 
 #profile-playlist {
   background-color: rgb(18, 18, 18);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#library {
+  overflow: auto;
 }/*# sourceMappingURL=style.css.map */
