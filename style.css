@@ -193,13 +193,21 @@ button {
 
 #album-tracks .row:hover {
   border-radius: 10px;
-  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
+  background: linear-gradient(
+    to right,
+    rgba(111, 111, 111, 0.492),
+    rgba(77, 77, 77, 0.4196078431)
+  );
 }
 
 #albumlevate div:hover {
   font-weight: bold;
   border-radius: 5px;
-  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
+  background: linear-gradient(
+    to right,
+    rgba(111, 111, 111, 0.492),
+    rgba(77, 77, 77, 0.4196078431)
+  );
 }
 #albumlevate div:hover p {
   font-weight: bold;
@@ -254,7 +262,7 @@ button {
 }
 
 #tutti-mobile {
-  background-color: #1ED760;
+  background-color: #1ed760;
 }
 
 .bottone-mobile {
@@ -266,4 +274,90 @@ button {
   position: fixed;
   bottom: 0;
   z-index: 100;
-}/*# sourceMappingURL=style.css.map */
+}
+#home-and-search {
+  background-color: rgb(18, 18, 18);
+}
+
+#library {
+  background-color: rgb(18, 18, 18);
+}
+
+#main-container {
+  background-color: rgb(79, 79, 79);
+}
+
+.playlist-item:hover {
+  background-color: rgb(40, 40, 40);
+}
+.playlist-item .div-item {
+  background-color: rgb(40, 40, 40);
+}
+
+.item-menu {
+  background-color: rgb(40, 40, 40);
+  position: absolute;
+  height: 160px;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  bottom: 10px;
+  border-radius: 0.1em;
+}
+.item-menu p:nth-of-type(1) {
+  margin-top: 0.6em;
+}
+.item-menu p {
+  margin-bottom: 0.4em;
+  padding: 0.2em 1em;
+  display: inline-block;
+  cursor: pointer;
+}
+.item-menu p:hover {
+  background-color: rgb(79, 79, 79);
+}
+
+#footer-profile {
+  background-color: rgb(18, 18, 18);
+}
+#footer-profile #copyright {
+  font-size: 0.8rem;
+}
+#footer-profile #second-ul li {
+  font-size: 0.8rem;
+  margin-bottom: 0.3em;
+}
+
+#profile-playlist {
+  background-color: rgb(18, 18, 18);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#library {
+  overflow: auto;
+}
+
+#rowProfile {
+  height: 100vh;
+}
+#rowProfile .col-12 {
+  height: 95.5%;
+  overflow-y: scroll;
+}
+
+#form-container {
+  width: 75%;
+}
+@media screen and (min-width: 576px) {
+  #form-container {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1108px) {
+  #form-container {
+    width: 40%;
+  }
+} /*# sourceMappingURL=style.css.map */
