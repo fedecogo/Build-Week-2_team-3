@@ -54,6 +54,7 @@ addPlaylistButton.addEventListener("click", () => {
           <p>Condividi</p>
           <p>Crea Playlist</p>
   </div>`;
+
   newDiv.addEventListener("contextmenu", function (e) {
     e.preventDefault();
     console.log("ciao");
@@ -71,6 +72,7 @@ addPlaylistButton.addEventListener("click", () => {
       openItemMenu();
     });
   }
+  location.reload();
 });
 
 // APRE IL MENU NEL SINGOLO ELEMENTO PLAYLIST
