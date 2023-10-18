@@ -95,19 +95,17 @@ const getAlbum = function (query) {
     </div>`;
         tracksContainer.appendChild(canzone);
       });
-//       // prova
-//       const divAudio = document.getElementById('appendi_qui')
-//       const newDiv = document.createElement("div");
-//       console.log(data.tracks.data[0].preview)
-//         newDiv.innerHTML = `
-//         <audio controls>
-//   <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
-// </audio>
-//         `
-//         // <audio controls><source src="${data.tracks.data[0].link}" type="audio/mpeg"></audio>
-//         divAudio.appendChild(newDiv)
-      
-
+      //       // prova
+      //       const divAudio = document.getElementById('appendi_qui')
+      //       const newDiv = document.createElement("div");
+      //       console.log(data.tracks.data[0].preview)
+      //         newDiv.innerHTML = `
+      //         <audio controls>
+      //   <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
+      // </audio>
+      //         `
+      //         // <audio controls><source src="${data.tracks.data[0].link}" type="audio/mpeg"></audio>
+      //         divAudio.appendChild(newDiv)
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -122,12 +120,11 @@ cuore.addEventListener("click", () => {
   cuore.classList.toggle("text-success");
   cuore.classList.toggle("bi-heart");
   cuore.classList.toggle("bi-heart-fill");
-  
 });
 
 // funzione aside amici display e non
 const gruppo = document.getElementById("users");
-const btnx = document.getElementById("x")
+const btnx = document.getElementById("x");
 
 const asidegruppo = document.getElementById("aside-right");
 gruppo.addEventListener("click", () => {
@@ -172,7 +169,9 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  const numeriArrey = [6415260, 12207660, 455130, 454043,1262014,464515625,95829922];
+  const numeriArrey = [
+    6415260, 12207660, 455130, 454043, 1262014, 464515625, 95829922,
+  ];
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -190,7 +189,6 @@ playlistbtn.addEventListener("click", () => {
   realVia.classList.remove("d-none");
 });
 
-
 // FUNZIONE PER FAR SI CHE AL CLICK DELLE CANZONI PARTE LA MUSICA
 const getSong = function (query) {
   fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${query}`)
@@ -205,45 +203,62 @@ const getSong = function (query) {
       console.log(data);
       console.log(data.tracks.data[0].album.cover);
       // cambio le immagini della st
-      const getDivImg = document.getElementById('current-song-image')
-      getDivImg.innerHTML=``
-      const NewImgAlbum = document.createElement("div")
-      NewImgAlbum.innerHTML=`<img
+      const getDivImg = document.getElementById("current-song-image");
+      getDivImg.innerHTML = ``;
+      const NewImgAlbum = document.createElement("div");
+      NewImgAlbum.innerHTML = `<img
       src="${data.tracks.data[0].album.cover}"
       alt="song photo"
       width="65px"
-      />`
-      getDivImg.appendChild(NewImgAlbum)
+      />`;
+      getDivImg.appendChild(NewImgAlbum);
 
-      // cambio h5 e h6 const 
-      const getDivText = document.getElementById('current-song-info')
-      getDivText.innerHTML=``
-      const newDivText  = document.createElement("div")
-      newDivText.innerHTML=`<h5>${data.tracks.data[0].title}</h5>
-      <h6>${data.title}</h6>`
-      getDivText.appendChild(newDivText)
-      
+      // cambio h5 e h6 const
+      const getDivText = document.getElementById("current-song-info");
+      getDivText.innerHTML = ``;
+      const newDivText = document.createElement("div");
+      newDivText.innerHTML = `<h5>${data.tracks.data[0].title}</h5>
+      <h6>${data.title}</h6>`;
+      getDivText.appendChild(newDivText);
+
       // parte centrale
-        // prova
-      const divAudio = document.getElementById('appendi_qui')
+      // prova
+      const divAudio = document.getElementById("appendi_qui");
       const newDiv = document.createElement("div");
-      console.log(data.tracks.data[0].preview)
-      divAudio.innerHTML=``
-        newDiv.innerHTML = `
+      console.log(data.tracks.data[0].preview);
+      divAudio.innerHTML = ``;
+      newDiv.innerHTML = `
         <audio controls autoplay>
   <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
 </audio>
-        `
-        divAudio.appendChild(newDiv)
-    
-      
+        `;
+      divAudio.appendChild(newDiv);
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
     });
-  };
-  // invoco la funzione GET SONG al click di play
-  const playbtn = document.getElementById('gesu');
-  playbtn.addEventListener('click', function() {getSong(albumId);
-  });
-  
+};
+// invoco la funzione GET SONG al click di play
+const playbtn = document.getElementById("gesu");
+playbtn.addEventListener("click", function () {
+  getSong(albumId);
+});
+
+// SELEZIONA L'IMMAGINE DEL PROFILO
+
+const profileImageNavbar = document.querySelector(".dropdown img");
+const userIcon = document.querySelector(".dropdown i");
+
+// NOME IMMAGINE PROFILO IN BASE AL LOCAL STORAGE
+
+const profileImageLocalStorage = localStorage.getItem("profileImage");
+profileImageNavbar.src = profileImageLocalStorage
+  ? profileImageLocalStorage
+  : "http://placekitten.com/30/30";
+profileImageNavbar.style.width = "30px";
+profileImageNavbar.style.heigth = "30px";
+
+if (profileImageLocalStorage) {
+  userIcon.classList.add("d-none");
+  profileImageNavbar.classList.remove("d-none");
+}
