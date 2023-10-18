@@ -83,7 +83,7 @@ const getArtist = function (query) {
       songDetails.innerHTML = songDetailsHTML;
       const wallpaperImg = document.getElementById("wallpaper-img");
       wallpaperImg.style.backgroundImage = `url('${data.data[0].artist.picture_xl}')`;
-
+     
       // aggiiungere albumalla row
       // da sistemare card per album
       // chiedere a stefano se serve unaltra fatch con  https://striveschool-api.herokuapp.com/api/deezer/album/75621062
