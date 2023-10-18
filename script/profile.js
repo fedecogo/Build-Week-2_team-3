@@ -191,6 +191,7 @@ form.addEventListener("submit", function (e) {
   footer.style.opacity = 1;
   localStorage.setItem("username", userNameInput.value);
   profileNameNavbar.innerText = localStorage.getItem("username");
+  location.reload();
 });
 
 // BOTTONE PER ANNULLARE MODIFICA NOME PROFILO
