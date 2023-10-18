@@ -121,8 +121,15 @@ const getArtist = function (query) {
  
 `;
 
-      // Assegna la stringa HTML al tuo elemento
       newRow.innerHTML = newRowHTML;
+      const divAudio = document.getElementById('appendi_qui')
+const newDiv = document.createElement("div");
+  newDiv.innerHTML = `
+  <audio controls>
+<source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
+</audio>
+  `
+  divAudio.appendChild(newDiv)
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);

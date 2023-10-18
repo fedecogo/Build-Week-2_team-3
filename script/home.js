@@ -85,3 +85,16 @@ playlistbtn.addEventListener("click", () => {
   const realVia = document.getElementById("levate");
   realVia.classList.remove("d-none");
 });
+
+
+// FUNZIONE TEMPORANE PER MUSICA 
+// DA SPOSTARE POI NELLA FATCH CON L'MP3
+const divAudio = document.getElementById('appendi_qui')
+const newDiv = document.createElement("div");
+  newDiv.innerHTML = `
+  <audio controls>
+<source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
+</audio>
+  `
+  divAudio.appendChild(newDiv)
+
