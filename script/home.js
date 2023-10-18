@@ -190,3 +190,119 @@ profileImageNavbar.src = profileImageLocalStorage
   : "http://placekitten.com/30/30";
 profileImageNavbar.style.width = "30px";
 profileImageNavbar.style.heigth = "30px";
+
+
+
+
+
+
+// FUNZIONE CARDS HOME LINKATE
+
+
+
+
+const creaCardsHome = function (query) {
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Errore nella response");
+      }
+    })
+    .then((data) => {
+      window.location.href = `artist.html?query=${query}`;
+    })
+
+    .catch((error) => {
+      console.error("Si è verificato un errore:", error);
+    });
+};
+
+//LINK 10 CARDS
+const firstcard = document.getElementById("card1");
+firstcard.addEventListener("click", function () {
+  creaCardsHome("Summer Playlist");
+});
+const secondcard = document.getElementById("card2");
+secondcard.addEventListener("click", function () {
+  creaCardsHome("Friday Playlist");
+});
+const thirdcard = document.getElementById("card3");
+thirdcard.addEventListener("click", function () {
+  creaCardsHome("Lavoro da casa");
+});
+const fourthcard = document.getElementById("card4");
+fourthcard.addEventListener("click", function () {
+  creaCardsHome("Home sweet Home");
+});
+const fifthcard = document.getElementById("card5");
+fifthcard.addEventListener("click", function () {
+  creaCardsHome("Summer Body Workout");
+});
+const sixthcard = document.getElementById("card6");
+sixthcard.addEventListener("click", function () {
+  creaCardsHome("Musica per Pulizie di Casa");
+});
+const seventhcard = document.getElementById("card7");
+seventhcard.addEventListener("click", function () {
+  creaCardsHome("Jazz Vibes Music");
+});
+const eightcard = document.getElementById("card8");
+eightcard.addEventListener("click", function () {
+  creaCardsHome("Imagine Dragons");
+});
+const ninthcard = document.getElementById("card9");
+ninthcard.addEventListener("click", function () {
+  creaCardsHome("musica per il buonumore");
+});
+const tenthcard = document.getElementById("card10");
+tenthcard.addEventListener("click", function () {
+  creaCardsHome("Musica nella Doccia");
+});
+
+// Card a scomparsa
+
+const Wcard = document.getElementById("cardw");
+Wcard.addEventListener("click", function () {
+  creaCardsHome("Film Estivo");
+});
+const Xcard = document.getElementById("cardx");
+Xcard.addEventListener("click", function () {
+  creaCardsHome("Piano");
+});
+const Ycard = document.getElementById("cardy");
+Ycard.addEventListener("click", function () {
+  creaCardsHome("Young rap");
+});
+const Zcard = document.getElementById("cardz");
+Zcard.addEventListener("click", function () {
+  creaCardsHome("Street Music");
+});
+
+//CARD Iniziali
+
+const Acard = document.getElementById("cardA");
+Acard.addEventListener("click", function () {
+  creaCardsHome("Rock Playlist");
+});
+const Bcard = document.getElementById("cardB");
+Bcard.addEventListener("click", function () {
+  creaCardsHome("Dance Music");
+});
+const Ccard = document.getElementById("cardC");
+Ccard.addEventListener("click", function () {
+  creaCardsHome("Canzoni per Bambini");
+});
+const Dcard = document.getElementById("cardD");
+Dcard.addEventListener("click", function () {
+  creaCardsHome("Sleeping Music");
+});
+const Ecard = document.getElementById("cardE");
+Ecard.addEventListener("click", function () {
+  creaCardsHome("Focus Lo-fi");
+});
+const Fcard = document.getElementById("cardF");
+Fcard.addEventListener("click", function () {
+  creaCardsHome("Guitar Music");
+});
