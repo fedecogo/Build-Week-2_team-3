@@ -89,3 +89,23 @@
 #wallpaper-img{
 background-position-y:27%;
 }
+
+#card1,
+#card2,
+#card3,
+#card4,
+#card5,
+#card6,
+#card7,
+#card8,
+#card9,
+#card10,
+#cardw,
+#cardx,
+#cardy,
+#cardz {
+  &:hover {
+    background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
+    transition: background-color 1s ease;
+  }
+}

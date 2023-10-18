@@ -235,6 +235,24 @@ button {
   background-position-y: 27%;
 }
 
+#card1:hover,
+#card2:hover,
+#card3:hover,
+#card4:hover,
+#card5:hover,
+#card6:hover,
+#card7:hover,
+#card8:hover,
+#card9:hover,
+#card10:hover,
+#cardw:hover,
+#cardx:hover,
+#cardy:hover,
+#cardz:hover {
+  background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
+  transition: background-color 1s ease;
+}
+
 #tutti-mobile {
   background-color: #1ED760;
 }
