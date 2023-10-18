@@ -50,6 +50,7 @@ const pageOnLoad = async (query) => {
 const miPiace = function (e) {
   e.target.classList.toggle('bi-heart')
   e.target.classList.toggle('bi-heart-fill')
+  e.target.classList.toggle('text-success')
 }
 
 toggleButton.addEventListener("click", () => {

@@ -14,19 +14,19 @@ const pageOnLoad = async (query) => {
 
 
     currentSongDiv.innerHTML = `
-<div id="current-song-image" class="p-2 d-flex align-items-center">
-<img
-  src="${onloadImg}"
-  alt="song photo"
-  width="65px"
-/>
-</div>
-<div id="current-song-info">
-<h5>${onloadArtistName}</h5>
-</div>
-<div class="ms-3" id="cuoricino">
-<i class="bi bi-heart" onclick=miPiace(event)></i>
-</div>`
+    <div id="current-song-image" class="p-2 d-flex align-items-center">
+    <img
+    src="${onloadImg}"
+    alt="song photo"
+    width="65px"
+    />
+    </div>
+    <div id="current-song-info">
+    <h5>${onloadArtistName}</h5>
+    </div>
+    <div class="ms-3" id="cuoricino">
+    <i class="bi bi-heart" onclick=miPiace(event)></i>
+    </div>`
   } catch (error) {
     console.log(error)
   }
@@ -36,6 +36,7 @@ const pageOnLoad = async (query) => {
 const miPiace = function (e) {
   e.target.classList.toggle('bi-heart')
   e.target.classList.toggle('bi-heart-fill')
+  e.target.classList.toggle('text-success')
 }
 
 const getArtist = function (query) {
@@ -60,62 +61,62 @@ const getArtist = function (query) {
       const songDetails = document.getElementById("appendi_song");
       songDetails.innerHTML = "";
       const songDetailsHTML = `
-        <div class="row mb-3 d-flex justify-content-between align-items-center">
-          <div class="col-1 text-center">1</div>
-          <div class="col-1 text-center">
-            <img class="me-1" src="${data.data[0].album.cover}" width="30px">
-          </div>
-          <div class="col-6">
-            <p class="m-0">${data.data[0].title}</p>
-          </div>
-          <div class="col-2 ps-3">${data.data[0].rank}</div>
-          <div class="col-2 ps-4 d-none d-md-block">${data.data[0].duration}</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content-between align-items-center">
-          <div class="col-1 text-center">2</div>
-          <div class="col-1 text-center">
-            <img class="me-1" src="${data.data[1].album.cover}" width="30px">
-          </div>
-          <div class="col-6">
-            <p class="m-0">${data.data[1].title}</p>
-          </div>
-          <div class="col-2 ps-3">${data.data[1].rank}</div>
-          <div class="col-2 ps-4 d-none d-md-block">${data.data[1].duration}</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content-between align-items-center">
-          <div class="col-1 text-center">3</div>
-          <div class="col-1 text-center">
-            <img class="me-1" src="${data.data[2].album.cover}" width="30px">
-          </div>
-          <div class="col-6">
-            <p class="m-0">${data.data[2].title}</p>
-          </div>
-          <div class="col-2 ps-3">${data.data[2].rank}</div>
-          <div class="col-2 ps-4 d-none d-md-block">${data.data[2].duration}</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content-between align-items-center">
-          <div class="col-1 text-center">4</div>
-          <div class="col-1 text-center">
-            <img class="me-1" src="${data.data[3].album.cover}" width="30px">
-          </div>
-          <div class="col-6">
-            <p class="m-0">${data.data[3].title}</p>
-          </div>
-          <div class="col-2 ps-3">${data.data[3].rank}</div>
-          <div class="col-2 ps-4 d-none d-md-block ">${data.data[3].duration}</div>
-        </div>
-        <div class="row mb-3 d-flex justify-content-between align-items-center">
-          <div class="col-1 text-center">5</div>
-          <div class="col-1 text-center">
-            <img class="me-1" src="${data.data[4].album.cover}" width="30px">
-          </div>
-          <div class="col-6">
-            <p class="m-0">${data.data[4].title}</p>
-          </div>
-          <div class="col-2 ps-3">${data.data[4].rank}</div>
-          <div class="col-2 ps-4 d-none d-md-block">${data.data[4].duration}</div>
-        </div>
-        `;
+    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="col-1 text-center">1</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[0].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[0].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[0].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${data.data[0].duration}</div>
+    </div>
+    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="col-1 text-center">2</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[1].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[1].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[1].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${data.data[1].duration}</div>
+    </div>
+    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="col-1 text-center">3</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[2].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[2].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[2].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${data.data[2].duration}</div>
+    </div>
+    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="col-1 text-center">4</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[3].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[3].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[3].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block ">${data.data[3].duration}</div>
+    </div>
+    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="col-1 text-center">5</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[4].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[4].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[4].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${data.data[4].duration}</div>
+    </div>
+    `;
       songDetails.innerHTML = songDetailsHTML;
       const wallpaperImg = document.getElementById("wallpaper-img");
       wallpaperImg.style.backgroundImage = `url('${data.data[0].artist.picture_xl}')`;
@@ -127,48 +128,48 @@ const getArtist = function (query) {
       const newRow = document.getElementById("appAlbum");
       newRow.innerHTML = "";
       const newRowHTML = `
-      <div class="col-xs-6 col-md-4 m-3 m-md-0" >
-      <a href="album.html?query=${data.data[0].album.id}" class="text-decoration-none" >
-        <div class="card bg-dark  text-white h-100 " id="cardalbum1">
-        <div class="card-body">
-          <img src="${data.data[0].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid" />
-            <h5 class="card-title mt-3">${data.data[0].album.title}</h5>
-                 </div>
-        </div>
-        </a>
-  </div>
-  
-  <div class="col-xs-6 col-md-4 m-3 m-md-0" >
-  <a href="album.html?query=${data.data[1].album.id}" class="text-decoration-none" >
+    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <a href="album.html?query=${data.data[0].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum1">
+    <div class="card-body">
+    <img src="${data.data[0].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid" />
+    <h5 class="card-title mt-3">${data.data[0].album.title}</h5>
+    </div>
+    </div>
+    </a>
+    </div>
+    
+    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <a href="album.html?query=${data.data[1].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum2">
     <div class="card-body">
-      <img src="${data.data[1].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
-        <h5 class="card-title mt-3">${data.data[1].album.title}</h5>
-             </div>
+    <img src="${data.data[1].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+    <h5 class="card-title mt-3">${data.data[1].album.title}</h5>
+    </div>
     </div>
     </a>
-  </div>
-  <div class="col-xs-6 col-md-4 m-3 m-md-0" >
-  <a href="album.html?query=${data.data[2].album.id}" class="text-decoration-none" >
+    </div>
+    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <a href="album.html?query=${data.data[2].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum3">
     <div class="card-body">
-      <img src="${data.data[2].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
-        <h5 class="card-title mt-3">${data.data[2].album.title}</h5>
-             </div>
+    <img src="${data.data[2].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+    <h5 class="card-title mt-3">${data.data[2].album.title}</h5>
+    </div>
     </div>
     </a>
-  </div>
- 
-`;
+    </div>
+    
+    `;
 
       newRow.innerHTML = newRowHTML;
       const divAudio = document.getElementById("appendi_qui");
       const newDiv = document.createElement("div");
       newDiv.innerHTML = `
-  <audio controls>
-<source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
-</audio>
-  `;
+    <audio controls autoplay id="audio-player">
+    <source src="${data.data[0].preview}" type="audio/mpeg">
+    </audio>
+    `;
       divAudio.appendChild(newDiv);
 
       // CREAZIONE DINAMICA DEI BRANI CHE MI PIACCIONO
@@ -177,24 +178,24 @@ const getArtist = function (query) {
       const numberOfLike = Math.ceil(Math.random() * 15)
       const iLike = document.getElementById("brani-piacciono-desktop")
       iLike.innerHTML = `<div class="me-2">
-        <img src="${artistPicture}" alt="" class="rounded-circle" width="60px">
-        </div>
-        <div>
-        <p class="fw-medium mb-0 text-nowrap fs-6">Hai messo mi piace a ${numberOfLike} brani</p>
-        <p class="text-secondary fw-light my-0 py-0">Di ${artistName}</p>
-        </div>
-        `
+    <img src="${artistPicture}" alt="" class="rounded-circle" width="60px">
+    </div>
+    <div>
+    <p class="fw-medium mb-0 text-nowrap fs-6">Hai messo mi piace a ${numberOfLike} brani</p>
+    <p class="text-secondary fw-light my-0 py-0">Di ${artistName}</p>
+    </div>
+    `
       const iLikeMobile = document.getElementById("brani-piacciono-mobile")
       iLikeMobile.innerHTML = `<div class="d-flex align-items-center mt-2 ms-2">
-        <div class="me-2">
-        <img src="${artistPicture}" alt="" class="rounded-circle" width="60px">
-        </div>
-        <div>
-        <p class="fw-medium mb-0 text-nowrap fs-6">Brani che ti piacciono</p>
-        <p class="text-secondary fw-light my-0 py-0">${numberOfLike} brani di ${artistName}</p>
-        </div>
-        </div>
-        `
+    <div class="me-2">
+    <img src="${artistPicture}" alt="" class="rounded-circle" width="60px">
+    </div>
+    <div>
+    <p class="fw-medium mb-0 text-nowrap fs-6">Brani che ti piacciono</p>
+    <p class="text-secondary fw-light my-0 py-0">${numberOfLike} brani di ${artistName}</p>
+    </div>
+    </div>
+    `
 
 
     })
@@ -359,4 +360,15 @@ butShuffle.addEventListener("click", function () {
   butShuffle.classList.toggle("text-success")
 })
 
+const playTheRightSong = async () => {
+  try {
+    const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
+    const data = await res.json()
+    console.log(data)
+  } catch (error) {
+    console.log('porcodio', error)
+  }
+}
+
+playTheRightSong()
 pageOnLoad(name_artist)
