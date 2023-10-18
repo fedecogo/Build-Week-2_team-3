@@ -3,6 +3,41 @@ const name_artist = addressBarContent.get("query");
 
 console.log(name_artist);
 
+//funzione per riempire correttamente il div current song al caricamento della pagina
+const currentSongDiv = document.getElementById('current-song')
+const pageOnLoad = async (query) => {
+  try {
+    const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
+    const data = await res.json()
+    const onloadImg = data.data[0].album.cover_small
+    const onloadArtistName = data.data[0].artist.name
+
+
+    currentSongDiv.innerHTML = `
+<div id="current-song-image" class="p-2 d-flex align-items-center">
+<img
+  src="${onloadImg}"
+  alt="song photo"
+  width="65px"
+/>
+</div>
+<div id="current-song-info">
+<h5>${onloadArtistName}</h5>
+</div>
+<div class="ms-3" id="cuoricino">
+<i class="bi bi-heart" onclick=miPiace(event)></i>
+</div>`
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
+const miPiace = function (e) {
+  e.target.classList.toggle('bi-heart')
+  e.target.classList.toggle('bi-heart-fill')
+}
+
 const getArtist = function (query) {
   fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
     .then((res) => {
@@ -324,3 +359,4 @@ butShuffle.addEventListener("click", function () {
   butShuffle.classList.toggle("text-success")
 })
 
+pageOnLoad(name_artist)
