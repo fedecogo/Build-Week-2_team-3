@@ -108,6 +108,8 @@ const deletePlaylist = function (e) {
 
 const modifyTitle = (e) => {
   const myDiv = e.target.closest(".playlist-item");
+  const itemMenu = myDiv.querySelector(".item-menu");
+  itemMenu.classList.add("d-none");
   const playlistTitle = myDiv.querySelector(".playlist-title");
   const inputElement = document.createElement("input");
 
@@ -126,12 +128,11 @@ const modifyTitle = (e) => {
       const newTitle = document.createElement("p");
       newTitle.innerText = inputElement.value;
       newTitle.classList.add("text-white", "fw-bold", "mb-0", "playlist-title");
-      const itemMenu = myDiv.querySelector(".item-menu");
 
-      itemMenu.classList.add("d-none");
       inputElement.replaceWith(newTitle);
       localStorage.setItem("playlistHTML", playlistContainer.innerHTML);
       renderPlaylist();
+      console.log(itemMenu);
     }
   });
 };
