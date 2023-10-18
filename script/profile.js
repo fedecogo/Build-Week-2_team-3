@@ -63,6 +63,14 @@ addPlaylistButton.addEventListener("click", () => {
   playlistContainer.appendChild(newDiv);
   localStorage.setItem("playlistCounter", playlistCounter);
   localStorage.setItem("playlistHTML", playlistContainer.innerHTML);
+  const playlists = Array.from(
+    document.getElementsByClassName("playlist-item")
+  );
+  for (const playlist of playlists) {
+    playlist.addEventListener("contextmenu", function () {
+      openItemMenu();
+    });
+  }
 });
 
 // APRE IL MENU NEL SINGOLO ELEMENTO PLAYLIST
@@ -82,28 +90,18 @@ const deletePlaylist = function (e) {
   const myDiv = e.target.closest(".playlist-item");
   myDiv.remove();
   localStorage.setItem("playlistHTML", playlistContainer.innerHTML);
-
   const playlists = Array.from(
-    playlistContainer.querySelectorAll(".playlist-item")
+    document.getElementsByClassName("playlist-item")
   );
 
-  for (const playlist of playlists) {
-    playlist.addEventListener("contextmenu", function (e) {
+  playlists.forEach((playlist) => {
+    playlist.addEventListener("contextmenu", (e) => {
+      console.log("ciao");
       openItemMenu(e);
     });
-  }
+  });
 };
 
-window.onload = (e) => {
-  const playlists = Array.from(
-    playlistContainer.querySelectorAll(".playlist-item")
-  );
-  for (const playlist of playlists) {
-    playlist.addEventListener("contextmenu", function (e) {
-      openItemMenu(e);
-    });
-  }
-};
 // HOME BUTTON
 
 homeButton.addEventListener("click", () => {
@@ -241,4 +239,14 @@ const editProfile = document.getElementById("edit-profile");
 editProfile.addEventListener("click", () => {
   makeDivAppear();
   openImageUploader();
+});
+
+// PLAYLISTS
+const playlists = Array.from(document.getElementsByClassName("playlist-item"));
+
+playlists.forEach((playlist) => {
+  playlist.addEventListener("contextmenu", (e) => {
+    console.log("ciao");
+    openItemMenu(e);
+  });
 });
