@@ -71,7 +71,7 @@
                     width="20px"
                     height="20px"
                   />
-                  <p class="ms-2">Brani che ti piacciono </p>
+                  <p class="ms-2">Brani che ti piacciono</p>
                 </div>
                 <div class="mt-1 d-flex">
                   <img
@@ -348,7 +348,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="d-flex justify-content-start text-white fw-bolder">
+                  <div
+                    class="d-flex justify-content-start text-white fw-bolder"
+                  >
                     <div class="mt-5" id="content-row">
                       <div
                         class="d-flex justify-content-start align-items-center mt-4 d-none d-md-block"
@@ -373,7 +375,8 @@
                   >
                     <div class="d-flex align-items-center order-1 order-md-0">
                       <i
-                        class="bi bi-shuffle d-md-none text-secondary me-3"
+                        class="bi bi-shuffle d-md-none text-secondary me-3 fs-2"
+                        id="shuffle"
                       ></i>
                       <i
                         class="bi bi-play-circle-fill fs-1 me-2"
@@ -393,8 +396,7 @@
                     </div>
                   </div>
                   <div class="d-md-none">
-                    <h4>Brani che ti piacciono</h4>
-                    <p>8brani di Ultimo</p>
+                    <div id="brani-piacciono-mobile"></div>
                   </div>
                   <div class="d-md-none d-flex">
                     <div
@@ -418,19 +420,10 @@
                     </div>
                     <div class="col-4 d-none d-md-block">
                       <h4>Brani che ti piacciono</h4>
-                      <div class="d-flex align-items-center" id="brani-piacciono-desktop">
-
-                         <div class="me-2">
-                          <img src="https://placekitten.com/30" alt="" class="rounded-circle" width="45px">
-                         </div>
-
-                         <div>
-                          <p class="fw-medium mb-0 text-nowrap fs-6">Hai messo mi piace a 11 brani</p>
-                          <p class="text-secondary fw-light my-0 py-0">Di Ultimo</p>
-                         </div>
-                       
-                      </div>
-                      
+                      <div
+                        class="d-flex align-items-center"
+                        id="brani-piacciono-desktop"
+                      ></div>
                     </div>
                   </div>
                   <div class="row">
@@ -700,6 +693,14 @@
           <i class="bi bi-arrows-angle-expand p-1"></i>
         </div>
       </div>
+    </div>
+    <div
+      class="d-flex justify-content-around text-white d-md-none"
+      id="footer-mobile"
+    >
+      <i class="bi bi-house-door-fill"></i>
+      <i class="bi bi-search"></i>
+      <i class="bi bi-collection-play-fill"></i>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

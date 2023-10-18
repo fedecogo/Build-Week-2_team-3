@@ -15,6 +15,7 @@ const getArtist = function (query) {
     .then((data) => {
       console.log(data);
 
+
       const contentRow = document.getElementById("h1_titolo");
       contentRow.innerHTML = "";
       const h1Element = document.createElement("h1");
@@ -83,7 +84,7 @@ const getArtist = function (query) {
       songDetails.innerHTML = songDetailsHTML;
       const wallpaperImg = document.getElementById("wallpaper-img");
       wallpaperImg.style.backgroundImage = `url('${data.data[0].artist.picture_xl}')`;
-     
+
       // aggiiungere albumalla row
       // da sistemare card per album
       // chiedere a stefano se serve unaltra fatch con  https://striveschool-api.herokuapp.com/api/deezer/album/75621062
@@ -134,6 +135,33 @@ const getArtist = function (query) {
 </audio>
   `;
       divAudio.appendChild(newDiv);
+
+      // CREAZIONE DINAMICA DEI BRANI CHE MI PIACCIONO
+      const artistName = data.data[0].artist.name
+      const artistPicture = data.data[0].artist.picture_small
+      const numberOfLike = Math.ceil(Math.random() * 15)
+      const iLike = document.getElementById("brani-piacciono-desktop")
+      iLike.innerHTML = `<div class="me-2">
+        <img src="${artistPicture}" alt="" class="rounded-circle" width="60px">
+        </div>
+        <div>
+        <p class="fw-medium mb-0 text-nowrap fs-6">Hai messo mi piace a ${numberOfLike} brani</p>
+        <p class="text-secondary fw-light my-0 py-0">Di ${artistName}</p>
+        </div>
+        `
+      const iLikeMobile = document.getElementById("brani-piacciono-mobile")
+      iLikeMobile.innerHTML = `<div class="d-flex align-items-center mt-2 ms-2">
+        <div class="me-2">
+        <img src="${artistPicture}" alt="" class="rounded-circle" width="60px">
+        </div>
+        <div>
+        <p class="fw-medium mb-0 text-nowrap fs-6">Brani che ti piacciono</p>
+        <p class="text-secondary fw-light my-0 py-0">${numberOfLike} brani di ${artistName}</p>
+        </div>
+        </div>
+        `
+
+
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -288,3 +316,11 @@ profileImageNavbar.src = profileImageLocalStorage
   : "http://placekitten.com/30/30";
 profileImageNavbar.style.width = "30px";
 profileImageNavbar.style.heigth = "30px";
+
+//button shuffle
+const butShuffle = document.getElementById("shuffle")
+butShuffle.addEventListener("click", function () {
+  butShuffle.classList.toggle("text-secondary")
+  butShuffle.classList.toggle("text-success")
+})
+

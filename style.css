@@ -231,10 +231,21 @@ button {
   transition: background-color 1s ease;
 }
 
+#wallpaper-img {
+  background-position-y: 27%;
+}
+
 #tutti-mobile {
   background-color: #1ED760;
 }
 
 .bottone-mobile {
   background-color: #161616;
+}
+
+#footer-mobile {
+  background-color: rgba(10, 10, 10, 0.125);
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
 }/*# sourceMappingURL=style.css.map */
