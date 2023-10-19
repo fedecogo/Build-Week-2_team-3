@@ -6,25 +6,25 @@ const toggleButton = document.getElementById("toggleButton");
 const searchBar = document.getElementById("searchBar");
 const searchButton = document.getElementById("searchButton");
 
-
 //Funzione che serve a far partire la canzone al click sul div
-let currentSongIndex = 0
+let currentSongIndex = 0;
 const singThisSong = function (i) {
-  currentSongIndex = i
-  getSong(albumId, currentSongIndex)
-}
-
+  currentSongIndex = i;
+  getSong(albumId, currentSongIndex);
+};
 
 //funzione per riempire correttamente il div current song al caricamento della pagina
-const currentSongDiv = document.getElementById('current-song')
+const currentSongDiv = document.getElementById("current-song");
 const pageOnLoad = async (query) => {
   try {
-    const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${query}`)
-    const data = await res.json()
-    const onloadImg = data.tracks.data[0].album.cover
-    const onloadSongTitle = data.title
-    const onloadArtistName = data.tracks.data[0].artist.name
-    console.log(data.tracks.data[0])
+    const res = await fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/album/${query}`
+    );
+    const data = await res.json();
+    const onloadImg = data.tracks.data[0].album.cover;
+    const onloadSongTitle = data.title;
+    const onloadArtistName = data.tracks.data[0].artist.name;
+    console.log(data.tracks.data[0]);
 
     currentSongDiv.innerHTML = `
 <div id="current-song-image" class="p-2 d-flex align-items-center">
@@ -40,18 +40,17 @@ const pageOnLoad = async (query) => {
 </div>
 <div class="ms-3" id="cuoricino">
 <i class="bi bi-heart" onclick=miPiace(event)></i>
-</div>`
+</div>`;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-
-}
+};
 
 const miPiace = function (e) {
-  e.target.classList.toggle('bi-heart')
-  e.target.classList.toggle('bi-heart-fill')
-  e.target.classList.toggle('text-success')
-}
+  e.target.classList.toggle("bi-heart");
+  e.target.classList.toggle("bi-heart-fill");
+  e.target.classList.toggle("text-success");
+};
 
 toggleButton.addEventListener("click", () => {
   searchBar.classList.toggle("hidden");
@@ -145,6 +144,7 @@ const getAlbum = function (query) {
         <div class="col-2 ps-4">${durataFormattata} min</div>
         </div>`;
         tracksContainer.appendChild(canzone);
+        generateImage();
       });
       //       // prova
       //       const divAudio = document.getElementById('appendi_qui')
@@ -314,4 +314,114 @@ if (profileImageLocalStorage) {
   profileImageNavbar.classList.remove("d-none");
 }
 
-pageOnLoad(albumId)
+// crea un canvas con l'immagine e ne ritorno il context 2d
+const draw = function (img) {
+  let canvas = document.createElement("canvas");
+  let c = canvas.getContext("2d");
+  c.width = canvas.width = img.clientWidth;
+  c.height = canvas.height = img.clientHeight;
+  c.clearRect(0, 0, c.width, c.height);
+  c.drawImage(img, 0, 0, img.clientWidth, img.clientHeight);
+  return c;
+};
+
+// scompone pixel per pixel e ritorna un oggetto con una mappa della loro frequenza nell'immagine
+const getColors = function (c) {
+  let col,
+    colors = {};
+  let pixels, r, g, b, a;
+  r = g = b = a = 0;
+  pixels = c.getImageData(0, 0, c.width, c.height);
+  for (let i = 0, data = pixels.data; i < data.length; i += 4) {
+    r = data[i];
+    g = data[i + 1];
+    b = data[i + 2];
+    a = data[i + 3];
+    if (a < 255 / 2) continue;
+    col = rgbToHex(r, g, b);
+    if (!colors[col]) colors[col] = 0;
+    colors[col]++;
+  }
+  return colors;
+};
+
+// trova il colore più ricorrente data una mappa di frequenza dei colori
+const findMostRecurrentColor = function (colorMap) {
+  let highestValue = 0;
+  let mostRecurrent = null;
+  for (const hexColor in colorMap) {
+    if (colorMap[hexColor] > highestValue) {
+      mostRecurrent = hexColor;
+      highestValue = colorMap[hexColor];
+    }
+  }
+  return mostRecurrent;
+};
+
+// converte un valore in rgb a un valore esadecimale
+const rgbToHex = function (r, g, b) {
+  if (r > 255 || g > 255 || b > 255) {
+    throw "Invalid color component";
+  } else {
+    return ((r << 16) | (g << 8) | b).toString(16);
+  }
+};
+
+// inserisce degli '0' se necessario davanti al colore in esadecimale per renderlo di 6 caratteri
+const pad = function (hex) {
+  return ("000000" + hex).slice(-6);
+};
+
+const generateImage = function () {
+  // genero dinamicamente un tag <img /> in un <div> vuoto
+  const imgForAvgColor = document.querySelector("#image img");
+  console.log(imgForAvgColor);
+  urlAlbumCover = imgForAvgColor.src;
+  let imageSrc = urlAlbumCover;
+  const newContainer = document.createElement("div");
+  newContainer.style.position = "absolute";
+  newContainer.style.right = "2000px";
+  const body = document.getElementsByTagName("body")[0];
+  console.log(body);
+  body.appendChild(newContainer);
+
+  // l'event listener "onload" nel tag <img /> si occupa di lanciare la funzione "start()" solamente
+  // al termine del caricamento della src
+  newContainer.innerHTML = `
+    <img
+    style="position: absolute; "
+      src=${imageSrc}
+      id="img"
+      crossorigin="anonymous"
+      onload="start()"
+    />`;
+};
+
+const start = function () {
+  // prendo il riferimento all'immagine del dom
+  let imgReference = document.querySelector("#img");
+
+  // creo il context 2d dell'immagine selezionata
+  let context = draw(imgReference);
+
+  // creo la mappa dei colori più ricorrenti nell'immagine
+  let allColors = getColors(context);
+
+  // trovo colore più ricorrente in esadecimale
+  let mostRecurrent = findMostRecurrentColor(allColors);
+
+  // se necessario, aggiunge degli '0' per rendere il risultato un valido colore esadecimale
+  let mostRecurrentHex = pad(mostRecurrent);
+
+  // console.log del risultato
+  console.log(mostRecurrentHex);
+  const albumSection = Array.from(document.querySelectorAll("#color > div"));
+  for (const section of albumSection) {
+    section.classList.remove("bg-secondary");
+    section.style.backgroundColor = `#${mostRecurrentHex}`;
+  }
+
+  console.log(albumSection);
+};
+
+pageOnLoad(albumId);
