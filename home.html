@@ -18,7 +18,7 @@
   </head>
   <body>
     <div id="container">
-      <div id="searchBar" class="hidden">
+      <div id="searchBar" class="d-none ">
         <input type="text" placeholder="Cerca..." />
         <button id="searchButton">Cerca</button>
       </div>
@@ -39,8 +39,12 @@
                   </a>
                 </div>
                 <div class="mt-1 d-flex" id="toggleButton">
-                  <i class="bi bi-search mt-1 pointer"></i>
-                  <p class="ms-2 fs-5 pointer">Cerca</p>
+                  <a href="search.html">
+                    <div><i class="bi bi-search mt-1"></i></div>
+                  </a>
+                  <a href="search.html">
+                    <div><p class="ms-2 mt-1 fs-5">Cerca</p></div>
+                  </a>
                 </div>
                 <div class="mt-1 d-flex">
                   <i class="bi bi-list mt-1 pointer"></i>
@@ -948,7 +952,9 @@
                 </div>
                 <div class="row text-secondary mt-4 g-0 pb-5">
                   <div class="col">
-                    <ul class="list-unstyled d-flex gap-3 flex-wrap flex-lg-nowrap pb-5 ">
+                    <ul
+                      class="list-unstyled d-flex gap-3 flex-wrap flex-lg-nowrap pb-5"
+                    >
                       <li>Informazioni legali</li>
                       <li>Centro sulla privacy</li>
                       <li>Informativa sulla privacy</li>

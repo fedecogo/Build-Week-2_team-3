@@ -17,708 +17,711 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="container">
-      <div id="searchBar" class="hidden">
-        <input type="text" placeholder="Cerca..." />
-        <button id="searchButton">Cerca</button>
-      </div>
-      <div class="row">
-        <div class="col-3 m-0 d-none d-md-block" id="aside-left">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 mb-3">
-                <div class="mt-1">
-                  <i class="bi bi-three-dots fs-5"></i>
-                </div>
-                <div class="mt-1" id="backtohome">
-                  <a href="home.html">
-                    <div><i class="bi bi-house mt-1"></i></div>
-                  </a>
-                  <a href="home.html">
-                    <div><p class="ms-2 mt-1 fs-5">Home</p></div>
-                  </a>
-                </div>
-                <div class="mt-1 d-flex" id="toggleButton">
-                  <i class="bi bi-search mt-1"></i>
-                  <p class="ms-2 fs-5">Cerca</p>
-                </div>
-                <div class="mt-1 d-flex">
-                  <i class="bi bi-list mt-1"></i>
-                  <p class="ms-2 fs-5">La tua libreria</p>
-                </div>
+    <div class="row">
+      <div class="col-3 m-0 d-none d-md-block" id="aside-left">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mb-3" id="hover">
+              <div class="mt-1">
+                <i class="bi bi-three-dots fs-5"></i>
               </div>
-              <div class="col-12 mb-3">
-                <div class="mt-1 d-flex">
-                  <img
-                    src="assets/imgs/plus.png"
-                    alt="Crea Playlist"
-                    width="20px"
-                    height="20px"
-                  />
-                  <p class="ms-2">Crea La Tua Playlist</p>
-                </div>
-                <div class="mt-1 d-flex">
-                  <img
-                    src="assets/imgs/cuore preferiti.png"
-                    alt="Crea Playlist"
-                    width="20px"
-                    height="20px"
-                  />
-                  <p class="ms-2">Brani che ti piacciono</p>
-                </div>
-                <div class="mt-1 d-flex">
-                  <img
-                    src="assets/imgs/podcast.png"
-                    alt="Crea Playlist"
-                    width="20px"
-                    height="20px"
-                  />
-                  <p class="ms-2">I Tuoi Episodi</p>
-                </div>
+              <div class="mt-1" id="backtohome">
+                <a href="home.html">
+                  <div><i class="bi bi-house mt-1"></i></div>
+                </a>
+                <a href="home.html">
+                  <div><p class="ms-2 mt-1 fs-5">Home</p></div>
+                </a>
               </div>
-              <hr />
-              <div id="playlist" class="col-12">
-                <button type="button" class="btn btn-outline-success" id="azz">
-                  <small>Albums</small>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-outline-success ms-2"
-                  id="azz2"
-                >
-                  <small>Playlists</small>
-                </button>
-                <div id="albumlevate" class="mt-3"></div>
-                <div id="levate" class="mt-3">
-                  <!-- spazio per playlist -->
-                  <p id="1riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-31.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Metal Playlist
-                  </p>
-                  <p id="2riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-9.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Shower Songs
-                  </p>
-                  <p id="3riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-18.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Summer Vibes
-                  </p>
-                  <p id="4riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-19.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Street Playlist
-                  </p>
-                  <p id="5riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-27.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Party Hits
-                  </p>
-                  <p id="6riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-45.png"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Daily Drive Music
-                  </p>
-                  <p id="7riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-40.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Frequency
-                  </p>
-                  <p id="8riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-28.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    AfroHits
-                  </p>
-                  <p id="9riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-5.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Viva Latino
-                  </p>
-                  <p id="10riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-6.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Jazz Vibes
-                  </p>
-                  <p id="11riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-2.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    POV : La tua Estate è un film
-                  </p>
-                  <p id="12riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-3.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Massima Concentrazione
-                  </p>
-                  <p id="13riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-16.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Soul Lounge
-                  </p>
-                  <p id="14riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-8.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    SangueGiovane
-                  </p>
-                  <p id="15riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-11.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Imagine Dragons
-                  </p>
-                  <p id="16riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-13.jpeg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Sunset
-                  </p>
-                  <p id="17riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-14.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Workout a Casa
-                  </p>
-                  <p id="18riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-22.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Indigo
-                  </p>
-                  <p id="19riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-5.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    LO-FI Beats
-                  </p>
-                  <p id="20riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/main/image-12.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    Wroom
-                  </p>
-                  <p id="21riga" class="mt-1">
-                    <img
-                      class="me-2"
-                      src="assets/imgs/search/image-12.jpg"
-                      width="30px"
-                      height="30px"
-                      alt="playlistimg"
-                    />
-                    10s All Out
-                  </p>
-                </div>
+              <div class="mt-1 d-flex" id="toggleButton">
+                <a href="search.html">
+                  <div><i class="bi bi-search mt-1"></i></div>
+                </a>
+                <a href="search.html">
+                  <div><p class="ms-2 mt-1 fs-5">Cerca</p></div>
+                </a>
+              </div>
+              <div class="mt-1 d-flex">
+                <i class="bi bi-list mt-1 pointer"></i>
+                <p class="ms-2 fs-5 pointer">La tua libreria</p>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="mt-1 d-flex pointer">
+                <img
+                  src="assets/imgs/plus.png"
+                  alt="Crea Playlist"
+                  width="20px"
+                  height="20px"
+                />
+                <p class="ms-2">Crea La Tua Playlist</p>
+              </div>
+              <div class="mt-1 d-flex pointer">
+                <img
+                  src="assets/imgs/cuore preferiti.png"
+                  alt="Crea Playlist"
+                  width="20px"
+                  height="20px"
+                />
+                <p class="ms-2">Brani che ti piacciono</p>
+              </div>
+              <div class="mt-1 d-flex pointer">
+                <img
+                  src="assets/imgs/podcast.png"
+                  alt="Crea Playlist"
+                  width="20px"
+                  height="20px"
+                />
+                <p class="ms-2">I Tuoi Episodi</p>
+              </div>
+            </div>
+            <hr />
+            <div id="playlist" class="col-12">
+              <button type="button" class="btn btn-outline-success" id="azz">
+                <small>Albums</small>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-success ms-2"
+                id="azz2"
+              >
+                <small>Playlists</small>
+              </button>
+              <div id="albumlevate" class="mt-3"></div>
+              <div id="levate" class="mt-3">
+                <!-- spazio per playlist -->
+                <p id="1riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-31.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Metal Playlist
+                </p>
+                <p id="2riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-9.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Shower Songs
+                </p>
+                <p id="3riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-18.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Summer Vibes
+                </p>
+                <p id="4riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-19.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Street Playlist
+                </p>
+                <p id="5riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-27.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Party Hits
+                </p>
+                <p id="6riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-45.png"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Daily Drive Music
+                </p>
+                <p id="7riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-40.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Frequency
+                </p>
+                <p id="8riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-28.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  AfroHits
+                </p>
+                <p id="9riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-5.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Viva Latino
+                </p>
+                <p id="10riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-6.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Jazz Vibes
+                </p>
+                <p id="11riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-2.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  POV : La tua Estate è un film
+                </p>
+                <p id="12riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-3.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Massima Concentrazione
+                </p>
+                <p id="13riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-16.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Soul Lounge
+                </p>
+                <p id="14riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-8.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  SangueGiovane
+                </p>
+                <p id="15riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="https://i0.wp.com/queen.pl/wp-content/uploads/2018/11/bohemian-rhapsody-ost-ok%C5%82adka.jpg?resize=500%2C445&ssl=1"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Queen
+                </p>
+                <p id="16riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-13.jpeg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Sunset
+                </p>
+                <p id="17riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-14.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Workout a Casa
+                </p>
+                <p id="18riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-22.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Indigo
+                </p>
+                <p id="19riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-5.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  LO-FI Beats
+                </p>
+                <p id="20riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/main/image-12.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  Wroom
+                </p>
+                <p id="21riga" class="mt-1">
+                  <img
+                    class="me-2"
+                    src="assets/imgs/search/image-12.jpg"
+                    width="30px"
+                    height="30px"
+                    alt="playlistimg"
+                  />
+                  10s All Out
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col m-0 p-0" id="centro">
-          <main class="bg-black d-flex justify-content-center">
-            <div class="container mx-0">
-              <div class="row justify-content-between align-items-center my-4">
-                <div class="col-12 col-lg-6 d-flex">
-                  <!-- icone frecce -->
-                  <div
-                    class="bg-dark d-flex align-items-center justify-content-center me-2"
-                    style="border-radius: 50%; width: 32px; height: 32px"
-                  >
-                    <i class="bi bi-chevron-left text-white"></i>
-                  </div>
-                  <div
-                    class="bg-dark d-flex align-items-center justify-content-center"
-                    style="border-radius: 50%; width: 32px; height: 32px"
-                  >
-                    <i class="bi bi-chevron-right text-white"></i>
-                  </div>
-                  <div class="d-flex align-items-center ms-5">
-                    <label for="search" class="text-white">
-                      <i class="bi bi-search me-2"></i>
-                    </label>
-                    <input
-                      type="search"
-                      id="search"
-                      class="bg-secondary rounded-pill text-white-50"
-                    />
-                  </div>
-                </div>
-
-                <div class="col-6 text-end">
-                  <!-- icona profilo -->
-                  <div class="dropdown d-none d-md-block">
-                    <a
-                      class="btn btn-dark rounded-pill dropdown-toggle py-0 ps-0"
-                      href="#"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <img
-                        src="http://placekitten.com/30/30"
-                        alt="profilo"
-                        class="rounded-circle p-1"
-                      />
-                      <small class="fw-bold"> Profilo</small>
-                    </a>
-
-                    <ul class="dropdown-menu bg-black">
-                      <li>
-                        <a class="dropdown-item text-white" href="#">Action</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item text-white" href="#"
-                          >Another action</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item text-white" href="#"
-                          >Something else here</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!--  fine profilo e frecces -->
-              <!-- INIZIO CARDS RICERCA -->
-              <div class="row">
-                <div class="col-6">
-                  <div class="text-white bg-primary mb-3">
-                    <h3>Nome Playlist</h3>
-                    <img
-                      src="assets/imgs/search/image-1.jpeg"
-                      alt="imagesearch"
-                      class="overflow-hidden"
-                    />
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="card text-bg-primary mb-3">
-                    <h5 class="card-header">Nome Playlist</h5>
-                    <img
-                      src="assets/imgs/search/image-1.jpeg"
-                      alt="imagesearch"
-                      class="overflow-hidden"
-                    />
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card text-bg-primary mb-3">
-                    <h5 class="card-header">Nome Playlist</h5>
-                    <img
-                      src="assets/imgs/search/image-1.jpeg"
-                      alt="imagesearch"
-                      class="overflow-hidden"
-                    />
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card text-bg-primary mb-3">
-                    <h5 class="card-header">Nome Playlist</h5>
-                    <img
-                      src="assets/imgs/search/image-1.jpeg"
-                      alt="imagesearch"
-                      class="overflow-hidden"
-                    />
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card text-bg-primary mb-3">
-                    <h5 class="card-header">Nome Playlist</h5>
-                    <img
-                      src="assets/imgs/search/image-1.jpeg"
-                      alt="imagesearch"
-                      class="overflow-hidden"
-                    />
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <!-- INIZIO FOOTER -->
-              <footer class="ms-2 ms-md-0 mb-5">
+      </div>
+      <div class="col m-0 p-0" id="centro">
+        <main class="bg-black d-flex justify-content-center">
+          <div class="container mx-0">
+            <div class="row justify-content-between align-items-center my-4">
+              <div class="col-12 col-lg-6 d-flex">
+                <!-- icone frecce -->
                 <div
-                  class="row flex-column flex-md-row text-white pb-4 border-bottom border-secondary"
+                  class="bg-dark d-flex align-items-center justify-content-center me-2"
+                  style="border-radius: 50%; width: 32px; height: 32px"
                 >
-                  <div class="col-2">
-                    <p class="mb-0 fw-bold">Azienda</p>
-                    <ul class="text-white-50 list-unstyled">
-                      <li>Chi siamo</li>
-                      <li>Opportunità di lavoro</li>
-                      <li>For the Record</li>
-                    </ul>
-                  </div>
-                  <div class="col-2">
-                    <p class="mb-0 fw-bold">Community</p>
-                    <ul class="text-white-50 list-unstyled">
-                      <li>Per artisti</li>
-                      <li>Sviluppatori</li>
-                      <li>Pubblicità</li>
-                      <li>Investitori</li>
-                      <li>Venditori</li>
-                    </ul>
-                  </div>
-                  <div class="col-2">
-                    <p class="mb-0 fw-bold">Link utili</p>
-                    <ul class="text-white-50 list-unstyled">
-                      <li>Assistenza</li>
-                      <li>App per cellulare gratuita</li>
-                      <li>Diritti del consumatore</li>
-                    </ul>
-                  </div>
-                  <div class="col fs-6 d-flex gap-4 justify-content-end">
-                    <div class="">
-                      <i class="bi bi-instagram"></i>
-                    </div>
-                    <i class="bi bi-twitter"></i>
-                    <i class="bi bi-facebook"></i>
-                  </div>
+                  <i class="bi bi-chevron-left text-white"></i>
                 </div>
-                <div class="row text-secondary mt-4 g-0 pb-5">
-                  <div class="col">
-                    <ul
-                      class="list-unstyled d-flex gap-3 flex-wrap flex-lg-nowrap pb-5"
-                    >
-                      <li>Informazioni legali</li>
-                      <li>Centro sulla privacy</li>
-                      <li>Informativa sulla privacy</li>
-                      <li>Impostazioni cookie</li>
-                      <li>Info annunci</li>
-                      <li>Accessibilità</li>
-                    </ul>
-                  </div>
-                  <div class="col-4 text-end">
-                    <p>© 2023 Spotify AB</p>
-                  </div>
+                <div
+                  class="bg-dark d-flex align-items-center justify-content-center"
+                  style="border-radius: 50%; width: 32px; height: 32px"
+                >
+                  <i class="bi bi-chevron-right text-white"></i>
                 </div>
-              </footer>
-              <!-- FINE FOOTER -->
-            </div>
-          </main>
-        </div>
-        <div class="col-2 m-0 d-none d-lg-block" id="aside-right">
-          <div class="container">
-            <div class="row">
-              <div
-                class="col-12 d-flex justify-content-between align-items-center"
-              >
-                <h6>Attività amici</h6>
-
-                <i class="bi bi-person-fill-add p-2"></i>
-                <i class="bi bi-x-lg me-2" id="x"></i>
-              </div>
-              <div
-                id="momo"
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
-                    <img
-                      src="assets/imgs/search/us/WhatsApp Image 2023-10-19 at 11.24.32.jpeg"
-                      width="35px"
-                      alt="album-image"
-                    />
-                  </div>
-                  <div class="ms-1">
-                    <p>Mohamed Ezwawi</p>
-                    <p>The Cranberries</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>Zombie</p>
-                    </div>
-                  </div>
-                </div>
-                <div><p>2 ore</p></div>
-              </div>
-              <div
-                id="federico"
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
-                    <img
-                      src="assets/imgs/search/us/WhatsApp Image 2023-10-19 at 11.18.42.jpeg"
-                      width="35px"
-                      alt="album-image"
-                    />
-                  </div>
-                  <div class="ms-1">
-                    <p>Federico Capizzi</p>
-                    <p>L.A Womans</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>Been Down so Long</p>
-                    </div>
-                  </div>
-                </div>
-                <div><p>1 ore</p></div>
-              </div>
-              <div
-                id="giulia"
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
-                    <img
-                      src="assets/imgs/search/us/96354203_10223407581002483_8702526627088695296_n.jpg"
-                      width="35px"
-                      alt="album-image"
-                    />
-                  </div>
-                  <div class="ms-1">
-                    <p>Giulia Silvestrini</p>
-                    <p>Saliva</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>Always</p>
-                    </div>
-                  </div>
-                </div>
-                <div><p>6 ore</p></div>
-              </div>
-              <div
-                id="angi"
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
-                    <img
-                      src="assets/imgs/search//us/WhatsApp Image 2023-10-19 at 11.21.28.jpeg"
-                      width="35px"
-                      alt="album-image"
-                    />
-                  </div>
-                  <div class="ms-1">
-                    <p>Angela Prestano</p>
-                    <p>Bresh & Pinguini Tattici Nucleari</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>Nightmare</p>
-                    </div>
-                  </div>
-                </div>
-                <div><p>3 ore</p></div>
-              </div>
-              <div
-                id="salvatore"
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
-                    <img
-                      src="assets/imgs/search/us/WhatsApp Image 2023-10-19 at 10.26.48.jpg"
-                      width="35px"
-                      alt="album-image"
-                    />
-                  </div>
-                  <div class="ms-1">
-                    <p>Salvatore Assennato</p>
-                    <p>Eros Ramazzotti</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>Più Bella Cosa</p>
-                    </div>
-                  </div>
-                </div>
-                <div><p>2 ore</p></div>
               </div>
 
-              <div
-                id="guido"
-                class="col-12 d-flex justify-content-between align-items-start mb-3"
-              >
-                <div class="d-flex">
-                  <div>
+              <div class="col-6 text-end">
+                <!-- icona profilo -->
+                <div class="dropdown d-none d-md-block">
+                  <a
+                    class="btn btn-dark rounded-pill dropdown-toggle py-0 ps-0"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     <img
-                      src="assets/imgs/search/us/WhatsApp Image 2023-10-19 at 12.24.26.jpeg"
-                      width="35px"
-                      alt="album-image"
+                      src="http://placekitten.com/30/30"
+                      alt="profilo"
+                      class="rounded-circle p-1"
                     />
-                  </div>
-                  <div class="ms-1">
-                    <p>Guido Masi</p>
-                    <p>Smash Mouth</p>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <i id="music-i" class="bi bi-music-note-beamed"></i>
-                      </div>
-                      <p>All Star</p>
-                    </div>
-                  </div>
+                    <small class="fw-bold"> Profilo</small>
+                  </a>
+
+                  <ul class="dropdown-menu bg-black text-white">
+                    <li>
+                      <a class="dropdown-item text-white" href="profile.html"
+                        >Profilo</a
+                      >
+                    </li>
+
+                    <li>
+                      <a class="dropdown-item text-white" href="#"
+                        >Another action</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item text-white" href="#"
+                        >Something else here</a
+                      >
+                    </li>
+                  </ul>
                 </div>
-                <div><p>4 ore</p></div>
               </div>
             </div>
+
+            <!--  fine profilo e frecces -->
+
+            <!-- INPUT RICERCA -->
+            <div class="row text-center">
+              <form class="input-group mb-5" id="form">
+                <input
+                  id="barra"
+                  type="text"
+                  class="form-control bg-dark text-white"
+                  placeholder="Cerca qui"
+                  aria-label="Cerca qui"
+                  aria-describedby="bottone"
+                />
+                <button
+                  class="btn btn-outline-secondary"
+                  type="submit"
+                  id="bottone"
+                >
+                  <i class="bi bi-search text-white"></i>
+                </button>
+              </form>
+            </div>
+            <!-- INIZIO CARDS RICERCA -->
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+              <div class="col mb-2">
+                <div class="card bg-primary flex-row flex-md-column px-2">
+                  <div class="text-white mb-3 text-end">
+                    <h3 class="text-center text-md-start">Dissect</h3>
+                    <img
+                      src="assets/imgs/search/image-2.jpg"
+                      alt="imagesearch"
+                      class="mw-100"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-2">
+                <div class="card bg-secondary flex-row flex-md-column px-2">
+                  <div class="text-white mb-3 text-end">
+                    <h3 class="text-center text-md-start">Beast Mode</h3>
+                    <img
+                      src="assets/imgs/search/image-8.jpg"
+                      alt="imagesearch"
+                      class="w-100"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-2">
+                <div class="card bg-warning flex-row flex-md-column px-2">
+                  <div class="text-white mb-3 text-end">
+                    <h3 class="text-center text-md-start">Blues</h3>
+                    <img
+                      src="assets/imgs/search/image-36.jpg"
+                      alt="imagesearch"
+                      class="mw-100"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-2">
+                <div class="card bg-danger flex-row flex-md-column px-2">
+                  <div class="text-white mb-3 text-end">
+                    <h3 class="text-center text-md-start">Rock Playlist</h3>
+                    <img
+                      src="assets/imgs/search/image-7.jpg"
+                      alt="imagesearch"
+                      class="mw-100"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-2">
+                <div
+                  class="card bg-success-subtle flex-row flex-md-column px-2"
+                >
+                  <div class="text-secondary mb-3 text-end">
+                    <h3 class="text-center text-md-start">Pollen</h3>
+                    <img
+                      src="assets/imgs/search/image-3.jpg"
+                      alt="imagesearch"
+                      class="mw-100"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-2">
+                <div class="card bg-info flex-row flex-md-column px-2">
+                  <div class="text-white mb-3 text-end">
+                    <h3 class="text-center text-md-start">Out Now</h3>
+                    <img
+                      src="assets/imgs/search/image-16.jpg"
+                      alt="imagesearch"
+                      class="mw-100"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-2">
+                <div class="card bg-success flex-row flex-md-column px-2">
+                  <div class="text-white mb-3 text-end">
+                    <h3 class="text-center text-md-start">Nu-Funk</h3>
+                    <img
+                      src="assets/imgs/search/image-32.jpg"
+                      alt="imagesearch"
+                      class="mw-100"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-5">
+                <div class="card bg-primary flex-row flex-md-column px-2">
+                  <div class="text-white mb-3 text-end">
+                    <h3 class="text-center text-md-start">Friday</h3>
+                    <img
+                      src="assets/imgs/search/image-26.jpg"
+                      alt="imagesearch"
+                      class="mw-100"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--  -->
+            <!-- INIZIO FOOTER -->
+            <footer class="ms-2 ms-md-0 mb-3">
+              <div
+                class="row flex-column flex-md-row text-white pb-4 border-bottom border-secondary"
+              >
+                <div class="col-2">
+                  <p class="mb-0 fw-bold">Azienda</p>
+                  <ul class="text-white-50 list-unstyled">
+                    <li>Chi siamo</li>
+                    <li>Opportunità di lavoro</li>
+                    <li>For the Record</li>
+                  </ul>
+                </div>
+                <div class="col-2">
+                  <p class="mb-0 fw-bold">Community</p>
+                  <ul class="text-white-50 list-unstyled">
+                    <li>Per artisti</li>
+                    <li>Sviluppatori</li>
+                    <li>Pubblicità</li>
+                    <li>Investitori</li>
+                    <li>Venditori</li>
+                  </ul>
+                </div>
+                <div class="col-2">
+                  <p class="mb-0 fw-bold">Link utili</p>
+                  <ul
+                    class="text-white-50 list-unstyled flex-column flex-md-row"
+                  >
+                    <li>Assistenza</li>
+                    <li>App per cellulare gratuita</li>
+                    <li>Diritti del consumatore</li>
+                  </ul>
+                </div>
+                <div class="col fs-6 d-flex gap-4 justify-content-end">
+                  <div class="">
+                    <i class="bi bi-instagram"></i>
+                  </div>
+                  <i class="bi bi-twitter"></i>
+                  <i class="bi bi-facebook"></i>
+                </div>
+              </div>
+              <div class="row text-secondary mt-4 g-0 pb-5">
+                <div class="col">
+                  <ul
+                    class="list-unstyled d-flex gap-3 flex-wrap flex-lg-nowrap pb-5"
+                  >
+                    <li>Informazioni legali</li>
+                    <li>Centro sulla privacy</li>
+                    <li>Informativa sulla privacy</li>
+                    <li>Impostazioni cookie</li>
+                    <li>Info annunci</li>
+                    <li>Accessibilità</li>
+                  </ul>
+                </div>
+                <div class="col-4 text-end">
+                  <p>© 2023 Spotify AB</p>
+                </div>
+              </div>
+            </footer>
+            <!-- FINE FOOTER -->
           </div>
-        </div>
+        </main>
       </div>
-    </div>
-    <!-- parte fissa sotto -->
-    <div id="music-player" class="position-fixed bottom-0 color-danger">
-      <div class="d-flex justify-content-between align-items-center">
-        <div id="current-song" class="d-flex p-2 align-items-center">
-          <div id="current-song-image" class="p-2 d-flex align-items-center">
-            <img
-              src="assets/imgs/main/image-12.jpg"
-              alt="song photo"
-              width="65px"
-            />
-          </div>
-          <div id="current-song-info">
-            <h5>Viva la vida</h5>
-            <h6>Ciao caro</h6>
-          </div>
-          <div id="cuoricino" class="ms-3">
-            <i class="bi bi-heart"></i>
-          </div>
-        </div>
-        <div>
-          <div class="d-flex align-items-center">
-            <i class="bi bi-shuffle p-1"></i>
-            <i class="bi bi-chevron-double-left p-1"></i>
-            <div class="fs-3 mx-2">
-              <i class="bi bi-play-circle"></i>
-            </div>
-            <i class="bi bi-chevron-double-right p-1"></i>
-            <i class="bi bi-arrow-repeat p-1"></i>
-          </div>
-          <div
-            class="progress"
-            role="progressbar"
-            aria-label="Animated striped example"
-            aria-valuenow="75"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
+      <div class="col-2 m-0 d-none d-lg-block" id="aside-right">
+        <div class="container">
+          <div class="row">
             <div
-              class="progress-bar progress-bar-striped progress-bar-animated"
-              style="width: 75%"
-            ></div>
-          </div>
-        </div>
-        <div class="d-flex p-2 align-items-center">
-          <i class="bi bi-brush p-1"></i>
-          <i class="bi bi-list p-1"></i>
-          <i class="bi bi-pc-display p-1"></i>
-          <i class="bi bi-volume-up-fill p-1"></i>
-          <div class="volume-control">
-            <div class="volume-slider">
-              <input
-                type="range"
-                id="volume-range"
-                min="0"
-                max="100"
-                step="1"
-                value="30"
-              />
+              class="col-12 d-flex justify-content-between align-items-center"
+            >
+              <h6>Attività amici</h6>
+
+              <i class="bi bi-person-fill-add p-2"></i>
+              <i class="bi bi-x-lg me-2" id="x"></i>
+            </div>
+            <div
+              id="momo"
+              class="col-12 d-flex justify-content-between align-items-start mb-3"
+            >
+              <div class="d-flex">
+                <div>
+                  <img
+                    src="assets/imgs/search/us/WhatsApp Image 2023-10-19 at 11.24.32.jpeg"
+                    width="35px"
+                    alt="album-image"
+                  />
+                </div>
+                <div class="ms-1">
+                  <p>Mohamed Ezwawi</p>
+                  <p>The Cranberries</p>
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i id="music-i" class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <p>Zombie</p>
+                  </div>
+                </div>
+              </div>
+              <div><p>2 ore</p></div>
+            </div>
+            <div
+              id="federico"
+              class="col-12 d-flex justify-content-between align-items-start mb-3"
+            >
+              <div class="d-flex">
+                <div>
+                  <img
+                    src="assets/imgs/search/us/WhatsApp Image 2023-10-19 at 11.18.42.jpeg"
+                    width="35px"
+                    alt="album-image"
+                  />
+                </div>
+                <div class="ms-1">
+                  <p>Federico Capizzi</p>
+                  <p>L.A Womans</p>
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i id="music-i" class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <p>Been Down so Long</p>
+                  </div>
+                </div>
+              </div>
+              <div><p>1 ore</p></div>
+            </div>
+            <div
+              id="giulia"
+              class="col-12 d-flex justify-content-between align-items-start mb-3"
+            >
+              <div class="d-flex">
+                <div>
+                  <img
+                    src="assets/imgs/search/us/96354203_10223407581002483_8702526627088695296_n.jpg"
+                    width="35px"
+                    alt="album-image"
+                  />
+                </div>
+                <div class="ms-1">
+                  <p>Giulia Silvestrini</p>
+                  <p>Saliva</p>
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i id="music-i" class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <p>Always</p>
+                  </div>
+                </div>
+              </div>
+              <div><p>6 ore</p></div>
+            </div>
+            <div
+              id="angi"
+              class="col-12 d-flex justify-content-between align-items-start mb-3"
+            >
+              <div class="d-flex">
+                <div>
+                  <img
+                    src="assets/imgs/search//us/WhatsApp Image 2023-10-19 at 11.21.28.jpeg"
+                    width="35px"
+                    alt="album-image"
+                  />
+                </div>
+                <div class="ms-1">
+                  <p>Angela Prestano</p>
+                  <p>Bresh & Pinguini Tattici Nucleari</p>
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i id="music-i" class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <p>Nightmare</p>
+                  </div>
+                </div>
+              </div>
+              <div><p>3 ore</p></div>
+            </div>
+            <div
+              id="salvatore"
+              class="col-12 d-flex justify-content-between align-items-start mb-3"
+            >
+              <div class="d-flex">
+                <div>
+                  <img
+                    src="assets/imgs/search/us/WhatsApp Image 2023-10-19 at 10.26.48.jpg"
+                    width="35px"
+                    alt="album-image"
+                  />
+                </div>
+                <div class="ms-1">
+                  <p>Salvatore Assennato</p>
+                  <p>Eros Ramazzotti</p>
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i id="music-i" class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <p>Più Bella Cosa</p>
+                  </div>
+                </div>
+              </div>
+              <div><p>2 ore</p></div>
+            </div>
+
+            <div
+              id="guido"
+              class="col-12 d-flex justify-content-between align-items-start mb-3"
+            >
+              <div class="d-flex">
+                <div>
+                  <img
+                    src="assets/imgs/search/us/WhatsApp Image 2023-10-19 at 12.24.26.jpeg"
+                    width="35px"
+                    alt="album-image"
+                  />
+                </div>
+                <div class="ms-1">
+                  <p>Guido Masi</p>
+                  <p>Smash Mouth</p>
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <i id="music-i" class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <p>All Star</p>
+                  </div>
+                </div>
+              </div>
+              <div><p>4 ore</p></div>
             </div>
           </div>
-          <i class="bi bi-arrows-angle-expand p-1"></i>
         </div>
       </div>
     </div>
+
+    <!-- parte fissa sotto -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
