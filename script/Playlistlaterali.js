@@ -126,3 +126,38 @@ const guido = document.getElementById("guido");
 guido.addEventListener("click", function () {
   creaCardsHome("Smash Mouth");
 });
+
+//Search cards
+
+const Cerca1 = document.getElementById("search1");
+Cerca1.addEventListener("click", function () {
+  creaCardsHome("Dissect");
+});
+const Cerca2 = document.getElementById("search2");
+Cerca2.addEventListener("click", function () {
+  creaCardsHome("Workout playlist");
+});
+const Cerca3 = document.getElementById("search3");
+Cerca3.addEventListener("click", function () {
+  creaCardsHome("Playlist Blues");
+});
+const Cerca4 = document.getElementById("search4");
+Cerca4.addEventListener("click", function () {
+  creaCardsHome("Rock");
+});
+const Cerca5 = document.getElementById("search5");
+Cerca5.addEventListener("click", function () {
+  creaCardsHome("Pollen");
+});
+const Cerca6 = document.getElementById("search6");
+Cerca6.addEventListener("click", function () {
+  creaCardsHome("Soul Lounge");
+});
+const Cerca7 = document.getElementById("search7");
+Cerca7.addEventListener("click", function () {
+  creaCardsHome("Nu-Funk");
+});
+const Cerca8 = document.getElementById("search8");
+Cerca8.addEventListener("click", function () {
+  creaCardsHome("Friday Music");
+});
