@@ -369,10 +369,18 @@ audio::-webkit-media-controls-mute-button {
 }
 
 #footer-mobile {
-  background-color: rgba(10, 10, 10, 0.125);
+  background-color: rgba(10, 10, 10, 0.4);
   position: fixed;
   bottom: 0;
   z-index: 100;
+}
+
+@media screen and (max-width: 576px) {
+  #music-media-player-mobile {
+    display: block;
+    position: fixed;
+    bottom: 25px;
+  }
 }
 
 #home-and-search {
