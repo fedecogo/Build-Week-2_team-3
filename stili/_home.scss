@@ -1,6 +1,7 @@
 .row {
   .col-4 {
     align-items: center;
+
     p {
       font-weight: bold;
       margin-left: 3px;
@@ -16,6 +17,7 @@
   background: linear-gradient(to right, black, #161616);
   transition: background-color 1s ease;
 }
+
 #cardIn:hover {
   background: linear-gradient(to right, #161616, #4d4d4d);
   transition: background-color 1s ease;
@@ -29,10 +31,12 @@
   .col-8 {
     background: linear-gradient(to right, rgb(61, 61, 61), #161616);
     transition: background-color 1s ease;
+
     p:hover {
       font-size: bold;
     }
   }
+
   .col-8:hover {
     background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
     transition: background-color 1s ease;
@@ -42,27 +46,26 @@
 #album-tracks {
   .row:hover {
     border-radius: 10px;
-    background: linear-gradient(
-      to right,
-      rgba(111, 111, 111, 0.492),
-      #4d4d4d6b
-    );
+    background: linear-gradient(to right,
+        rgba(111, 111, 111, 0.492),
+        #4d4d4d6b);
   }
 }
+
 #albumlevate {
   div:hover {
     font-weight: bold;
     border-radius: 5px;
-    background: linear-gradient(
-      to right,
-      rgba(111, 111, 111, 0.492),
-      #4d4d4d6b
-    );
+    background: linear-gradient(to right,
+        rgba(111, 111, 111, 0.492),
+        #4d4d4d6b);
+
     p {
       font-weight: bold;
     }
   }
 }
+
 #title {
   font-size: 80px;
 }
@@ -72,6 +75,7 @@
     i {
       font-size: 25px;
     }
+
     p {
       font-weight: bold;
     }
@@ -82,14 +86,17 @@
   background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
   transition: background-color 1s ease;
 }
+
 #cardalbum1:hover {
   background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
   transition: background-color 1s ease;
 }
+
 #cardalbum2:hover {
   background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
   transition: background-color 1s ease;
 }
+
 #wallpaper-img {
   background-position-y: 27%;
 }
@@ -116,15 +123,14 @@
 
 #levate {
   cursor: pointer;
+
   .mt-1:hover {
     font-weight: bold;
 
     border-radius: 5px;
-    background: linear-gradient(
-      to right,
-      rgba(111, 111, 111, 0.492),
-      #4d4d4d6b
-    );
+    background: linear-gradient(to right,
+        rgba(111, 111, 111, 0.492),
+        #4d4d4d6b);
 
     p {
       align-self: center;
@@ -136,8 +142,47 @@
 #songIn {
   font-size: 2em;
   cursor: pointer;
+
   &:hover {
     font-size: 2.5em;
     transition: font-size 0.5s ease;
   }
+}
+
+//stili dell'audio player
+
+audio::-webkit-media-controls-panel {
+  background-color: rgb(34, 35, 36);
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: #1ED760;
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-current-time-display {
+  color: #848484;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+  color: #848484;
+}
+
+audio::-webkit-media-controls-timeline {
+  border-radius: 40px;
+  background-color: rgb(25, 26, 27);
+  ;
+}
+
+audio::-webkit-media-controls-volume-slider {
+  background-color: rgb(25, 26, 27);
+  ;
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+audio::-webkit-media-controls-mute-button {
+  background-color: rgb(25, 26, 27);
+  border-radius: 50%;
 }
