@@ -423,3 +423,15 @@ const start = function () {
   console.log(mostRecurrentHex);
   localStorage.setItem("color", mostRecurrentHex);
 };
+
+const leftArrow = document.getElementsByClassName("fa-chevron-circle-left")[0];
+const rightArrow = document.getElementsByClassName(
+  "fa-chevron-circle-right"
+)[0];
+
+leftArrow.addEventListener("click", () => {
+  history.back();
+});
+rightArrow.addEventListener("click", () => {
+  history.forward();
+});

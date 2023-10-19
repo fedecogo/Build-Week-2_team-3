@@ -442,3 +442,13 @@ goHomeMobile.addEventListener("click", () => {
 });
 
 pageOnLoad(albumId);
+
+const leftArrow = document.getElementsByClassName("bi-chevron-left")[0];
+const rightArrow = document.getElementsByClassName("bi-chevron-right")[0];
+
+leftArrow.addEventListener("click", () => {
+  history.back();
+});
+rightArrow.addEventListener("click", () => {
+  history.forward();
+});
