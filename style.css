@@ -191,6 +191,10 @@ button {
   transition: background-color 1s ease;
 }
 
+#playBones {
+  background-color: #1ED760;
+}
+
 #sos .col-8 {
   background: linear-gradient(to right, rgb(61, 61, 61), #161616);
   transition: background-color 1s ease;
@@ -207,17 +211,13 @@ button {
 
 #album-tracks .row:hover {
   border-radius: 10px;
-  background: linear-gradient(to right,
-      rgba(111, 111, 111, 0.492),
-      rgba(77, 77, 77, 0.4196078431));
+  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
 }
 
 #albumlevate div:hover {
   font-weight: bold;
   border-radius: 5px;
-  background: linear-gradient(to right,
-      rgba(111, 111, 111, 0.492),
-      rgba(77, 77, 77, 0.4196078431));
+  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
 }
 
 #albumlevate div:hover p {
@@ -273,8 +273,33 @@ button {
   transition: background-color 1s ease;
 }
 
+#levate {
+  cursor: pointer;
+}
+
+#levate .mt-1:hover {
+  font-weight: bold;
+  border-radius: 5px;
+  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
+}
+
+#levate .mt-1:hover p {
+  align-self: center;
+  font-weight: bold;
+}
+
+#songIn {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+#songIn:hover {
+  font-size: 2.5em;
+  transition: font-size 0.5s ease;
+}
+
 #tutti-mobile {
-  background-color: #1ed760;
+  background-color: #1ED760;
 }
 
 .bottone-mobile {
@@ -385,40 +410,3 @@ button {
 }
 
 /*# sourceMappingURL=style.css.map */
-
-
-audio::-webkit-media-controls-panel {
-  background-color: rgb(34, 35, 36);
-}
-
-audio::-webkit-media-controls-play-button {
-  background-color: #1ED760;
-  border-radius: 50%;
-}
-
-audio::-webkit-media-controls-current-time-display {
-  color: #848484;
-}
-
-audio::-webkit-media-controls-time-remaining-display {
-  color: #848484;
-}
-
-audio::-webkit-media-controls-timeline {
-  border-radius: 40px;
-  background-color: rgb(25, 26, 27);
-  ;
-}
-
-audio::-webkit-media-controls-volume-slider {
-  background-color: rgb(25, 26, 27);
-  ;
-  border-radius: 50px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-audio::-webkit-media-controls-mute-button {
-  background-color: rgb(25, 26, 27);
-  border-radius: 50%;
-}

@@ -51,7 +51,6 @@ const getArtist = function (query) {
     .then((data) => {
       console.log(data);
 
-
       const contentRow = document.getElementById("h1_titolo");
       contentRow.innerHTML = "";
       const h1Element = document.createElement("h1");
@@ -173,10 +172,10 @@ const getArtist = function (query) {
       divAudio.appendChild(newDiv);
 
       // CREAZIONE DINAMICA DEI BRANI CHE MI PIACCIONO
-      const artistName = data.data[0].artist.name
-      const artistPicture = data.data[0].artist.picture_small
-      const numberOfLike = Math.ceil(Math.random() * 15)
-      const iLike = document.getElementById("brani-piacciono-desktop")
+      const artistName = data.data[0].artist.name;
+      const artistPicture = data.data[0].artist.picture_small;
+      const numberOfLike = Math.ceil(Math.random() * 15);
+      const iLike = document.getElementById("brani-piacciono-desktop");
       iLike.innerHTML = `<div class="me-2">
     <img src="${artistPicture}" alt="" class="rounded-circle" width="60px">
     </div>
@@ -196,8 +195,6 @@ const getArtist = function (query) {
     </div>
     </div>
     `
-
-
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -324,8 +321,18 @@ butM.addEventListener("click", () => {
   // butE.classList.add("btn-outline-dark")
   // butM.classList.toggle("btn-outline-dark");
   // butM.classList.toggle("btn-outline-success");
-  butM.classList.add('text-white', 'border-bottom', 'border-3', 'border-success')
-  butE.classList.remove('text-white', 'border-bottom', 'border-3', 'border-success')
+  butM.classList.add(
+    "text-white",
+    "border-bottom",
+    "border-3",
+    "border-success"
+  );
+  butE.classList.remove(
+    "text-white",
+    "border-bottom",
+    "border-3",
+    "border-success"
+  );
 });
 
 butE.addEventListener("click", () => {
@@ -333,8 +340,18 @@ butE.addEventListener("click", () => {
   // butM.classList.add("btn-outline-dark")
   // butE.classList.toggle("btn-outline-dark");
   // butE.classList.toggle("btn-outline-success");
-  butE.classList.add('text-white', 'border-bottom', 'border-3', 'border-success')
-  butM.classList.remove('text-white', 'border-bottom', 'border-3', 'border-success')
+  butE.classList.add(
+    "text-white",
+    "border-bottom",
+    "border-3",
+    "border-success"
+  );
+  butM.classList.remove(
+    "text-white",
+    "border-bottom",
+    "border-3",
+    "border-success"
+  );
 });
 
 // SELEZIONA IL NOME E L'IMMAGINE PROFILO
@@ -354,7 +371,7 @@ profileImageNavbar.style.width = "30px";
 profileImageNavbar.style.heigth = "30px";
 
 //button shuffle
-const butShuffle = document.getElementById("shuffle")
+const butShuffle = document.getElementById("shuffle");
 butShuffle.addEventListener("click", function () {
   butShuffle.classList.toggle("text-secondary")
   butShuffle.classList.toggle("text-success")
@@ -366,7 +383,7 @@ const playTheRightSong = async () => {
     const data = await res.json()
     console.log(data)
   } catch (error) {
-    console.log('porcodio', error)
+    console.log('errore', error)
   }
 }
 
