@@ -95,7 +95,7 @@ const divAudio = document.getElementById("appendi_qui");
 const newDiv = document.createElement("div");
 newDiv.innerHTML = `
   <audio controls>
-<source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg" type="audio/mpeg">
+<source src="" type="audio/mpeg">
 </audio>
   `;
 divAudio.appendChild(newDiv);
@@ -113,13 +113,13 @@ const getBSong = function (query) {
     })
     .then((data) => {
       console.log(data);
-      console.log(data.tracks.data[0].album.cover);
+      console.log(data.tracks.data[6].album.cover);
       // cambio le immagini della st
       const getDivImg = document.getElementById("current-song-image");
       getDivImg.innerHTML = ``;
       const NewImgAlbum = document.createElement("div");
       NewImgAlbum.innerHTML = `<img
-      src="assets/imgs/main/image-11.jpg"
+      src="${data.tracks.data[6].album.cover}"
       alt="song photo"
       width="60px"
       />`;
@@ -130,8 +130,8 @@ const getBSong = function (query) {
       const getDivText = document.getElementById("current-song-info");
       getDivText.innerHTML = ``;
       const newDivText = document.createElement("div");
-      newDivText.innerHTML = `<h5>${data.tracks.data[0].title}</h5>
-      <h6>Mercury</h6>`;
+      newDivText.innerHTML = `<h5>${data.tracks.data[6].title}</h5>
+      <h6>${data.tracks.data[6].artist.name}</h6>`;
       getDivText.appendChild(newDivText);
 
       // parte centrale
@@ -141,7 +141,7 @@ const getBSong = function (query) {
       divAudio.innerHTML = ``;
       newDiv.innerHTML = `
         <audio controls autoplay>
-  <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
+  <source src="${data.tracks.data[6].preview}" type="audio/mpeg">
 </audio>
         `;
       divAudio.appendChild(newDiv);
@@ -154,7 +154,7 @@ const getBSong = function (query) {
 // invoco la funzione al click di play
 const bonesBtn = document.getElementById("playBones");
 bonesBtn.addEventListener("click", () => {
-  getBSong(302204417);
+  getBSong(75621062);
 });
 
 // funzione aside amici display e non
