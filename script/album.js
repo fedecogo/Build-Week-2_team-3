@@ -287,7 +287,6 @@ const getSong = function (query, i) {
       const newDiv = document.createElement("div");
       console.log(data.tracks.data[i].preview);
       divAudio.innerHTML = ``;
-      newDiv.setAttribute('id', 'music-media-player-mobile')
       newDiv.innerHTML = `
       <audio controls autoplay>
   <source src="${data.tracks.data[i].preview}" type="audio/mpeg">
