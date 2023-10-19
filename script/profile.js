@@ -430,8 +430,23 @@ const rightArrow = document.getElementsByClassName(
 )[0];
 
 leftArrow.addEventListener("click", () => {
-  history.back();
+  if (history.length > 1) {
+    history.back();
+  }
+  CursorState();
 });
+
 rightArrow.addEventListener("click", () => {
   history.forward();
+  CursorState();
 });
+
+const CursorState = () => {
+  if (history.length <= 1) {
+    leftArrow.classList.add("not-allowed");
+  } else {
+    leftArrow.classList.remove("not-allowed");
+  }
+};
+
+CursorState();

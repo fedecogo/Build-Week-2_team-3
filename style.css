@@ -485,4 +485,8 @@ audio::-webkit-media-controls-mute-button {
   #username {
     font-size: 4.5em;
   }
+}
+
+.not-allowed {
+  cursor: not-allowed;
 }/*# sourceMappingURL=style.css.map */

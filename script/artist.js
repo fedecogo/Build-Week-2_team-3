@@ -437,8 +437,23 @@ const leftArrow = document.getElementsByClassName("bi-chevron-left")[0];
 const rightArrow = document.getElementsByClassName("bi-chevron-right")[0];
 
 leftArrow.addEventListener("click", () => {
-  history.back();
+  if (history.length > 1) {
+    history.back();
+  }
+  CursorState();
 });
+
 rightArrow.addEventListener("click", () => {
   history.forward();
+  CursorState();
 });
+
+const CursorState = () => {
+  if (history.length <= 1) {
+    leftArrow.classList.add("not-allowed");
+  } else {
+    leftArrow.classList.remove("not-allowed");
+  }
+};
+
+CursorState();
