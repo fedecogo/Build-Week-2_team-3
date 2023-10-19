@@ -93,13 +93,11 @@ const getAlbum = function (query) {
       console.log(data);
       console.log(data.artist.name);
       // Funzione per far si che al click del nome dell artista ti porta alla sua pagina artist
-      const goToArtistBtn = document.getElementById('name-artist');
-      const dataArtist = (data.artist.name)
-      goToArtistBtn.addEventListener('click', () => {
+      const goToArtistBtn = document.getElementById("name-artist");
+      const dataArtist = data.artist.name;
+      goToArtistBtn.addEventListener("click", () => {
         window.location.href = `artist.html?query=${dataArtist}`;
       });
-
-
 
       const tracksContainer = document.getElementById("album-tracks");
       const image = document.getElementById("image");
@@ -139,7 +137,10 @@ const getAlbum = function (query) {
         let durataTotale = song.duration;
         let minuti = Math.floor(durataTotale / 60);
         let secondi = durataTotale % 60;
-        let durataFormattata = minuti.toString().padStart(2, '0') + ':' + secondi.toString().padStart(2, '0');
+        let durataFormattata =
+          minuti.toString().padStart(2, "0") +
+          ":" +
+          secondi.toString().padStart(2, "0");
 
         canzone.innerHTML = `<div onclick=singThisSong(${i})
         class="row mb-3 d-flex justify-content-between align-items-center"
@@ -287,7 +288,6 @@ const getSong = function (query, i) {
       const newDiv = document.createElement("div");
       console.log(data.tracks.data[i].preview);
       divAudio.innerHTML = ``;
-      newDiv.setAttribute('id', 'music-media-player-mobile')
       newDiv.innerHTML = `
       <audio controls autoplay>
   <source src="${data.tracks.data[i].preview}" type="audio/mpeg">
@@ -324,7 +324,7 @@ if (profileImageLocalStorage) {
   profileImageNavbar.classList.remove("d-none");
 }
 
-pageOnLoad(albumId)
+pageOnLoad(albumId);
 
 // crea un canvas con l'immagine e ne ritorno il context 2d
 const draw = function (img) {
@@ -392,7 +392,7 @@ const generateImage = function () {
   let imageSrc = urlAlbumCover;
   const newContainer = document.createElement("div");
   newContainer.style.position = "absolute";
-  newContainer.style.right = "2000px";
+  newContainer.style.right = "3000px";
   const body = document.getElementsByTagName("body")[0];
   console.log(body);
   body.appendChild(newContainer);
@@ -436,10 +436,9 @@ const start = function () {
   console.log(albumSection);
 };
 
-const goHomeMobile = document.getElementById('go-home-mobile')
-goHomeMobile.addEventListener('click', () => {
-  location.href = './home.html'
-})
-
+const goHomeMobile = document.getElementById("go-home-mobile");
+goHomeMobile.addEventListener("click", () => {
+  location.href = "./home.html";
+});
 
 pageOnLoad(albumId);

@@ -116,7 +116,7 @@ giulia.addEventListener("click", function () {
 });
 const angi = document.getElementById("angi");
 angi.addEventListener("click", function () {
-  creaCardsHome("Bresh Pinguini Tattici");
+  creaCardsHome("Pinguini Tattici");
 });
 const salvatore = document.getElementById("salvatore");
 salvatore.addEventListener("click", function () {
@@ -124,5 +124,5 @@ salvatore.addEventListener("click", function () {
 });
 const guido = document.getElementById("guido");
 guido.addEventListener("click", function () {
-  creaCardsHome("undefined");
+  creaCardsHome("Smash Mouth");
 });

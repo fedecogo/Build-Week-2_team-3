@@ -47,11 +47,9 @@
 #album-tracks {
   .row:hover {
     border-radius: 10px;
-    background: linear-gradient(
-      to right,
-      rgba(111, 111, 111, 0.492),
-      #4d4d4d6b
-    );
+    background: linear-gradient(to right,
+        rgba(111, 111, 111, 0.492),
+        #4d4d4d6b);
   }
 }
 
@@ -59,11 +57,9 @@
   div:hover {
     font-weight: bold;
     border-radius: 5px;
-    background: linear-gradient(
-      to right,
-      rgba(111, 111, 111, 0.492),
-      #4d4d4d6b
-    );
+    background: linear-gradient(to right,
+        rgba(111, 111, 111, 0.492),
+        #4d4d4d6b);
 
     p {
       font-weight: bold;
@@ -134,11 +130,9 @@
     font-weight: bold;
 
     border-radius: 5px;
-    background: linear-gradient(
-      to right,
-      rgba(111, 111, 111, 0.492),
-      #4d4d4d6b
-    );
+    background: linear-gradient(to right,
+        rgba(111, 111, 111, 0.492),
+        #4d4d4d6b);
 
     p {
       align-self: center;
@@ -205,13 +199,12 @@ audio::-webkit-media-controls-mute-button {
     font-weight: bold;
     padding-top: 0.8em;
     border-radius: 5px;
-    background: linear-gradient(
-      to right,
-      rgba(111, 111, 111, 0.492),
-      #4d4d4d6b
-    );
+    background: linear-gradient(to right,
+        rgba(111, 111, 111, 0.492),
+        #4d4d4d6b);
   }
 }
+
 .dropdown-item {
   &:hover {
     background-color: #4d4d4d;

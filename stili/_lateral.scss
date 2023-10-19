@@ -156,8 +156,10 @@ button {
   }
 }
 
-#music-player {
-  @media screen and (max-width: 576px) {
-    display: none;
+#icone-del-belino {
+  .bi {
+    @media screen and (max-width: 576px) {
+      display: none;
+    }
   }
 }

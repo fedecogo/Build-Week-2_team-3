@@ -46,16 +46,16 @@
                   </a>
                 </div>
                 <div class="mt-1 d-flex" id="toggleButton">
-                  <i class="bi bi-search mt-1"></i>
-                  <p class="ms-2 fs-5">Cerca</p>
+                  <i class="bi bi-search mt-1 pointer"></i>
+                  <p class="ms-2 fs-5 pointer">Cerca</p>
                 </div>
                 <div class="mt-1 d-flex">
-                  <i class="bi bi-list mt-1"></i>
-                  <p class="ms-2 fs-5">La tua libreria</p>
+                  <i class="bi bi-list mt-1 pointer"></i>
+                  <p class="ms-2 fs-5 pointer">La tua libreria</p>
                 </div>
               </div>
               <div class="col-12 mb-3">
-                <div class="mt-1 d-flex">
+                <div class="mt-1 d-flex pointer">
                   <img
                     src="assets/imgs/plus.png"
                     alt="Crea Playlist"
@@ -64,7 +64,7 @@
                   />
                   <p class="ms-2">Crea La Tua Playlist</p>
                 </div>
-                <div class="mt-1 d-flex">
+                <div class="mt-1 d-flex pointer">
                   <img
                     src="assets/imgs/cuore preferiti.png"
                     alt="Crea Playlist"
@@ -73,7 +73,7 @@
                   />
                   <p class="ms-2">Brani che ti piacciono</p>
                 </div>
-                <div class="mt-1 d-flex">
+                <div class="mt-1 d-flex pointer">
                   <img
                     src="assets/imgs/podcast.png"
                     alt="Crea Playlist"
@@ -324,7 +324,7 @@
                     <div class="col-6">
                       <div class="d-flex mt-0 mt-md-3 ms-3">
                         <div
-                          class="bg-dark d-flex align-items-center justify-content-center me-2 d-none d-md-block"
+                          class="bg-dark d-flex align-items-center justify-content-center me-2 d-none d-md-block pointer"
                           style="border-radius: 50%; width: 32px; height: 32px"
                         >
                           <i class="bi bi-chevron-left text-white ms-1"></i>
@@ -332,7 +332,7 @@
 
                         <a href="home.html" class="arrow mt-0 d-md-none">
                           <i
-                            class="bi bi-arrow-left-short text-white fs-1 ms-1 mt-0"
+                            class="bi bi-arrow-left-short text-white fs-1 ms-1 mt-0 pointer"
                           ></i>
                         </a>
 
@@ -494,7 +494,7 @@
                   <div class="row" id="appAlbum"></div>
                 </div>
                 <div class="col-12 mt-3" id="parte_sotto_img_3">
-                  <footer>
+                  <footer class="ms-2 ms-md-0 mb-5">
                     <div
                       class="row flex-column flex-md-row text-white pb-4 border-bottom border-secondary"
                     >
@@ -535,7 +535,7 @@
                     <div class="row text-secondary mt-4 g-0 pb-5">
                       <div class="col">
                         <ul
-                          class="list-unstyled d-flex gap-3 flex-column flex-md-row"
+                          class="list-unstyled d-flex gap-3 flex-wrap flex-lg-nowrap pb-5"
                         >
                           <li>Informazioni legali</li>
                           <li>Centro sulla privacy</li>
@@ -589,7 +589,7 @@
                     </div>
                   </div>
                 </div>
-                <div><p>4 ore</p></div>
+                <div><p>2 ore</p></div>
               </div>
               <div
                 id="federico"
@@ -614,7 +614,7 @@
                     </div>
                   </div>
                 </div>
-                <div><p>4 ore</p></div>
+                <div><p>1 ore</p></div>
               </div>
               <div
                 id="giulia"
@@ -639,7 +639,7 @@
                     </div>
                   </div>
                 </div>
-                <div><p>4 ore</p></div>
+                <div><p>6 ore</p></div>
               </div>
               <div
                 id="angi"
@@ -648,7 +648,7 @@
                 <div class="d-flex">
                   <div>
                     <img
-                      src="assets/imgs/search//us/WhatsApp Image 2023-10-19 at 11.24.32.jpeg"
+                      src="assets/imgs/search//us/WhatsApp Image 2023-10-19 at 11.21.28.jpeg"
                       width="35px"
                       alt="album-image"
                     />
@@ -664,7 +664,7 @@
                     </div>
                   </div>
                 </div>
-                <div><p>4 ore</p></div>
+                <div><p>3 ore</p></div>
               </div>
               <div
                 id="salvatore"
@@ -689,7 +689,7 @@
                     </div>
                   </div>
                 </div>
-                <div><p>4 ore</p></div>
+                <div><p>2 ore</p></div>
               </div>
 
               <div
@@ -699,19 +699,19 @@
                 <div class="d-flex">
                   <div>
                     <img
-                      src="assets/imgs/main/image-9.jpg"
+                      src="assets/imgs/search/us/WhatsApp Image 2023-10-19 at 12.24.26.jpeg"
                       width="35px"
                       alt="album-image"
                     />
                   </div>
                   <div class="ms-1">
                     <p>Guido Masi</p>
-                    <p>Incamera-time zuma</p>
+                    <p>Smash Mouth</p>
                     <div class="d-flex align-items-center">
                       <div>
                         <i id="music-i" class="bi bi-music-note-beamed"></i>
                       </div>
-                      <p>Senza Pagare</p>
+                      <p>All Star</p>
                     </div>
                   </div>
                 </div>
@@ -756,18 +756,6 @@
           <i class="bi bi-list p-1"></i>
           <i class="bi bi-pc-display p-1"></i>
           <i class="bi bi-volume-up-fill p-1"></i>
-          <div class="volume-control">
-            <div class="volume-slider">
-              <input
-                type="range"
-                id="volume-range"
-                min="0"
-                max="100"
-                step="1"
-                value="30"
-              />
-            </div>
-          </div>
           <i class="bi bi-arrows-angle-expand p-1"></i>
         </div>
       </div>
@@ -777,7 +765,7 @@
       id="footer-mobile"
     >
       <i class="bi bi-house-door-fill" id="go-home-mobile"></i>
-      <i class="bi bi-search"></i>
+      <i class="bi bi-search" id="search-mobile"></i>
       <i class="bi bi-collection-play-fill"></i>
     </div>
     <script

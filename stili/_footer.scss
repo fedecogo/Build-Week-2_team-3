@@ -2,7 +2,15 @@
     color: white;
     background-color: $gray-color;
     width: 100%;
-    img{
+    position: fixed;
+    bottom: 0;
+
+    img {
         border-radius: 5px;
+    }
+
+    @media screen and (max-width: 576px) {
+        bottom: 65px;
+        background-color: rgba(0, 0, 0, 0);
     }
 }
