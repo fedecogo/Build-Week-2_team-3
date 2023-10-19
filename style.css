@@ -313,6 +313,10 @@ audio::-webkit-media-controls-mute-button {
   border-radius: 50%;
 }
 
+.dropdown-item:hover {
+  background-color: #4d4d4d;
+}
+
 #tutti-mobile {
   background-color: #1ED760;
 }
