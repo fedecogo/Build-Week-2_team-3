@@ -49,7 +49,7 @@ const getArtist = function (query) {
       }
     })
     .then((data) => {
-      console.log(data);
+      console.log(data.data[0]);
 
       const contentRow = document.getElementById("h1_titolo");
       contentRow.innerHTML = "";
@@ -59,6 +59,28 @@ const getArtist = function (query) {
 
       const songDetails = document.getElementById("appendi_song");
       songDetails.innerHTML = "";
+let durataTotale0 = data.data[0].duration; 
+let durataTotale1 = data.data[1].duration; 
+let durataTotale2 = data.data[2].duration; 
+let durataTotale3 = data.data[3].duration; 
+let durataTotale4 = data.data[4].duration; 
+let minuti0 = Math.floor(durataTotale0 / 60);
+let minuti1 = Math.floor(durataTotale1 / 60);
+let minuti2 = Math.floor(durataTotale2 / 60);
+let minuti3 = Math.floor(durataTotale3 / 60);
+let minuti4 = Math.floor(durataTotale4 / 60);
+let secondi0 = durataTotale0 % 60;
+let secondi1 = durataTotale1 % 60;
+let secondi2 = durataTotale2 % 60;
+let secondi3 = durataTotale3 % 60;
+let secondi4 = durataTotale4 % 60;
+let durataFormattata1 = minuti0.toString().padStart(2, '0') + ':' + secondi0.toString().padStart(2, '0');
+let durataFormattata2 = minuti1.toString().padStart(2, '0') + ':' + secondi1.toString().padStart(2, '0');
+let durataFormattata3 = minuti2.toString().padStart(2, '0') + ':' + secondi2.toString().padStart(2, '0');
+let durataFormattata4 = minuti3.toString().padStart(2, '0') + ':' + secondi3.toString().padStart(2, '0');
+let durataFormattata5 = minuti4.toString().padStart(2, '0') + ':' + secondi4.toString().padStart(2, '0');
+
+
       const songDetailsHTML = `
     <div class="row mb-3 d-flex justify-content-between align-items-center">
     <div class="col-1 text-center">1</div>
@@ -69,7 +91,7 @@ const getArtist = function (query) {
     <p class="m-0">${data.data[0].title}</p>
     </div>
     <div class="col-2 ps-3">${data.data[0].rank}</div>
-    <div class="col-2 ps-4 d-none d-md-block">${data.data[0].duration}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${durataFormattata1} min</div>
     </div>
     <div class="row mb-3 d-flex justify-content-between align-items-center">
     <div class="col-1 text-center">2</div>
@@ -80,7 +102,7 @@ const getArtist = function (query) {
     <p class="m-0">${data.data[1].title}</p>
     </div>
     <div class="col-2 ps-3">${data.data[1].rank}</div>
-    <div class="col-2 ps-4 d-none d-md-block">${data.data[1].duration}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${durataFormattata2} min</div>
     </div>
     <div class="row mb-3 d-flex justify-content-between align-items-center">
     <div class="col-1 text-center">3</div>
@@ -91,7 +113,7 @@ const getArtist = function (query) {
     <p class="m-0">${data.data[2].title}</p>
     </div>
     <div class="col-2 ps-3">${data.data[2].rank}</div>
-    <div class="col-2 ps-4 d-none d-md-block">${data.data[2].duration}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${durataFormattata3} min</div>
     </div>
     <div class="row mb-3 d-flex justify-content-between align-items-center">
     <div class="col-1 text-center">4</div>
@@ -102,7 +124,7 @@ const getArtist = function (query) {
     <p class="m-0">${data.data[3].title}</p>
     </div>
     <div class="col-2 ps-3">${data.data[3].rank}</div>
-    <div class="col-2 ps-4 d-none d-md-block ">${data.data[3].duration}</div>
+    <div class="col-2 ps-4 d-none d-md-block ">${durataFormattata4} min</div>
     </div>
     <div class="row mb-3 d-flex justify-content-between align-items-center">
     <div class="col-1 text-center">5</div>
@@ -113,7 +135,7 @@ const getArtist = function (query) {
     <p class="m-0">${data.data[4].title}</p>
     </div>
     <div class="col-2 ps-3">${data.data[4].rank}</div>
-    <div class="col-2 ps-4 d-none d-md-block">${data.data[4].duration}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${durataFormattata5} min</div>
     </div>
     `;
       songDetails.innerHTML = songDetailsHTML;

@@ -127,7 +127,11 @@ const getAlbum = function (query) {
       tracksContainer.innerHTML = "";
       data.tracks.data.forEach((song, i) => {
         const canzone = document.createElement("div");
-        const time2 = (song.duration / 60).toFixed(2);
+        let durataTotale = song.duration;
+        let minuti = Math.floor(durataTotale / 60);
+        let secondi = durataTotale % 60;
+        let durataFormattata = minuti.toString().padStart(2, '0') + ':' + secondi.toString().padStart(2, '0');
+
         canzone.innerHTML = `<div onclick=singThisSong(${i})
         class="row mb-3 d-flex justify-content-between align-items-center"
         >
@@ -137,7 +141,7 @@ const getAlbum = function (query) {
         <p class="m-0">${song.artist.name}</p>
         </div>
         <div class="col-3 ps-3">${song.rank}</div>
-        <div class="col-2 ps-4">${time2} min</div>
+        <div class="col-2 ps-4">${durataFormattata} min</div>
         </div>`;
         tracksContainer.appendChild(canzone);
         generateImage();
