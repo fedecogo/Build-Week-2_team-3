@@ -23,6 +23,7 @@ const searchSong = function (query) {
 //
 Form.addEventListener("submit", (event) => {
   event.preventDefault();
+
   const query = document.getElementById("barra").value;
 
   console.log(query);
