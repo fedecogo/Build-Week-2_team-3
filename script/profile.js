@@ -49,9 +49,8 @@ addPlaylistButton.addEventListener("click", () => {
     <i class="bi bi-music-note-beamed fs-3 text-white"></i>
   </div>
   <div class="d-flex flex-column text-white-50">
-   <p class="playlist-title text-white fw-bold mb-0">La mia playlist n.${
-     playlistNumber || "1"
-   }</p>
+   <p class="playlist-title text-white fw-bold mb-0">La mia playlist n.${playlistNumber || "1"
+    }</p>
     <small>
       <p>Playlist &#8226; ${usernameStorage || "Nome utente"}</p>
    </small>
@@ -423,3 +422,9 @@ const start = function () {
   console.log(mostRecurrentHex);
   localStorage.setItem("color", mostRecurrentHex);
 };
+
+
+const goHomeMobile = document.getElementById('go-home-mobile')
+goHomeMobile.addEventListener('click', () => {
+  location.href = './home.html'
+})
