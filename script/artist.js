@@ -187,7 +187,7 @@ let durataFormattata5 = minuti4.toString().padStart(2, '0') + ':' + secondi4.toS
       const divAudio = document.getElementById("appendi_qui");
       const newDiv = document.createElement("div");
       newDiv.innerHTML = `
-    <audio controls autoplay id="audio-player">
+    <audio controls id="audio-player">
     <source src="${data.data[0].preview}" type="audio/mpeg">
     </audio>
     `;

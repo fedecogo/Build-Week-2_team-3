@@ -101,3 +101,28 @@ const VentunesimaRiga = document.getElementById("21riga");
 VentunesimaRiga.addEventListener("click", function () {
   creaCardsHome("Playlist 10");
 });
+
+const momo = document.getElementById("momo");
+momo.addEventListener("click", function () {
+  creaCardsHome("The Cranberries");
+});
+const federico = document.getElementById("federico");
+federico.addEventListener("click", function () {
+  creaCardsHome("L.A Womans");
+});
+const giulia = document.getElementById("giulia");
+giulia.addEventListener("click", function () {
+  creaCardsHome("Saliva");
+});
+const angi = document.getElementById("angi");
+angi.addEventListener("click", function () {
+  creaCardsHome("Bresh Pinguini Tattici");
+});
+const salvatore = document.getElementById("salvatore");
+salvatore.addEventListener("click", function () {
+  creaCardsHome("Eros Ramazzotti");
+});
+const guido = document.getElementById("guido");
+guido.addEventListener("click", function () {
+  creaCardsHome("undefined");
+});
