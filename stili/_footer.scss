@@ -1,16 +1,19 @@
 #music-player {
-    color: white;
-    background-color: $gray-color;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+  color: white;
+  background-color: $gray-color;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 
-    img {
-        border-radius: 5px;
-    }
-
-    @media screen and (max-width: 576px) {
-        bottom: 65px;
-        background-color: rgba(0, 0, 0, 0);
-    }
+  img {
+    border-radius: 5px;
+  }
+  @media screen and (max-width: 767px) {
+    bottom: 65px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  @media screen and (max-width: 576px) {
+    bottom: 65px;
+    background-color: rgba(0, 0, 0, 0);
+  }
 }

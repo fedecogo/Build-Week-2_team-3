@@ -154,12 +154,24 @@ button {
     transform: translateY(0);
   }
 }
+@media screen and (max-width: 767px) {
+  #icone-del-belino .bi {
+    display: none;
+  }
+}
 @media screen and (max-width: 576px) {
   #icone-del-belino .bi {
     display: none;
   }
 }
 
+@media screen and (max-width: 767px) {
+  #current-song #current-song-image img,
+  #current-song #current-song-info,
+  #current-song #cuoricino i {
+    display: none;
+  }
+}
 @media screen and (max-width: 576px) {
   #current-song #current-song-image img,
   #current-song #current-song-info,
@@ -177,6 +189,12 @@ button {
 }
 #music-player img {
   border-radius: 5px;
+}
+@media screen and (max-width: 767px) {
+  #music-player {
+    bottom: 65px;
+    background-color: rgba(0, 0, 0, 0);
+  }
 }
 @media screen and (max-width: 576px) {
   #music-player {
