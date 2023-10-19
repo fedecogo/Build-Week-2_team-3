@@ -399,3 +399,20 @@ leftArrow.addEventListener("click", () => {
 rightArrow.addEventListener("click", () => {
   history.forward();
 });
+
+const saveBtn = document.getElementById('saveBut')
+saveBtn.addEventListener('click', (e) => {
+  if (e.target.innerText === 'Salva') {
+    e.target.innerText = 'Salvato'
+    e.target.classList.toggle('text-white')
+    e.target.classList.toggle('text-black')
+    e.target.classList.toggle('bg-white')
+    e.target.classList.toggle('me-4')
+  } else {
+    e.target.innerText = 'Salva'
+    e.target.classList.toggle('text-white')
+    e.target.classList.toggle('text-black')
+    e.target.classList.toggle('bg-white')
+    e.target.classList.toggle('me-4')
+  }
+})

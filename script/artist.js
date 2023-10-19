@@ -57,7 +57,7 @@ const getArtist = function (query) {
       h1Element.textContent = data.data[0].artist.name;
       contentRow.appendChild(h1Element);
       const addSong = document.getElementById('addSongBtn')
-      addSong.addEventListener("click",(e)=>{
+      addSong.addEventListener("click", (e) => {
         const card1 = document.getElementById("card1")
         const card2 = document.getElementById("card2")
         const card3 = document.getElementById("card3")
@@ -74,7 +74,7 @@ const getArtist = function (query) {
           e.target.textContent = "Visualizza altro";
         }
       })
-      
+
 
       const songDetails = document.getElementById("appendi_song");
       songDetails.innerHTML = "";
@@ -121,7 +121,7 @@ const getArtist = function (query) {
 
 
       const songDetailsHTML = `
-    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-1-top">
     <div class="col-1 text-center">1</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[0].album.cover}" width="30px">
@@ -132,7 +132,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-3">${data.data[0].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata1} min</div>
     </div>
-    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-2-top">
     <div class="col-1 text-center">2</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[1].album.cover}" width="30px">
@@ -143,7 +143,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-3">${data.data[1].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata2} min</div>
     </div>
-    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-3-top">
     <div class="col-1 text-center">3</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[2].album.cover}" width="30px">
@@ -154,7 +154,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-3">${data.data[2].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata3} min</div>
     </div>
-    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-4-top">
     <div class="col-1 text-center">4</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[3].album.cover}" width="30px">
@@ -165,7 +165,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-3">${data.data[3].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block ">${durataFormattata4} min</div>
     </div>
-    <div class="row mb-3 d-flex justify-content-between align-items-center">
+    <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-5-top">
     <div class="col-1 text-center">5</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[4].album.cover}" width="30px">
