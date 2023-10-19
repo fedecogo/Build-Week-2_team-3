@@ -384,3 +384,9 @@ Fcard.addEventListener("click", function () {
 // VentesimaRiga.addEventListener("click", function () {
 //   creaCardsHome("Guitar Music");
 // });
+
+
+const goHomeMobile = document.getElementById('go-home-mobile')
+goHomeMobile.addEventListener('click', () => {
+  location.href = './home.html'
+})

@@ -98,7 +98,7 @@ const getAlbum = function (query) {
       goToArtistBtn.addEventListener('click', () => {
         window.location.href = `artist.html?query=${dataArtist}`;
       });
-      
+
 
 
       const tracksContainer = document.getElementById("album-tracks");
@@ -287,6 +287,7 @@ const getSong = function (query, i) {
       const newDiv = document.createElement("div");
       console.log(data.tracks.data[i].preview);
       divAudio.innerHTML = ``;
+      newDiv.setAttribute('id', 'music-media-player-mobile')
       newDiv.innerHTML = `
       <audio controls autoplay>
   <source src="${data.tracks.data[i].preview}" type="audio/mpeg">
@@ -434,5 +435,11 @@ const start = function () {
 
   console.log(albumSection);
 };
+
+const goHomeMobile = document.getElementById('go-home-mobile')
+goHomeMobile.addEventListener('click', () => {
+  location.href = './home.html'
+})
+
 
 pageOnLoad(albumId);
