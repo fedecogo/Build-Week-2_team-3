@@ -193,6 +193,7 @@ button {
 #sos .col-8:hover {
   background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
   transition: background-color 1s ease;
+  cursor: pointer;
 }
 
 #album-tracks .row:hover {
@@ -253,6 +254,7 @@ button {
 #cardx:hover,
 #cardy:hover,
 #cardz:hover {
+  cursor: pointer;
   background: linear-gradient(to right, rgb(111, 111, 111), #4d4d4d);
   transition: background-color 1s ease;
 }
@@ -284,7 +286,7 @@ audio::-webkit-media-controls-panel {
 }
 
 audio::-webkit-media-controls-play-button {
-  background-color: #1ED760;
+  background-color: #1ed760;
   border-radius: 50%;
 }
 
@@ -313,8 +315,24 @@ audio::-webkit-media-controls-mute-button {
   border-radius: 50%;
 }
 
-.dropdown-item:hover {
-  background-color: #4d4d4d;
+#momo,
+#federico,
+#giulia,
+#angi,
+#salvatore,
+#guido {
+  cursor: pointer;
+}
+#momo:hover,
+#federico:hover,
+#giulia:hover,
+#angi:hover,
+#salvatore:hover,
+#guido:hover {
+  font-weight: bold;
+  padding-top: 0.8em;
+  border-radius: 5px;
+  background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
 }
 
 #tutti-mobile {
