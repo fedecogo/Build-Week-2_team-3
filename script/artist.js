@@ -56,25 +56,24 @@ const getArtist = function (query) {
       const h1Element = document.createElement("h1");
       h1Element.textContent = data.data[0].artist.name;
       contentRow.appendChild(h1Element);
-      const addSong = document.getElementById('addSongBtn')
-      addSong.addEventListener("click",(e)=>{
-        const card1 = document.getElementById("card1")
-        const card2 = document.getElementById("card2")
-        const card3 = document.getElementById("card3")
-        const card4 = document.getElementById("card4")
-        const card5 = document.getElementById("card5")
-        card1.classList.toggle("visually-hidden")
-        card2.classList.toggle("visually-hidden")
-        card3.classList.toggle("visually-hidden")
-        card4.classList.toggle("visually-hidden")
-        card5.classList.toggle("visually-hidden")
+      const addSong = document.getElementById("addSongBtn");
+      addSong.addEventListener("click", (e) => {
+        const card1 = document.getElementById("card1");
+        const card2 = document.getElementById("card2");
+        const card3 = document.getElementById("card3");
+        const card4 = document.getElementById("card4");
+        const card5 = document.getElementById("card5");
+        card1.classList.toggle("visually-hidden");
+        card2.classList.toggle("visually-hidden");
+        card3.classList.toggle("visually-hidden");
+        card4.classList.toggle("visually-hidden");
+        card5.classList.toggle("visually-hidden");
         if (e.target.textContent.trim() === "Visualizza altro") {
           e.target.textContent = "Visualizza di meno";
         } else {
           e.target.textContent = "Visualizza altro";
         }
-      })
-      
+      });
 
       const songDetails = document.getElementById("appendi_song");
       songDetails.innerHTML = "";
@@ -108,17 +107,46 @@ const getArtist = function (query) {
       let secondi7 = durataTotale7 % 60;
       let secondi8 = durataTotale8 % 60;
       let secondi9 = durataTotale9 % 60;
-      let durataFormattata1 = minuti0.toString().padStart(2, '0') + ':' + secondi0.toString().padStart(2, '0');
-      let durataFormattata2 = minuti1.toString().padStart(2, '0') + ':' + secondi1.toString().padStart(2, '0');
-      let durataFormattata3 = minuti2.toString().padStart(2, '0') + ':' + secondi2.toString().padStart(2, '0');
-      let durataFormattata4 = minuti3.toString().padStart(2, '0') + ':' + secondi3.toString().padStart(2, '0');
-      let durataFormattata5 = minuti4.toString().padStart(2, '0') + ':' + secondi4.toString().padStart(2, '0');
-      let durataFormattata6 = minuti5.toString().padStart(2, '0') + ':' + secondi5.toString().padStart(2, '0');
-      let durataFormattata7 = minuti6.toString().padStart(2, '0') + ':' + secondi6.toString().padStart(2, '0');
-      let durataFormattata8 = minuti7.toString().padStart(2, '0') + ':' + secondi7.toString().padStart(2, '0');
-      let durataFormattata9 = minuti8.toString().padStart(2, '0') + ':' + secondi8.toString().padStart(2, '0');
-      let durataFormattata10 = minuti9.toString().padStart(2, '0') + ':' + secondi9.toString().padStart(2, '0');
-
+      let durataFormattata1 =
+        minuti0.toString().padStart(2, "0") +
+        ":" +
+        secondi0.toString().padStart(2, "0");
+      let durataFormattata2 =
+        minuti1.toString().padStart(2, "0") +
+        ":" +
+        secondi1.toString().padStart(2, "0");
+      let durataFormattata3 =
+        minuti2.toString().padStart(2, "0") +
+        ":" +
+        secondi2.toString().padStart(2, "0");
+      let durataFormattata4 =
+        minuti3.toString().padStart(2, "0") +
+        ":" +
+        secondi3.toString().padStart(2, "0");
+      let durataFormattata5 =
+        minuti4.toString().padStart(2, "0") +
+        ":" +
+        secondi4.toString().padStart(2, "0");
+      let durataFormattata6 =
+        minuti5.toString().padStart(2, "0") +
+        ":" +
+        secondi5.toString().padStart(2, "0");
+      let durataFormattata7 =
+        minuti6.toString().padStart(2, "0") +
+        ":" +
+        secondi6.toString().padStart(2, "0");
+      let durataFormattata8 =
+        minuti7.toString().padStart(2, "0") +
+        ":" +
+        secondi7.toString().padStart(2, "0");
+      let durataFormattata9 =
+        minuti8.toString().padStart(2, "0") +
+        ":" +
+        secondi8.toString().padStart(2, "0");
+      let durataFormattata10 =
+        minuti9.toString().padStart(2, "0") +
+        ":" +
+        secondi9.toString().padStart(2, "0");
 
       const songDetailsHTML = `
     <div class="row mb-3 d-flex justify-content-between align-items-center">
@@ -521,15 +549,15 @@ leftArrow.addEventListener("click", () => {
   if (history.length > 1) {
     history.back();
   }
-  CursorState();
+  cursorState();
 });
 
 rightArrow.addEventListener("click", () => {
   history.forward();
-  CursorState();
+  cursorState();
 });
 
-const CursorState = () => {
+const cursorState = () => {
   if (history.length <= 1) {
     leftArrow.classList.add("not-allowed");
   } else {
@@ -537,4 +565,4 @@ const CursorState = () => {
   }
 };
 
-CursorState();
+cursorState();

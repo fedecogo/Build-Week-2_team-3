@@ -397,15 +397,15 @@ leftArrow.addEventListener("click", () => {
   if (history.length > 1) {
     history.back();
   }
-  CursorState();
+  cursorState();
 });
 
 rightArrow.addEventListener("click", () => {
   history.forward();
-  CursorState();
+  cursorState();
 });
 
-const CursorState = () => {
+const cursorState = () => {
   if (history.length <= 1) {
     leftArrow.classList.add("not-allowed");
   } else {
@@ -413,4 +413,4 @@ const CursorState = () => {
   }
 };
 
-CursorState();
+cursorState();

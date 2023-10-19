@@ -433,23 +433,36 @@ leftArrow.addEventListener("click", () => {
   if (history.length > 1) {
     history.back();
   }
-  CursorState();
+  cursorState();
 });
 
 rightArrow.addEventListener("click", () => {
   history.forward();
-  CursorState();
+  cursorState();
 });
 
-const CursorState = () => {
+// rightArrow.addEventListener("click", function () {
+//   if (history.length > history.state.index + 1) {
+//     history.forward();
+//   }
+//   updateButtonState();
+// });
+
+const cursorState = () => {
   if (history.length <= 1) {
     leftArrow.classList.add("not-allowed");
   } else {
     leftArrow.classList.remove("not-allowed");
   }
+  if (history.length <= history.state.index + 1) {
+    rightArrow.classList.add("not-allowd");
+  } else {
+    rightArrow.classList.remove("not-allowed");
+  }
 };
 
-CursorState();
+cursorState();
+
 const goHomeMobile = document.getElementById("go-home-mobile");
 goHomeMobile.addEventListener("click", () => {
   location.href = "./home.html";
