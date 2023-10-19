@@ -119,13 +119,11 @@ const getArtist = function (query) {
       let durataFormattata9 = minuti8.toString().padStart(2, '0') + ':' + secondi8.toString().padStart(2, '0');
       let durataFormattata10 = minuti9.toString().padStart(2, '0') + ':' + secondi9.toString().padStart(2, '0');
 
-      const playTheRightSong = function (i) {
-        return i
-      }
+      
 
 
       const songDetailsHTML = `
-    <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-1-top" onclick=playTheRightSong(${0})>
+    <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-1-top" onclick=getSong(${0})>
     <div class="col-1 text-center">1</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[0].album.cover}" width="30px">
@@ -137,7 +135,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata1} min</div>
     </div>
     <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-2-top"
-    onclick=playTheRightSong(${1})>
+    onclick=getSong(${1})>
     <div class="col-1 text-center">2</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[1].album.cover}" width="30px">
@@ -148,7 +146,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-3">${data.data[1].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata2} min</div>
     </div>
-    <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-3-top" onclick=playTheRightSong(${2})>
+    <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-3-top" onclick=getSong(${2})>
     <div class="col-1 text-center">3</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[2].album.cover}" width="30px">
@@ -160,7 +158,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata3} min</div>
     </div>
     <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-4-top"
-    onclick=playTheRightSong(${3})>
+    onclick=getSong(${3})>
     <div class="col-1 text-center">4</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[3].album.cover}" width="30px">
@@ -172,7 +170,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-4 d-none d-md-block ">${durataFormattata4} min</div>
     </div>
     <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-5-top"
-    onclick=playTheRightSong(${4})>
+    onclick=getSong(${4})>
     <div class="col-1 text-center">5</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[4].album.cover}" width="30px">
@@ -184,7 +182,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata5} min</div>
     </div>
 
-    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card1" onclick=playTheRightSong(${5})>
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card1" onclick=getSong(${5})>
     <div class="col-1 text-center">6</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[5].album.cover}" width="30px">
@@ -195,7 +193,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-3">${data.data[5].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata6} min</div>
     </div>
-    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card2" onclick=playTheRightSong(${6})>
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card2" onclick=getSong(${6})>
     <div class="col-1 text-center">7</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[6].album.cover}" width="30px">
@@ -206,7 +204,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-3">${data.data[6].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata7} min</div>
     </div>
-    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card3" onclick=playTheRightSong(${7})>
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card3" onclick=getSong(${7})>
     <div class="col-1 text-center">8</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[7].album.cover}" width="30px">
@@ -217,7 +215,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-3">${data.data[7].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata8} min</div>
     </div>
-    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card4" onclick=playTheRightSong(${8})>
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card4" onclick=getSong(${8})>
     <div class="col-1 text-center">9</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[8].album.cover}" width="30px">
@@ -228,7 +226,7 @@ const getArtist = function (query) {
     <div class="col-2 ps-3">${data.data[8].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block ">${durataFormattata9} min</div>
     </div>
-    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card5" onclick=playTheRightSong(${9})>
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card5" onclick=getSong(${9})>
     <div class="col-1 text-center">10</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[9].album.cover}" width="30px">
@@ -282,20 +280,51 @@ const getArtist = function (query) {
     </div>
     </a>
     </div>
+    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <a href="album.html?query=${data.data[3].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum1">
+    <div class="card-body">
+    <img src="${data.data[3].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid" />
+    <h5 class="card-title mt-3">${data.data[3].album.title}</h5>
+    </div>
+    </div>
+    </a>
+    </div>
+    
+    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <a href="album.html?query=${data.data[4].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum2">
+    <div class="card-body">
+    <img src="${data.data[4].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+    <h5 class="card-title mt-3">${data.data[4].album.title}</h5>
+    </div>
+    </div>
+    </a>
+    </div>
+    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <a href="album.html?query=${data.data[5].album.id}" class="text-decoration-none" >
+    <div class="card bg-dark  text-white h-100 " id="cardalbum3">
+    <div class="card-body">
+    <img src="${data.data[5].album.cover_medium}" max-width="200px"  alt="..." class="img-fluid"/>
+    <h5 class="card-title mt-3">${data.data[5].album.title}</h5>
+    </div>
+    </div>
+    </a>
+    </div>
     
     `;
 
 
 
       newRow.innerHTML = newRowHTML;
-      const divAudio = document.getElementById("appendi_qui");
-      const newDiv = document.createElement("div");
-      newDiv.innerHTML = `
-    <audio controls id="audio-player">
-    <source src="${data.data[playTheRightSong].preview}" type="audio/mpeg">
-    </audio>
-    `;
-      divAudio.appendChild(newDiv);
+    //   const divAudio = document.getElementById("appendi_qui");
+    //   const newDiv = document.createElement("div");
+    //   newDiv.innerHTML = `
+    // <audio controls id="audio-player">
+    // <source src="${data.data[playTheRightSong].preview}" type="audio/mpeg">
+    // </audio>
+    // `;
+    //   divAudio.appendChild(newDiv);
 
       // CREAZIONE DINAMICA DEI BRANI CHE MI PIACCIONO
       const artistName = data.data[0].artist.name;
@@ -539,3 +568,58 @@ leftArrow.addEventListener("click", () => {
 rightArrow.addEventListener("click", () => {
   history.forward();
 });
+
+let songIndex = 0
+
+// funzione per riprodurre la song selezionata
+const getSong = function (i) {
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${name_artist}`)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Errore nella response");
+      }
+    })
+    .then((data) => {
+      console.log(data.data[i]);
+      // cambio le immagini della st
+      const getDivImg = document.getElementById("current-song-image");
+      getDivImg.innerHTML = ``;
+      const NewImgAlbum = document.createElement("div");
+      NewImgAlbum.innerHTML = `<img
+      // src="${data.data[i].album.cover}"
+      alt="song photo"
+      width="65px"
+      />`;
+      getDivImg.appendChild(NewImgAlbum);
+
+      // cambio h5 e h6 const
+      const getDivText = document.getElementById("current-song-info");
+      getDivText.innerHTML = ``;
+      const newDivText = document.createElement("div");
+      newDivText.innerHTML = `<h5>${data.data[i].title}</h5>
+      <h6>${data.data[i].artist.name}</h6>`;
+      getDivText.appendChild(newDivText);
+
+      const divAudio = document.getElementById("appendi_qui");
+      const newDiv = document.createElement("div");
+      divAudio.innerHTML = ``;
+      newDiv.innerHTML = `
+      <audio controls autoplay>
+  <source src="${data.data[i].preview}" type="audio/mpeg">
+  </audio>
+        `;
+      divAudio.appendChild(newDiv);
+      songIndex= i
+    })
+    .catch((error) => {
+      console.error("Si è verificato un errore:", error);
+    });
+};
+
+// Funzione per far partire la prima song con il btn con id Song in
+      const buttonPlay = document.getElementById("songIn")
+      buttonPlay.addEventListener("click", ()=>{
+        getSong(songIndex)
+      })
