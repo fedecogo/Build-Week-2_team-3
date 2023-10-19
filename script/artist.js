@@ -4,14 +4,15 @@ const name_artist = addressBarContent.get("query");
 console.log(name_artist);
 
 //funzione per riempire correttamente il div current song al caricamento della pagina
-const currentSongDiv = document.getElementById('current-song')
+const currentSongDiv = document.getElementById("current-song");
 const pageOnLoad = async (query) => {
   try {
-    const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
-    const data = await res.json()
-    const onloadImg = data.data[0].album.cover_small
-    const onloadArtistName = data.data[0].artist.name
-
+    const res = await fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`
+    );
+    const data = await res.json();
+    const onloadImg = data.data[0].album.cover_small;
+    const onloadArtistName = data.data[0].artist.name;
 
     currentSongDiv.innerHTML = `
     <div id="current-song-image" class="p-2 d-flex align-items-center">
@@ -26,18 +27,17 @@ const pageOnLoad = async (query) => {
     </div>
     <div class="ms-3" id="cuoricino">
     <i class="bi bi-heart" onclick=miPiace(event)></i>
-    </div>`
+    </div>`;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-
-}
+};
 
 const miPiace = function (e) {
-  e.target.classList.toggle('bi-heart')
-  e.target.classList.toggle('bi-heart-fill')
-  e.target.classList.toggle('text-success')
-}
+  e.target.classList.toggle("bi-heart");
+  e.target.classList.toggle("bi-heart-fill");
+  e.target.classList.toggle("text-success");
+};
 
 const getArtist = function (query) {
   fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
@@ -74,12 +74,26 @@ const getArtist = function (query) {
       let secondi2 = durataTotale2 % 60;
       let secondi3 = durataTotale3 % 60;
       let secondi4 = durataTotale4 % 60;
-      let durataFormattata1 = minuti0.toString().padStart(2, '0') + ':' + secondi0.toString().padStart(2, '0');
-      let durataFormattata2 = minuti1.toString().padStart(2, '0') + ':' + secondi1.toString().padStart(2, '0');
-      let durataFormattata3 = minuti2.toString().padStart(2, '0') + ':' + secondi2.toString().padStart(2, '0');
-      let durataFormattata4 = minuti3.toString().padStart(2, '0') + ':' + secondi3.toString().padStart(2, '0');
-      let durataFormattata5 = minuti4.toString().padStart(2, '0') + ':' + secondi4.toString().padStart(2, '0');
-
+      let durataFormattata1 =
+        minuti0.toString().padStart(2, "0") +
+        ":" +
+        secondi0.toString().padStart(2, "0");
+      let durataFormattata2 =
+        minuti1.toString().padStart(2, "0") +
+        ":" +
+        secondi1.toString().padStart(2, "0");
+      let durataFormattata3 =
+        minuti2.toString().padStart(2, "0") +
+        ":" +
+        secondi2.toString().padStart(2, "0");
+      let durataFormattata4 =
+        minuti3.toString().padStart(2, "0") +
+        ":" +
+        secondi3.toString().padStart(2, "0");
+      let durataFormattata5 =
+        minuti4.toString().padStart(2, "0") +
+        ":" +
+        secondi4.toString().padStart(2, "0");
 
       const songDetailsHTML = `
     <div class="row mb-3 d-flex justify-content-between align-items-center">
@@ -205,8 +219,8 @@ const getArtist = function (query) {
     <p class="fw-medium mb-0 text-nowrap fs-6">Hai messo mi piace a ${numberOfLike} brani</p>
     <p class="text-secondary fw-light my-0 py-0">Di ${artistName}</p>
     </div>
-    `
-      const iLikeMobile = document.getElementById("brani-piacciono-mobile")
+    `;
+      const iLikeMobile = document.getElementById("brani-piacciono-mobile");
       iLikeMobile.innerHTML = `<div class="d-flex align-items-center mt-2 ms-2">
     <div class="me-2">
     <img src="${artistPicture}" alt="" class="rounded-circle" width="60px">
@@ -216,7 +230,7 @@ const getArtist = function (query) {
     <p class="text-secondary fw-light my-0 py-0">${numberOfLike} brani di ${artistName}</p>
     </div>
     </div>
-    `
+    `;
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -395,24 +409,36 @@ profileImageNavbar.style.heigth = "30px";
 //button shuffle
 const butShuffle = document.getElementById("shuffle");
 butShuffle.addEventListener("click", function () {
-  butShuffle.classList.toggle("text-secondary")
-  butShuffle.classList.toggle("text-success")
-})
+  butShuffle.classList.toggle("text-secondary");
+  butShuffle.classList.toggle("text-success");
+});
 
 const playTheRightSong = async () => {
   try {
-    const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
-    const data = await res.json()
-    console.log(data)
+    const res = await fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`
+    );
+    const data = await res.json();
+    console.log(data);
   } catch (error) {
-    console.log('errore', error)
+    console.log("errore", error);
   }
-}
+};
 
-const goHomeMobile = document.getElementById('go-home-mobile')
-goHomeMobile.addEventListener('click', () => {
-  location.href = './home.html'
-})
+const goHomeMobile = document.getElementById("go-home-mobile");
+goHomeMobile.addEventListener("click", () => {
+  location.href = "./home.html";
+});
 
-playTheRightSong()
-pageOnLoad(name_artist)
+playTheRightSong();
+pageOnLoad(name_artist);
+
+const leftArrow = document.getElementsByClassName("bi-chevron-left")[0];
+const rightArrow = document.getElementsByClassName("bi-chevron-right")[0];
+
+leftArrow.addEventListener("click", () => {
+  history.back();
+});
+rightArrow.addEventListener("click", () => {
+  history.forward();
+});

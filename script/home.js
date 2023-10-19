@@ -385,8 +385,17 @@ Fcard.addEventListener("click", function () {
 //   creaCardsHome("Guitar Music");
 // });
 
+const goHomeMobile = document.getElementById("go-home-mobile");
+goHomeMobile.addEventListener("click", () => {
+  location.href = "./home.html";
+});
 
-const goHomeMobile = document.getElementById('go-home-mobile')
-goHomeMobile.addEventListener('click', () => {
-  location.href = './home.html'
-})
+const leftArrow = document.getElementsByClassName("bi-chevron-left")[0];
+const rightArrow = document.getElementsByClassName("bi-chevron-right")[0];
+
+leftArrow.addEventListener("click", () => {
+  history.back();
+});
+rightArrow.addEventListener("click", () => {
+  history.forward();
+});
