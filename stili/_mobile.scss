@@ -12,11 +12,3 @@
     bottom: 0;
     z-index: 100;
 }
-
-#music-media-player-mobile {
-    @media screen and (max-width:576px) {
-        display: block;
-        position: fixed;
-        bottom: 25px;
-    }
-}

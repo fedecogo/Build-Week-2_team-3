@@ -375,14 +375,6 @@ audio::-webkit-media-controls-mute-button {
   z-index: 100;
 }
 
-@media screen and (max-width: 576px) {
-  #music-media-player-mobile {
-    display: block;
-    position: fixed;
-    bottom: 25px;
-  }
-}
-
 #home-and-search {
   background-color: rgb(18, 18, 18);
 }
