@@ -1,3 +1,38 @@
+const Barra = document.getElementById("barra");
+console.log(Barra);
+const ButtonSearch = document.getElementById("bottone");
+const Form = document.getElementById("form");
+
+const searchSong = function (query) {
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Errore nella response");
+      }
+    })
+    .then((data) => {
+      window.location.href = `artist.html?query=${query}`;
+    })
+    .catch((error) => {
+      console.error("Si è verificato un errore:", error);
+    });
+};
+
+//
+Form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const query = document.getElementById("barra").value;
+
+  console.log(query);
+
+  if (query) {
+    searchSong(query);
+  }
+});
+
+//
 //  FUNZIONE PER INSERIRE GLI ALBUM NELLA BARRA LATERALE SINISTRA
 
 const playlistMenu = document.getElementById("playlist");

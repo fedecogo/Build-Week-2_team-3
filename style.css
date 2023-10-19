@@ -1,3 +1,13 @@
+.form-control::-moz-placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.form-control::placeholder {
+  color: white;
+  opacity: 1;
+}
+
 #aside-left {
   background-color: #000000;
   color: white;
