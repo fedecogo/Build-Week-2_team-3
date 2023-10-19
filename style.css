@@ -392,7 +392,7 @@ audio::-webkit-media-controls-panel {
 }
 
 audio::-webkit-media-controls-play-button {
-  background-color: rgb(25, 26, 27);
+  background-color: #1ED760;
   border-radius: 50%;
 }
 
@@ -420,6 +420,5 @@ audio::-webkit-media-controls-volume-slider {
 
 audio::-webkit-media-controls-mute-button {
   background-color: rgb(25, 26, 27);
-  ;
   border-radius: 50%;
 }
