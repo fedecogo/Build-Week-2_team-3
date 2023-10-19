@@ -56,25 +56,24 @@ const getArtist = function (query) {
       const h1Element = document.createElement("h1");
       h1Element.textContent = data.data[0].artist.name;
       contentRow.appendChild(h1Element);
-      const addSong = document.getElementById('addSongBtn')
+      const addSong = document.getElementById("addSongBtn");
       addSong.addEventListener("click", (e) => {
-        const card1 = document.getElementById("card1")
-        const card2 = document.getElementById("card2")
-        const card3 = document.getElementById("card3")
-        const card4 = document.getElementById("card4")
-        const card5 = document.getElementById("card5")
-        card1.classList.toggle("visually-hidden")
-        card2.classList.toggle("visually-hidden")
-        card3.classList.toggle("visually-hidden")
-        card4.classList.toggle("visually-hidden")
-        card5.classList.toggle("visually-hidden")
+        const card1 = document.getElementById("card1");
+        const card2 = document.getElementById("card2");
+        const card3 = document.getElementById("card3");
+        const card4 = document.getElementById("card4");
+        const card5 = document.getElementById("card5");
+        card1.classList.toggle("visually-hidden");
+        card2.classList.toggle("visually-hidden");
+        card3.classList.toggle("visually-hidden");
+        card4.classList.toggle("visually-hidden");
+        card5.classList.toggle("visually-hidden");
         if (e.target.textContent.trim() === "Visualizza altro") {
           e.target.textContent = "Visualizza di meno";
         } else {
           e.target.textContent = "Visualizza altro";
         }
-      })
-
+      });
 
       const songDetails = document.getElementById("appendi_song");
       songDetails.innerHTML = "";
@@ -108,19 +107,46 @@ const getArtist = function (query) {
       let secondi7 = durataTotale7 % 60;
       let secondi8 = durataTotale8 % 60;
       let secondi9 = durataTotale9 % 60;
-      let durataFormattata1 = minuti0.toString().padStart(2, '0') + ':' + secondi0.toString().padStart(2, '0');
-      let durataFormattata2 = minuti1.toString().padStart(2, '0') + ':' + secondi1.toString().padStart(2, '0');
-      let durataFormattata3 = minuti2.toString().padStart(2, '0') + ':' + secondi2.toString().padStart(2, '0');
-      let durataFormattata4 = minuti3.toString().padStart(2, '0') + ':' + secondi3.toString().padStart(2, '0');
-      let durataFormattata5 = minuti4.toString().padStart(2, '0') + ':' + secondi4.toString().padStart(2, '0');
-      let durataFormattata6 = minuti5.toString().padStart(2, '0') + ':' + secondi5.toString().padStart(2, '0');
-      let durataFormattata7 = minuti6.toString().padStart(2, '0') + ':' + secondi6.toString().padStart(2, '0');
-      let durataFormattata8 = minuti7.toString().padStart(2, '0') + ':' + secondi7.toString().padStart(2, '0');
-      let durataFormattata9 = minuti8.toString().padStart(2, '0') + ':' + secondi8.toString().padStart(2, '0');
-      let durataFormattata10 = minuti9.toString().padStart(2, '0') + ':' + secondi9.toString().padStart(2, '0');
-
-      
-
+      let durataFormattata1 =
+        minuti0.toString().padStart(2, "0") +
+        ":" +
+        secondi0.toString().padStart(2, "0");
+      let durataFormattata2 =
+        minuti1.toString().padStart(2, "0") +
+        ":" +
+        secondi1.toString().padStart(2, "0");
+      let durataFormattata3 =
+        minuti2.toString().padStart(2, "0") +
+        ":" +
+        secondi2.toString().padStart(2, "0");
+      let durataFormattata4 =
+        minuti3.toString().padStart(2, "0") +
+        ":" +
+        secondi3.toString().padStart(2, "0");
+      let durataFormattata5 =
+        minuti4.toString().padStart(2, "0") +
+        ":" +
+        secondi4.toString().padStart(2, "0");
+      let durataFormattata6 =
+        minuti5.toString().padStart(2, "0") +
+        ":" +
+        secondi5.toString().padStart(2, "0");
+      let durataFormattata7 =
+        minuti6.toString().padStart(2, "0") +
+        ":" +
+        secondi6.toString().padStart(2, "0");
+      let durataFormattata8 =
+        minuti7.toString().padStart(2, "0") +
+        ":" +
+        secondi7.toString().padStart(2, "0");
+      let durataFormattata9 =
+        minuti8.toString().padStart(2, "0") +
+        ":" +
+        secondi8.toString().padStart(2, "0");
+      let durataFormattata10 =
+        minuti9.toString().padStart(2, "0") +
+        ":" +
+        secondi9.toString().padStart(2, "0");
 
       const songDetailsHTML = `
     <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-1-top" onclick=getSong(${0})>
@@ -249,7 +275,7 @@ const getArtist = function (query) {
       const newRow = document.getElementById("appAlbum");
       newRow.innerHTML = "";
       const newRowHTML = `
-    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <div class="col-xs-6 col-md-4 m-3 m-md-0 pb-1 pb-lg-3" >
     <a href="album.html?query=${data.data[0].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum1">
     <div class="card-body">
@@ -260,7 +286,7 @@ const getArtist = function (query) {
     </a>
     </div>
     
-    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <div class="col-xs-6 col-md-4 m-3 m-md-0 pb-1 pb-lg-3" >
     <a href="album.html?query=${data.data[1].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum2">
     <div class="card-body">
@@ -270,7 +296,7 @@ const getArtist = function (query) {
     </div>
     </a>
     </div>
-    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <div class="col-xs-6 col-md-4 m-3 m-md-0 pb-1 pb-lg-3" >
     <a href="album.html?query=${data.data[2].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum3">
     <div class="card-body">
@@ -291,7 +317,7 @@ const getArtist = function (query) {
     </a>
     </div>
     
-    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <div class="col-xs-6 col-md-4 m-3  m-md-0" >
     <a href="album.html?query=${data.data[4].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum2">
     <div class="card-body">
@@ -314,17 +340,15 @@ const getArtist = function (query) {
     
     `;
 
-
-
       newRow.innerHTML = newRowHTML;
-    //   const divAudio = document.getElementById("appendi_qui");
-    //   const newDiv = document.createElement("div");
-    //   newDiv.innerHTML = `
-    // <audio controls id="audio-player">
-    // <source src="${data.data[playTheRightSong].preview}" type="audio/mpeg">
-    // </audio>
-    // `;
-    //   divAudio.appendChild(newDiv);
+      //   const divAudio = document.getElementById("appendi_qui");
+      //   const newDiv = document.createElement("div");
+      //   newDiv.innerHTML = `
+      // <audio controls id="audio-player">
+      // <source src="${data.data[playTheRightSong].preview}" type="audio/mpeg">
+      // </audio>
+      // `;
+      //   divAudio.appendChild(newDiv);
 
       // CREAZIONE DINAMICA DEI BRANI CHE MI PIACCIONO
       const artistName = data.data[0].artist.name;
@@ -435,17 +459,20 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  
-  const numeriArrey = [1262260,1262014, 113728, 12047952, 1327607, 90153, 6415260, 59853252, 455130, 454043, 81314, 51350192, 59853992, 12207756];
 
-// Funzione per mescolare un array in modo casuale
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+  const numeriArrey = [
+    1262260, 1262014, 113728, 12047952, 1327607, 90153, 6415260, 59853252,
+    455130, 454043, 81314, 51350192, 59853992, 12207756,
+  ];
+
+  // Funzione per mescolare un array in modo casuale
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
-}
-shuffleArray(numeriArrey);
+  shuffleArray(numeriArrey);
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -582,11 +609,13 @@ rightArrow.addEventListener("click", () => {
   CursorState();
 });
 
-let songIndex = 0
+let songIndex = 0;
 
 // funzione per riprodurre la song selezionata
 const getSong = function (i) {
-  fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${name_artist}`)
+  fetch(
+    `https://striveschool-api.herokuapp.com/api/deezer/search?q=${name_artist}`
+  )
     .then((res) => {
       if (res.ok) {
         return res.json();
@@ -624,7 +653,7 @@ const getSong = function (i) {
   </audio>
         `;
       divAudio.appendChild(newDiv);
-      songIndex= i
+      songIndex = i;
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -632,10 +661,10 @@ const getSong = function (i) {
 };
 
 // Funzione per far partire la prima song con il btn con id Song in
-      const buttonPlay = document.getElementById("songIn")
-      buttonPlay.addEventListener("click", ()=>{
-        getSong(songIndex)
-      })
+const buttonPlay = document.getElementById("songIn");
+buttonPlay.addEventListener("click", () => {
+  getSong(songIndex);
+});
 const CursorState = () => {
   if (history.length <= 1) {
     leftArrow.classList.add("not-allowed");
