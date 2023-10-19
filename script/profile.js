@@ -430,12 +430,26 @@ const rightArrow = document.getElementsByClassName(
 )[0];
 
 leftArrow.addEventListener("click", () => {
-  history.back();
-});
-rightArrow.addEventListener("click", () => {
-  history.forward();
+  if (history.length > 1) {
+    history.back();
+  }
+  CursorState();
 });
 
+rightArrow.addEventListener("click", () => {
+  history.forward();
+  CursorState();
+});
+
+const CursorState = () => {
+  if (history.length <= 1) {
+    leftArrow.classList.add("not-allowed");
+  } else {
+    leftArrow.classList.remove("not-allowed");
+  }
+};
+
+CursorState();
 const goHomeMobile = document.getElementById("go-home-mobile");
 goHomeMobile.addEventListener("click", () => {
   location.href = "./home.html";

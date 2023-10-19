@@ -1,3 +1,13 @@
+.form-control::-moz-placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.form-control::placeholder {
+  color: white;
+  opacity: 1;
+}
+
 #aside-left {
   background-color: #000000;
   color: white;
@@ -10,12 +20,14 @@
 #aside-left p {
   margin-bottom: 0px;
 }
-#aside-left #backtohome {
+#aside-left #backtohome,
+#aside-left #toggleButton {
   display: flex;
   align-items: center;
   flex-direction: row;
 }
-#aside-left #backtohome a {
+#aside-left #backtohome a,
+#aside-left #toggleButton a {
   color: inherit;
   text-decoration: none;
 }
@@ -490,4 +502,8 @@ audio::-webkit-media-controls-mute-button {
   #username {
     font-size: 4.5em;
   }
+}
+
+.not-allowed {
+  cursor: not-allowed;
 }/*# sourceMappingURL=style.css.map */

@@ -299,91 +299,7 @@ Fcard.addEventListener("click", function () {
   creaCardsHome("Guitar Music");
 });
 
-// // Playlist laterali 21 righe
-// const PrimaRiga = document.getElementById("1riga");
-// PrimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const SecondaRiga = document.getElementById("2riga");
-// SecondaRigaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const TerzaRiga = document.getElementById("3riga");
-// TerzaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const QuartaRiga = document.getElementById("4riga");
-// QuartaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const QuintaRiga = document.getElementById("5riga");
-// QuintaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const SestaRiga = document.getElementById("6riga");
-// SestaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const SettimaRiga = document.getElementById("7riga");
-// SettimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const OttavaRiga = document.getElementById("8riga");
-// OttavaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const NonaRiga = document.getElementById("9riga");
-// NonaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const DecimaRiga = document.getElementById("10riga");
-// DecimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const UndicesimaRiga = document.getElementById("11riga");
-// UndicesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const DodicesimaRiga = document.getElementById("12riga");
-// DodicesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const TredicesimaRiga = document.getElementById("13riga");
-// TredicesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const QuattordicesimaRiga = document.getElementById("14riga");
-// QuattordicesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const QuindicesimaRiga = document.getElementById("15riga");
-// QuindicesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const SedicesimaRiga = document.getElementById("16riga");
-// SedicesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const DiciassettesimaRiga = document.getElementById("17riga");
-// DiciassettesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const DiciottesimaRiga = document.getElementById("18riga");
-// DiciottesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const DiciannovesimaRiga = document.getElementById("19riga");
-// DiciannovesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const VentesimaRiga = document.getElementById("20riga");
-// VentesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
-// const VentunesimaRiga = document.getElementById("21riga");
-// VentesimaRiga.addEventListener("click", function () {
-//   creaCardsHome("Guitar Music");
-// });
+
 
 const goHomeMobile = document.getElementById("go-home-mobile");
 goHomeMobile.addEventListener("click", () => {
@@ -394,10 +310,15 @@ const leftArrow = document.getElementsByClassName("bi-chevron-left")[0];
 const rightArrow = document.getElementsByClassName("bi-chevron-right")[0];
 
 leftArrow.addEventListener("click", () => {
-  history.back();
+  if (history.length > 1) {
+    history.back();
+  }
+  CursorState();
 });
+
 rightArrow.addEventListener("click", () => {
   history.forward();
+  CursorState();
 });
 
 const saveBtn = document.getElementById('saveBut')
@@ -416,3 +337,12 @@ saveBtn.addEventListener('click', (e) => {
     e.target.classList.toggle('me-4')
   }
 })
+const CursorState = () => {
+  if (history.length <= 1) {
+    leftArrow.classList.add("not-allowed");
+  } else {
+    leftArrow.classList.remove("not-allowed");
+  }
+};
+
+CursorState();
