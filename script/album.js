@@ -392,7 +392,7 @@ const generateImage = function () {
   let imageSrc = urlAlbumCover;
   const newContainer = document.createElement("div");
   newContainer.style.position = "absolute";
-  newContainer.style.right = "2000px";
+  newContainer.style.right = "3000px";
   const body = document.getElementsByTagName("body")[0];
   console.log(body);
   body.appendChild(newContainer);
