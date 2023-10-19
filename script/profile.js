@@ -435,3 +435,8 @@ leftArrow.addEventListener("click", () => {
 rightArrow.addEventListener("click", () => {
   history.forward();
 });
+
+const goHomeMobile = document.getElementById("go-home-mobile");
+goHomeMobile.addEventListener("click", () => {
+  location.href = "./home.html";
+});
