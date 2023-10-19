@@ -163,3 +163,14 @@ button {
     }
   }
 }
+
+#current-song {
+
+  #current-song-image img,
+  #current-song-info,
+  #cuoricino i {
+    @media screen and (max-width: 576px) {
+      display: none;
+    }
+  }
+}
