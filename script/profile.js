@@ -16,7 +16,12 @@ const playlistContainer = document.getElementById("playlist-container");
 const sidebarCol = document.getElementById("sidebarCol");
 const saveButton = document.getElementById("save-button");
 const mainContainer = document.getElementById("main-container");
-mainContainer.style.backgroundColor = `#${localStorage.getItem("color")}`;
+// mainContainer.style.backgroundColor = `#${localStorage.getItem("color")}`;
+mainContainer.style.background = `linear-gradient(to bottom, #${localStorage.getItem(
+  "color"
+)}, transparent)`;
+
+// linear-gradient(to bottom, ${avgColor}, transparent)
 playlistContainer.innerHTML = localStorage.getItem("playlistHTML");
 
 // ADD PLAYLIST
@@ -185,7 +190,11 @@ const displaySelectedImage = function () {
       generateImage(imageUrl);
 
       mainContainer.classList.remove("bg-secondary");
-      mainContainer.style.backgroundColor = `#${localStorage.getItem("color")}`;
+      // mainContainer.style.backgroundColor = `#${localStorage.getItem("color")}`;
+      mainContainer.style.background = `linear-gradient(to bottom, #${localStorage.getItem(
+        "color"
+      )}, transparent)`;
+
       styleContainer.backgroundSize = "cover";
       styleContainer.backgroundRepeat = "no-repeat";
       styleContainer.backgroundPosition = "center center";
