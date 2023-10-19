@@ -59,26 +59,26 @@ const getArtist = function (query) {
 
       const songDetails = document.getElementById("appendi_song");
       songDetails.innerHTML = "";
-let durataTotale0 = data.data[0].duration; 
-let durataTotale1 = data.data[1].duration; 
-let durataTotale2 = data.data[2].duration; 
-let durataTotale3 = data.data[3].duration; 
-let durataTotale4 = data.data[4].duration; 
-let minuti0 = Math.floor(durataTotale0 / 60);
-let minuti1 = Math.floor(durataTotale1 / 60);
-let minuti2 = Math.floor(durataTotale2 / 60);
-let minuti3 = Math.floor(durataTotale3 / 60);
-let minuti4 = Math.floor(durataTotale4 / 60);
-let secondi0 = durataTotale0 % 60;
-let secondi1 = durataTotale1 % 60;
-let secondi2 = durataTotale2 % 60;
-let secondi3 = durataTotale3 % 60;
-let secondi4 = durataTotale4 % 60;
-let durataFormattata1 = minuti0.toString().padStart(2, '0') + ':' + secondi0.toString().padStart(2, '0');
-let durataFormattata2 = minuti1.toString().padStart(2, '0') + ':' + secondi1.toString().padStart(2, '0');
-let durataFormattata3 = minuti2.toString().padStart(2, '0') + ':' + secondi2.toString().padStart(2, '0');
-let durataFormattata4 = minuti3.toString().padStart(2, '0') + ':' + secondi3.toString().padStart(2, '0');
-let durataFormattata5 = minuti4.toString().padStart(2, '0') + ':' + secondi4.toString().padStart(2, '0');
+      let durataTotale0 = data.data[0].duration;
+      let durataTotale1 = data.data[1].duration;
+      let durataTotale2 = data.data[2].duration;
+      let durataTotale3 = data.data[3].duration;
+      let durataTotale4 = data.data[4].duration;
+      let minuti0 = Math.floor(durataTotale0 / 60);
+      let minuti1 = Math.floor(durataTotale1 / 60);
+      let minuti2 = Math.floor(durataTotale2 / 60);
+      let minuti3 = Math.floor(durataTotale3 / 60);
+      let minuti4 = Math.floor(durataTotale4 / 60);
+      let secondi0 = durataTotale0 % 60;
+      let secondi1 = durataTotale1 % 60;
+      let secondi2 = durataTotale2 % 60;
+      let secondi3 = durataTotale3 % 60;
+      let secondi4 = durataTotale4 % 60;
+      let durataFormattata1 = minuti0.toString().padStart(2, '0') + ':' + secondi0.toString().padStart(2, '0');
+      let durataFormattata2 = minuti1.toString().padStart(2, '0') + ':' + secondi1.toString().padStart(2, '0');
+      let durataFormattata3 = minuti2.toString().padStart(2, '0') + ':' + secondi2.toString().padStart(2, '0');
+      let durataFormattata4 = minuti3.toString().padStart(2, '0') + ':' + secondi3.toString().padStart(2, '0');
+      let durataFormattata5 = minuti4.toString().padStart(2, '0') + ':' + secondi4.toString().padStart(2, '0');
 
 
       const songDetailsHTML = `
@@ -408,6 +408,11 @@ const playTheRightSong = async () => {
     console.log('errore', error)
   }
 }
+
+const goHomeMobile = document.getElementById('go-home-mobile')
+goHomeMobile.addEventListener('click', () => {
+  location.href = './home.html'
+})
 
 playTheRightSong()
 pageOnLoad(name_artist)
