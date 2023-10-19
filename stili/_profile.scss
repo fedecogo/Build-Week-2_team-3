@@ -84,3 +84,10 @@
     width: 40%;
   }
 }
+
+#username {
+  font-size: 3em;
+  @media screen and (min-width: 768px) {
+    font-size: 4.5em;
+  }
+}
