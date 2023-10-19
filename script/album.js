@@ -1,4 +1,4 @@
-// funzione cerca copiata dalla home.js
+// funzione cerca url
 const adressBar = new URLSearchParams(location.search);
 const albumId = adressBar.get("query");
 console.log(albumId);
@@ -92,7 +92,16 @@ const getAlbum = function (query) {
     })
     .then((data) => {
       console.log(data);
-      console.log(data.tracks);
+      console.log(data.artist.name);
+      // Funzione per far si che al click del nome dell artista ti porta alla sua pagina artist
+      const goToArtistBtn = document.getElementById('name-artist');
+      const dataArtist = (data.artist.name)
+      goToArtistBtn.addEventListener('click', () => {
+        window.location.href = `artist.html?query=${dataArtist}`;
+      });
+      
+
+
       const tracksContainer = document.getElementById("album-tracks");
       const image = document.getElementById("image");
       const logoImage = document.getElementById("logo-image");
@@ -315,3 +324,4 @@ if (profileImageLocalStorage) {
 }
 
 pageOnLoad(albumId)
+
