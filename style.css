@@ -335,6 +335,31 @@ audio::-webkit-media-controls-mute-button {
   background: linear-gradient(to right, rgba(111, 111, 111, 0.492), rgba(77, 77, 77, 0.4196078431));
 }
 
+.dropdown-item:hover {
+  background-color: #4d4d4d;
+}
+
+#saveBut:hover {
+  color: black;
+  background-color: #757a78;
+  animation: anSaMo 0.9s ease-in;
+}
+
+@keyframes anSaMo {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#playBones:hover {
+  animation: anSaMo 0.9s ease-in;
+}
+
 #tutti-mobile {
   background-color: #1ED760;
 }
