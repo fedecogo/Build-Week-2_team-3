@@ -393,6 +393,10 @@ audio::-webkit-media-controls-mute-button {
   animation: anSaMo 0.9s ease-in;
 }
 
+#name-artist:hover {
+  cursor: pointer;
+}
+
 #tutti-mobile {
   background-color: #1ED760;
 }

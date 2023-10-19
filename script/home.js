@@ -69,9 +69,18 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  const numeriArrey = [
-    6415260, 12207660, 455130, 454043, 1262014, 464515625, 95829922,
-  ];
+  const numeriArrey = [1262260,1262014, 113728, 12047952, 1327607, 90153, 6415260, 59853252, 455130, 454043, 81314, 51350192, 59853992, 12207756];
+
+// Funzione per mescolare un array in modo casuale
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// Mescola l'array numeriArrey
+shuffleArray(numeriArrey);
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
