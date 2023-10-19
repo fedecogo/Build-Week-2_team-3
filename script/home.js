@@ -69,18 +69,21 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  const numeriArrey = [1262260,1262014, 113728, 12047952, 1327607, 90153, 6415260, 59853252, 455130, 454043, 81314, 51350192, 59853992, 12207756];
+  const numeriArrey = [
+    1262260, 1262014, 113728, 12047952, 1327607, 90153, 6415260, 59853252,
+    455130, 454043, 81314, 51350192, 59853992, 12207756,
+  ];
 
-// Funzione per mescolare un array in modo casuale
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+  // Funzione per mescolare un array in modo casuale
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
-}
 
-// Mescola l'array numeriArrey
-shuffleArray(numeriArrey);
+  // Mescola l'array numeriArrey
+  shuffleArray(numeriArrey);
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -308,11 +311,13 @@ Fcard.addEventListener("click", function () {
   creaCardsHome("Guitar Music");
 });
 
-
-
 const goHomeMobile = document.getElementById("go-home-mobile");
 goHomeMobile.addEventListener("click", () => {
   location.href = "./home.html";
+});
+const searchMobile = document.getElementById("search-mobile");
+searchMobile.addEventListener("click", () => {
+  location.href = "./search.html";
 });
 
 const leftArrow = document.getElementsByClassName("bi-chevron-left")[0];
@@ -330,22 +335,22 @@ rightArrow.addEventListener("click", () => {
   CursorState();
 });
 
-const saveBtn = document.getElementById('saveBut')
-saveBtn.addEventListener('click', (e) => {
-  if (e.target.innerText === 'Salva') {
-    e.target.innerText = 'Salvato'
-    e.target.classList.toggle('text-white')
-    e.target.classList.toggle('text-black')
-    e.target.classList.toggle('bg-white')
-    e.target.classList.toggle('me-4')
+const saveBtn = document.getElementById("saveBut");
+saveBtn.addEventListener("click", (e) => {
+  if (e.target.innerText === "Salva") {
+    e.target.innerText = "Salvato";
+    e.target.classList.toggle("text-white");
+    e.target.classList.toggle("text-black");
+    e.target.classList.toggle("bg-white");
+    e.target.classList.toggle("me-4");
   } else {
-    e.target.innerText = 'Salva'
-    e.target.classList.toggle('text-white')
-    e.target.classList.toggle('text-black')
-    e.target.classList.toggle('bg-white')
-    e.target.classList.toggle('me-4')
+    e.target.innerText = "Salva";
+    e.target.classList.toggle("text-white");
+    e.target.classList.toggle("text-black");
+    e.target.classList.toggle("bg-white");
+    e.target.classList.toggle("me-4");
   }
-})
+});
 const CursorState = () => {
   if (history.length <= 1) {
     leftArrow.classList.add("not-allowed");

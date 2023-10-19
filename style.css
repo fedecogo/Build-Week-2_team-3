@@ -180,6 +180,11 @@ button {
   }
 }
 
+#go-home-mobile,
+#search-mobile {
+  cursor: pointer;
+}
+
 #music-player {
   color: white;
   background-color: #161616;

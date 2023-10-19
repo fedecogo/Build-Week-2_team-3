@@ -591,6 +591,10 @@ const goHomeMobile = document.getElementById("go-home-mobile");
 goHomeMobile.addEventListener("click", () => {
   location.href = "./home.html";
 });
+const searchMobile = document.getElementById("search-mobile");
+searchMobile.addEventListener("click", () => {
+  location.href = "./search.html";
+});
 
 pageOnLoad(name_artist);
 
