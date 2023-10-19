@@ -450,3 +450,7 @@ const CursorState = () => {
 };
 
 CursorState();
+const goHomeMobile = document.getElementById("go-home-mobile");
+goHomeMobile.addEventListener("click", () => {
+  location.href = "./home.html";
+});

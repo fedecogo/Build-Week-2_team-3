@@ -56,6 +56,25 @@ const getArtist = function (query) {
       const h1Element = document.createElement("h1");
       h1Element.textContent = data.data[0].artist.name;
       contentRow.appendChild(h1Element);
+      const addSong = document.getElementById('addSongBtn')
+      addSong.addEventListener("click",(e)=>{
+        const card1 = document.getElementById("card1")
+        const card2 = document.getElementById("card2")
+        const card3 = document.getElementById("card3")
+        const card4 = document.getElementById("card4")
+        const card5 = document.getElementById("card5")
+        card1.classList.toggle("visually-hidden")
+        card2.classList.toggle("visually-hidden")
+        card3.classList.toggle("visually-hidden")
+        card4.classList.toggle("visually-hidden")
+        card5.classList.toggle("visually-hidden")
+        if (e.target.textContent.trim() === "Visualizza altro") {
+          e.target.textContent = "Visualizza di meno";
+        } else {
+          e.target.textContent = "Visualizza altro";
+        }
+      })
+      
 
       const songDetails = document.getElementById("appendi_song");
       songDetails.innerHTML = "";
@@ -64,36 +83,42 @@ const getArtist = function (query) {
       let durataTotale2 = data.data[2].duration;
       let durataTotale3 = data.data[3].duration;
       let durataTotale4 = data.data[4].duration;
+      let durataTotale5 = data.data[5].duration;
+      let durataTotale6 = data.data[6].duration;
+      let durataTotale7 = data.data[7].duration;
+      let durataTotale8 = data.data[8].duration;
+      let durataTotale9 = data.data[9].duration;
       let minuti0 = Math.floor(durataTotale0 / 60);
       let minuti1 = Math.floor(durataTotale1 / 60);
       let minuti2 = Math.floor(durataTotale2 / 60);
       let minuti3 = Math.floor(durataTotale3 / 60);
       let minuti4 = Math.floor(durataTotale4 / 60);
+      let minuti5 = Math.floor(durataTotale5 / 60);
+      let minuti6 = Math.floor(durataTotale6 / 60);
+      let minuti7 = Math.floor(durataTotale7 / 60);
+      let minuti8 = Math.floor(durataTotale8 / 60);
+      let minuti9 = Math.floor(durataTotale9 / 60);
       let secondi0 = durataTotale0 % 60;
       let secondi1 = durataTotale1 % 60;
       let secondi2 = durataTotale2 % 60;
       let secondi3 = durataTotale3 % 60;
       let secondi4 = durataTotale4 % 60;
-      let durataFormattata1 =
-        minuti0.toString().padStart(2, "0") +
-        ":" +
-        secondi0.toString().padStart(2, "0");
-      let durataFormattata2 =
-        minuti1.toString().padStart(2, "0") +
-        ":" +
-        secondi1.toString().padStart(2, "0");
-      let durataFormattata3 =
-        minuti2.toString().padStart(2, "0") +
-        ":" +
-        secondi2.toString().padStart(2, "0");
-      let durataFormattata4 =
-        minuti3.toString().padStart(2, "0") +
-        ":" +
-        secondi3.toString().padStart(2, "0");
-      let durataFormattata5 =
-        minuti4.toString().padStart(2, "0") +
-        ":" +
-        secondi4.toString().padStart(2, "0");
+      let secondi5 = durataTotale5 % 60;
+      let secondi6 = durataTotale6 % 60;
+      let secondi7 = durataTotale7 % 60;
+      let secondi8 = durataTotale8 % 60;
+      let secondi9 = durataTotale9 % 60;
+      let durataFormattata1 = minuti0.toString().padStart(2, '0') + ':' + secondi0.toString().padStart(2, '0');
+      let durataFormattata2 = minuti1.toString().padStart(2, '0') + ':' + secondi1.toString().padStart(2, '0');
+      let durataFormattata3 = minuti2.toString().padStart(2, '0') + ':' + secondi2.toString().padStart(2, '0');
+      let durataFormattata4 = minuti3.toString().padStart(2, '0') + ':' + secondi3.toString().padStart(2, '0');
+      let durataFormattata5 = minuti4.toString().padStart(2, '0') + ':' + secondi4.toString().padStart(2, '0');
+      let durataFormattata6 = minuti5.toString().padStart(2, '0') + ':' + secondi5.toString().padStart(2, '0');
+      let durataFormattata7 = minuti6.toString().padStart(2, '0') + ':' + secondi6.toString().padStart(2, '0');
+      let durataFormattata8 = minuti7.toString().padStart(2, '0') + ':' + secondi7.toString().padStart(2, '0');
+      let durataFormattata9 = minuti8.toString().padStart(2, '0') + ':' + secondi8.toString().padStart(2, '0');
+      let durataFormattata10 = minuti9.toString().padStart(2, '0') + ':' + secondi9.toString().padStart(2, '0');
+
 
       const songDetailsHTML = `
     <div class="row mb-3 d-flex justify-content-between align-items-center">
@@ -150,6 +175,62 @@ const getArtist = function (query) {
     </div>
     <div class="col-2 ps-3">${data.data[4].rank}</div>
     <div class="col-2 ps-4 d-none d-md-block">${durataFormattata5} min</div>
+    </div>
+
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card1">
+    <div class="col-1 text-center">6</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[5].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[5].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[5].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${durataFormattata6} min</div>
+    </div>
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card2">
+    <div class="col-1 text-center">7</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[6].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[6].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[6].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${durataFormattata7} min</div>
+    </div>
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card3">
+    <div class="col-1 text-center">8</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[7].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[7].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[7].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${durataFormattata8} min</div>
+    </div>
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card4">
+    <div class="col-1 text-center">9</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[8].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[8].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[8].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block ">${durataFormattata9} min</div>
+    </div>
+    <div class="row mb-3 d-flex justify-content-between align-items-center visually-hidden" id="card5">
+    <div class="col-1 text-center">10</div>
+    <div class="col-1 text-center">
+    <img class="me-1" src="${data.data[9].album.cover}" width="30px">
+    </div>
+    <div class="col-6">
+    <p class="m-0">${data.data[9].title}</p>
+    </div>
+    <div class="col-2 ps-3">${data.data[9].rank}</div>
+    <div class="col-2 ps-4 d-none d-md-block">${durataFormattata10} min</div>
     </div>
     `;
       songDetails.innerHTML = songDetailsHTML;
