@@ -104,14 +104,14 @@ const getAlbum = function (query) {
       const logoImage = document.getElementById("logo-image");
       image.innerHTML = ``;
       image.innerHTML = `<img
-    class="ms-4 mt-4"
+    class="ms-4 mt-4 border border-secondary-subtle shadow"
     src="${data.cover_big}"
     width="230px"
       alt="image"
     />`;
       logoImage.innerHTML = ``;
       logoImage.innerHTML = ` <img
-      class="mt-4"
+      class="mt-4 shadow-sm "
       src="${data.artist.picture}"
       width="25px"
       height="25px"
@@ -120,13 +120,13 @@ const getAlbum = function (query) {
       />`;
       const titolo = document.getElementById("titolo-album");
       titolo.innerHTML = ``;
-      titolo.innerHTML = `${data.title}`;
+      titolo.innerHTML = `${data.title} ` ;
 
       const nomegruppo = document.getElementById("name-artist");
       const time = (data.duration / 60).toFixed(2);
 
       nomegruppo.innerHTML = ``;
-      nomegruppo.innerHTML = ` <span class="fw-bold text-white"
+      nomegruppo.innerHTML = ` <span class="fw-bold text-white "
       >${data.artist.name}</span
       >
       -${data.release_date} - ${data.nb_tracks} brani, ${time}min`;
