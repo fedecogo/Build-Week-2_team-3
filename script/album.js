@@ -510,6 +510,5 @@ function toggleFullScreen() {
     fullscreenIcon.classList.add('bi-arrows-angle-contract');
     fullscreenIcon.classList.remove('bi-arrows-angle-expand');
     sessionStorage.setItem('fullscreen','attiva')
-
   }
 }
