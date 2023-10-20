@@ -316,7 +316,7 @@ const getArtist = function (query) {
       const newRow = document.getElementById("appAlbum");
       newRow.innerHTML = "";
       const newRowHTML = `
-    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <div class="col-xs-6 col-md-4 m-3 m-md-0 pb-1 pb-lg-3" >
     <a href="album.html?query=${data.data[0].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum1">
     <div class="card-body">
@@ -327,7 +327,7 @@ const getArtist = function (query) {
     </a>
     </div>
     
-    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <div class="col-xs-6 col-md-4 m-3 m-md-0 pb-1 pb-lg-3" >
     <a href="album.html?query=${data.data[1].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum2">
     <div class="card-body">
@@ -337,7 +337,7 @@ const getArtist = function (query) {
     </div>
     </a>
     </div>
-    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <div class="col-xs-6 col-md-4 m-3 m-md-0 pb-1 pb-lg-3" >
     <a href="album.html?query=${data.data[2].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum3">
     <div class="card-body">
@@ -358,7 +358,7 @@ const getArtist = function (query) {
     </a>
     </div>
     
-    <div class="col-xs-6 col-md-4 m-3 m-md-0" >
+    <div class="col-xs-6 col-md-4 m-3  m-md-0" >
     <a href="album.html?query=${data.data[4].album.id}" class="text-decoration-none" >
     <div class="card bg-dark  text-white h-100 " id="cardalbum2">
     <div class="card-body">
@@ -667,6 +667,10 @@ butShuffle.addEventListener("click", function () {
 const goHomeMobile = document.getElementById("go-home-mobile");
 goHomeMobile.addEventListener("click", () => {
   location.href = "./home.html";
+});
+const searchMobile = document.getElementById("search-mobile");
+searchMobile.addEventListener("click", () => {
+  location.href = "./search.html";
 });
 
 pageOnLoad(name_artist);

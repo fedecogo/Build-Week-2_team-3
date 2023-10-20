@@ -351,13 +351,8 @@
                     </li>
 
                     <li>
-                      <a class="dropdown-item text-white" href="#"
-                        >Another action</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item text-white" href="#"
-                        >Something else here</a
+                      <a class="dropdown-item text-white" href="search.html"
+                        >Cerca</a
                       >
                     </li>
                   </ul>
@@ -389,8 +384,11 @@
             </div>
             <!-- INIZIO CARDS RICERCA -->
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-              <div class="col mb-2">
+            <div
+              class="row row-cols-1 row-cols-md-2 row-cols-lg-4"
+              id="allsearchcards"
+            >
+              <div class="col mb-3" id="search1">
                 <div class="card bg-primary flex-row flex-md-column px-2">
                   <div class="text-white mb-3 text-end">
                     <h3 class="text-center text-md-start">Dissect</h3>
@@ -402,7 +400,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col mb-2">
+              <div class="col mb-2" id="search2">
                 <div class="card bg-secondary flex-row flex-md-column px-2">
                   <div class="text-white mb-3 text-end">
                     <h3 class="text-center text-md-start">Beast Mode</h3>
@@ -414,7 +412,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col mb-2">
+              <div class="col mb-2" id="search3">
                 <div class="card bg-warning flex-row flex-md-column px-2">
                   <div class="text-white mb-3 text-end">
                     <h3 class="text-center text-md-start">Blues</h3>
@@ -426,7 +424,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col mb-2">
+              <div class="col mb-2" id="search4">
                 <div class="card bg-danger flex-row flex-md-column px-2">
                   <div class="text-white mb-3 text-end">
                     <h3 class="text-center text-md-start">Rock Playlist</h3>
@@ -438,7 +436,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col mb-2">
+              <div class="col mb-2" id="search5">
                 <div
                   class="card bg-success-subtle flex-row flex-md-column px-2"
                 >
@@ -452,7 +450,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col mb-2">
+              <div class="col mb-2" id="search6">
                 <div class="card bg-info flex-row flex-md-column px-2">
                   <div class="text-white mb-3 text-end">
                     <h3 class="text-center text-md-start">Out Now</h3>
@@ -464,7 +462,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col mb-2">
+              <div class="col mb-2" id="search7">
                 <div class="card bg-success flex-row flex-md-column px-2">
                   <div class="text-white mb-3 text-end">
                     <h3 class="text-center text-md-start">Nu-Funk</h3>
@@ -476,7 +474,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col mb-5">
+              <div class="col mb-5" id="search8">
                 <div class="card bg-primary flex-row flex-md-column px-2">
                   <div class="text-white mb-3 text-end">
                     <h3 class="text-center text-md-start">Friday</h3>
@@ -722,7 +720,14 @@
     </div>
 
     <!-- parte fissa sotto -->
-
+    <div
+      class="d-flex justify-content-around fs-2 ms-1 py-3 mt-2 mb-0 w-100 text-white d-md-none"
+      id="footer-mobile"
+    >
+      <i class="bi bi-house-door-fill" id="go-home-mobile"></i>
+      <i class="bi bi-search" id="search-mobile"></i>
+      <i class="bi bi-collection-play-fill"></i>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

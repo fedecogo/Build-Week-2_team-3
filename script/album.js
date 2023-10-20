@@ -104,14 +104,14 @@ const getAlbum = function (query) {
       const logoImage = document.getElementById("logo-image");
       image.innerHTML = ``;
       image.innerHTML = `<img
-    class="ms-4 mt-4"
+    class="ms-4 mt-4 border border-secondary-subtle shadow"
     src="${data.cover_big}"
     width="230px"
       alt="image"
     />`;
       logoImage.innerHTML = ``;
       logoImage.innerHTML = ` <img
-      class="mt-4"
+      class="mt-4 shadow-sm "
       src="${data.artist.picture}"
       width="25px"
       height="25px"
@@ -120,13 +120,13 @@ const getAlbum = function (query) {
       />`;
       const titolo = document.getElementById("titolo-album");
       titolo.innerHTML = ``;
-      titolo.innerHTML = `${data.title}`;
+      titolo.innerHTML = `${data.title} ` ;
 
       const nomegruppo = document.getElementById("name-artist");
       const time = (data.duration / 60).toFixed(2);
 
       nomegruppo.innerHTML = ``;
-      nomegruppo.innerHTML = ` <span class="fw-bold text-white"
+      nomegruppo.innerHTML = ` <span class="fw-bold text-white "
       >${data.artist.name}</span
       >
       -${data.release_date} - ${data.nb_tracks} brani, ${time}min`;
@@ -230,19 +230,22 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  
-  const numeriArrey = [1262260,1262014, 113728, 12047952, 1327607, 90153, 6415260, 59853252, 455130, 454043, 81314, 51350192, 59853992, 12207756];
 
-// Funzione per mescolare un array in modo casuale
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+  const numeriArrey = [
+    1262260, 1262014, 113728, 12047952, 1327607, 90153, 6415260, 59853252,
+    455130, 454043, 81314, 51350192, 59853992, 12207756,
+  ];
+
+  // Funzione per mescolare un array in modo casuale
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
-}
 
-// Mescola l'array numeriArrey
-shuffleArray(numeriArrey);
+  // Mescola l'array numeriArrey
+  shuffleArray(numeriArrey);
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -449,6 +452,11 @@ const start = function () {
 const goHomeMobile = document.getElementById("go-home-mobile");
 goHomeMobile.addEventListener("click", () => {
   location.href = "./home.html";
+});
+
+const searchMobile = document.getElementById("search-mobile");
+searchMobile.addEventListener("click", () => {
+  location.href = "./search.html";
 });
 
 pageOnLoad(albumId);
