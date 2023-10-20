@@ -587,4 +587,11 @@ audio::-webkit-media-controls-mute-button {
 
 .not-allowed {
   cursor: not-allowed;
+}
+
+#show-playlist .row {
+  cursor: pointer;
+}
+#show-playlist .row:hover {
+  background-color: rgb(40, 40, 40);
 }/*# sourceMappingURL=style.css.map */
