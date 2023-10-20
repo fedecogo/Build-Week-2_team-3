@@ -16,6 +16,7 @@ const playlistContainer = document.getElementById("playlist-container");
 const sidebarCol = document.getElementById("sidebarCol");
 const saveButton = document.getElementById("save-button");
 const mainContainer = document.getElementById("main-container");
+const searchButton = document.querySelector("#search-button");
 // mainContainer.style.backgroundColor = `#${localStorage.getItem("color")}`;
 mainContainer.style.background = `linear-gradient(to bottom, #${localStorage.getItem(
   "color"
@@ -24,6 +25,12 @@ mainContainer.style.background = `linear-gradient(to bottom, #${localStorage.get
 // linear-gradient(to bottom, ${avgColor}, transparent)
 playlistContainer.innerHTML = localStorage.getItem("playlistHTML");
 const emptyButton = document.getElementById("empty-button");
+
+//  LINK alla SEARCH PAGE
+
+searchButton.addEventListener("click", () => {
+  location.href = "search.html";
+});
 
 // ADD PLAYLIST
 

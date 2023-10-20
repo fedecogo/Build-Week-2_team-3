@@ -109,8 +109,6 @@ profileMobile.addEventListener("click", () => {
   location.href = "./profile.html";
 });
 
-
-// FUNZIONE PER LA HISTORY
 const leftArrow = document.getElementsByClassName("bi-chevron-left")[0];
 const rightArrow = document.getElementsByClassName("bi-chevron-right")[0];
 
@@ -133,3 +131,5 @@ const CursorState = () => {
     leftArrow.classList.remove("not-allowed");
   }
 };
+
+CursorState();
