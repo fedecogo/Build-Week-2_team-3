@@ -311,15 +311,6 @@ Fcard.addEventListener("click", function () {
   creaCardsHome("Guitar Music");
 });
 
-const goHomeMobile = document.getElementById("go-home-mobile");
-goHomeMobile.addEventListener("click", () => {
-  location.href = "./home.html";
-});
-const searchMobile = document.getElementById("search-mobile");
-searchMobile.addEventListener("click", () => {
-  location.href = "./search.html";
-});
-
 const leftArrow = document.getElementsByClassName("bi-chevron-left")[0];
 const rightArrow = document.getElementsByClassName("bi-chevron-right")[0];
 
@@ -360,3 +351,17 @@ const CursorState = () => {
 };
 
 CursorState();
+
+const goHomeMobile = document.getElementById("go-home-mobile");
+goHomeMobile.addEventListener("click", () => {
+  location.href = "./home.html";
+});
+const searchMobile = document.getElementById("search-mobile");
+searchMobile.addEventListener("click", () => {
+  location.href = "./search.html";
+});
+
+const profileMobile = document.getElementById("profile-mobile");
+profileMobile.addEventListener("click", () => {
+  location.href = "./profile.html";
+});

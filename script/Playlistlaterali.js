@@ -161,3 +161,6 @@ const Cerca8 = document.getElementById("search8");
 Cerca8.addEventListener("click", function () {
   creaCardsHome("Friday Music");
 });
+
+
+
