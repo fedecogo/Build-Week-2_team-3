@@ -149,6 +149,7 @@ const modifyTitle = (e) => {
 const playlistDisplay = document.getElementById("show-playlist");
 console.log(playlistDisplay);
 const playlistDisplayContainer = document.createElement("div");
+playlistDisplayContainer.setAttribute("id", "playlist-display-container");
 playlistDisplay.appendChild(playlistDisplayContainer);
 const renderPlaylistDisplay = () => {
   playlistDisplayContainer.innerHTML = localStorage.getItem("playlist");

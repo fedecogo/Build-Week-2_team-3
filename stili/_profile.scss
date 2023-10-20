@@ -82,6 +82,7 @@
 
 #profile-playlist {
   background-color: rgb(18, 18, 18);
+  height: 40vh;
 }
 
 .pointer {
@@ -128,4 +129,11 @@
       background-color: rgb(40, 40, 40);
     }
   }
+}
+
+#playlist-display-container {
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 3em;
 }
