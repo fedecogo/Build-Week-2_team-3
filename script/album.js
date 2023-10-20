@@ -489,3 +489,27 @@ const CursorState = () => {
 };
 
 CursorState();
+
+// funzione per full screen PER OGNI PAGINA
+const fullscreenIcon = document.getElementById('fullscreen-icon');
+fullscreenIcon.addEventListener('click', toggleFullScreen);
+function toggleFullScreen() {
+  if (document.fullscreenElement) {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+    fullscreenIcon.classList.remove('active');
+    fullscreenIcon.classList.remove('bi-arrows-angle-contract');
+    fullscreenIcon.classList.add('bi-arrows-angle-expand');
+    sessionStorage.setItem('fullscreen','inattiva')
+  } else {
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    }
+    fullscreenIcon.classList.add('active');
+    fullscreenIcon.classList.add('bi-arrows-angle-contract');
+    fullscreenIcon.classList.remove('bi-arrows-angle-expand');
+    sessionStorage.setItem('fullscreen','attiva')
+
+  }
+}
