@@ -426,7 +426,6 @@ const start = function () {
     section.style.backgroundColor = `#${mostRecurrentHex}`;
   }
   colorToConvert = `#${mostRecurrentHex}`;
-  console.log(colorToConvert);
 
   const musicPlayer = document.getElementById("music-player");
   musicPlayer.style.backgroundColor = colorToConvert;
@@ -450,7 +449,6 @@ const start = function () {
     let luminosita = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
     return luminosita;
   };
-  console.log(calcolaLuminosita(colorToConvert));
 
   let luminositaSfondo = calcolaLuminosita(colorToConvert);
 
@@ -460,7 +458,6 @@ const start = function () {
   if (luminositaSfondo > 0.5) {
     musicPlayer.classList.add("text-black");
     musicPlayer.classList.remove("text-white");
-    console.log("si");
     noWhiteText.classList.remove("text-white");
     noWhiteText.classList.add("text-black");
     const textWhiteArray = Array.from(
@@ -471,7 +468,6 @@ const start = function () {
       element.classList.add("text-black");
     });
   } else {
-    console.log("no");
     musicPlayer.classList.add("text-white");
     musicPlayer.classList.remove("text-black");
     noWhiteText.classList.add("text-black");

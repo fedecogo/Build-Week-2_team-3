@@ -146,7 +146,6 @@ const modifyTitle = (e) => {
       inputElement.replaceWith(newTitle);
       localStorage.setItem("playlistHTML", playlistContainer.innerHTML);
       renderPlaylist();
-      console.log(itemMenu);
     }
   });
 };
@@ -154,7 +153,6 @@ const modifyTitle = (e) => {
 // MOSTRA LA PLAYLIST PRINCIPALE
 
 const playlistDisplay = document.getElementById("show-playlist");
-console.log(playlistDisplay);
 const playlistDisplayContainer = document.createElement("div");
 playlistDisplayContainer.setAttribute("id", "playlist-display-container");
 playlistDisplay.appendChild(playlistDisplayContainer);
@@ -168,7 +166,6 @@ const renderPlaylistDisplay = () => {
   const numberOfSong = playlistDisplayContainer.querySelectorAll(
     ".row .col-1:nth-of-type(1)"
   );
-  console.log(numberOfSong);
 
   numberOfSong.forEach((song, i) => {
     song.innerText = i + 1;
@@ -176,7 +173,6 @@ const renderPlaylistDisplay = () => {
 
   const songs = playlistDisplayContainer.querySelectorAll(".row");
   songs.forEach((song) => {
-    console.log("ok");
     song.removeAttribute("id");
     song.classList.add("text-white");
   });
@@ -256,7 +252,6 @@ const displaySelectedImage = function () {
     reader.readAsDataURL(selectedImage);
   }
   if (iconsContainer.style.backgroundImage !== "none") {
-    console.log("The div has a background image.");
     personIcon.classList.add("d-none");
     personIcon.classList.remove("bi");
     personIcon.classList.remove("bi-person");
@@ -374,7 +369,6 @@ const renderPlaylist = () => {
 // crea un canvas con l'immagine e ne ritorno il context 2d
 let color = "";
 const draw = function (img) {
-  console.log(img);
   let canvas = document.createElement("canvas");
   let c = canvas.getContext("2d");
   c.width = canvas.width = img.clientWidth;
@@ -470,7 +464,6 @@ const start = function () {
   let mostRecurrentHex = pad(mostRecurrent);
   // console.log del risultato
   location.reload();
-  console.log(mostRecurrentHex);
   localStorage.setItem("color", mostRecurrentHex);
 };
 

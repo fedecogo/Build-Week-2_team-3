@@ -1,5 +1,4 @@
 const Barra = document.getElementById("barra");
-console.log(Barra);
 const ButtonSearch = document.getElementById("bottone");
 const Form = document.getElementById("form");
 
@@ -26,8 +25,6 @@ Form.addEventListener("submit", (event) => {
 
   const query = document.getElementById("barra").value;
 
-  console.log(query);
-
   if (query) {
     searchSong(query);
   }
@@ -51,7 +48,6 @@ const getAlbum = function (query) {
       const card = document.createElement("div");
       card.innerHTML = `<a class="text-decoration-none text-white" href="album.html?query=${data.id}"><div class="d-flex align-items-center mt-2"><img src="${data.cover_medium}" width="30px" height="30px" /><p>${data.title}<p></div><a>`;
       app.appendChild(card);
-      console.log(data);
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);

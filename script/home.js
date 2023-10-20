@@ -33,7 +33,6 @@ const getImages = function (query) {
 
 const btn = document.getElementById("elimina_pubbl");
 btn.addEventListener("click", function () {
-  console.log("Pulsante cliccato");
   let cardElement = document.getElementById("cardIn");
   if (cardElement) {
     cardElement.classList.add("delete");
@@ -57,7 +56,6 @@ const getAlbum = function (query) {
       const card = document.createElement("div");
       card.innerHTML = `<a class="text-decoration-none text-white" href="album.html?query=${data.id}"><div class="d-flex align-items-center mt-2"><img src="${data.cover_medium}" width="30px" height="30px" /><p>${data.title}<p></div><a>`;
       app.appendChild(card);
-      console.log(data);
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -124,8 +122,6 @@ const getBSong = function (query) {
       }
     })
     .then((data) => {
-      console.log(data);
-      console.log(data.tracks.data[6].album.cover);
       // cambio le immagini della st
       const getDivImg = document.getElementById("current-song-image");
       getDivImg.innerHTML = ``;
@@ -149,7 +145,6 @@ const getBSong = function (query) {
       // parte centrale
       const divAudio = document.getElementById("appendi_qui");
       const newDiv = document.createElement("div");
-      console.log(data.tracks.data[0].preview);
       divAudio.innerHTML = ``;
       newDiv.innerHTML = `
         <audio controls autoplay>
@@ -366,28 +361,25 @@ profileMobile.addEventListener("click", () => {
   location.href = "./profile.html";
 });
 
-
-
 // funzione per full screen PER OGNI PAGINA
-const fullscreenIcon = document.getElementById('fullscreen-icon');
-fullscreenIcon.addEventListener('click', toggleFullScreen);
+const fullscreenIcon = document.getElementById("fullscreen-icon");
+fullscreenIcon.addEventListener("click", toggleFullScreen);
 function toggleFullScreen() {
   if (document.fullscreenElement) {
     if (document.exitFullscreen) {
       document.exitFullscreen();
     }
-    fullscreenIcon.classList.remove('active');
-    fullscreenIcon.classList.remove('bi-arrows-angle-contract');
-    fullscreenIcon.classList.add('bi-arrows-angle-expand');
-    sessionStorage.setItem('fullscreen','inattiva')
+    fullscreenIcon.classList.remove("active");
+    fullscreenIcon.classList.remove("bi-arrows-angle-contract");
+    fullscreenIcon.classList.add("bi-arrows-angle-expand");
+    sessionStorage.setItem("fullscreen", "inattiva");
   } else {
     if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen();
     }
-    fullscreenIcon.classList.add('active');
-    fullscreenIcon.classList.add('bi-arrows-angle-contract');
-    fullscreenIcon.classList.remove('bi-arrows-angle-expand');
-    sessionStorage.setItem('fullscreen','attiva')
-
+    fullscreenIcon.classList.add("active");
+    fullscreenIcon.classList.add("bi-arrows-angle-contract");
+    fullscreenIcon.classList.remove("bi-arrows-angle-expand");
+    sessionStorage.setItem("fullscreen", "attiva");
   }
 }

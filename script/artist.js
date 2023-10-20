@@ -49,8 +49,6 @@ const getArtist = function (query) {
       }
     })
     .then((data) => {
-      console.log(data.data[0]);
-
       const contentRow = document.getElementById("h1_titolo");
       contentRow.innerHTML = "";
       const h1Element = document.createElement("h1");
@@ -275,7 +273,6 @@ const getArtist = function (query) {
         const songs = Array.from(
           document.querySelectorAll("#appendi_song .row")
         );
-        console.log(songs);
         for (const song of songs) {
           const divToAppend = document.createElement("div");
           divToAppend.classList.add(
@@ -440,7 +437,6 @@ const addToPlaylist = function (e) {
   });
   // aggiunge eventlistener per aprire il menu di nuovo, perché lo perde quando riscrivi l'html
   const songs = Array.from(appendiSong.getElementsByClassName("row"));
-  console.log(songs);
   const openItemMenu = function (e) {
     e.preventDefault();
     const song = e.target.closest(".row");
@@ -526,7 +522,6 @@ const getAlbum = function (query) {
       const card = document.createElement("div");
       card.innerHTML = `<a class="text-decoration-none text-white" href="album.html?query=${data.id}"><div class="d-flex align-items-center mt-2"><img src="${data.cover_medium}" width="30px" height="30px" /><p>${data.title}<p></div><a>`;
       app.appendChild(card);
-      console.log(data);
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -712,7 +707,6 @@ const getSong = function (i) {
       }
     })
     .then((data) => {
-      console.log(data.data[i]);
       // cambio le immagini della st
       const getDivImg = document.getElementById("current-song-image");
       getDivImg.innerHTML = ``;
@@ -764,25 +758,24 @@ const CursorState = () => {
 CursorState();
 
 // funzione per full screen PER OGNI PAGINA
-const fullscreenIcon = document.getElementById('fullscreen-icon');
-fullscreenIcon.addEventListener('click', toggleFullScreen);
+const fullscreenIcon = document.getElementById("fullscreen-icon");
+fullscreenIcon.addEventListener("click", toggleFullScreen);
 function toggleFullScreen() {
   if (document.fullscreenElement) {
     if (document.exitFullscreen) {
       document.exitFullscreen();
     }
-    fullscreenIcon.classList.remove('active');
-    fullscreenIcon.classList.remove('bi-arrows-angle-contract');
-    fullscreenIcon.classList.add('bi-arrows-angle-expand');
-    sessionStorage.setItem('fullscreen','inattiva')
+    fullscreenIcon.classList.remove("active");
+    fullscreenIcon.classList.remove("bi-arrows-angle-contract");
+    fullscreenIcon.classList.add("bi-arrows-angle-expand");
+    sessionStorage.setItem("fullscreen", "inattiva");
   } else {
     if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen();
     }
-    fullscreenIcon.classList.add('active');
-    fullscreenIcon.classList.add('bi-arrows-angle-contract');
-    fullscreenIcon.classList.remove('bi-arrows-angle-expand');
-    sessionStorage.setItem('fullscreen','attiva')
-
+    fullscreenIcon.classList.add("active");
+    fullscreenIcon.classList.add("bi-arrows-angle-contract");
+    fullscreenIcon.classList.remove("bi-arrows-angle-expand");
+    sessionStorage.setItem("fullscreen", "attiva");
   }
 }
