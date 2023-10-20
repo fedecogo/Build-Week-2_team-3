@@ -156,11 +156,11 @@ button {
 }
 
 #icone-del-belino {
-  
-  .bi {transition: font-size 0.4s;
+  .bi {
+    transition: font-size 0.4s;
     &:hover {
-    font-size: 30px;
-  }
+      font-size: 30px;
+    }
     font-size: 20px;
     margin-right: 10px;
     @media screen and (max-width: 767px) {
@@ -191,5 +191,14 @@ button {
     @media screen and (max-width: 576px) {
       display: none;
     }
+  }
+}
+
+#music-player {
+  @media screen and (max-width: 767px) {
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+  @media screen and (max-width: 576px) {
+    background-color: rgba(0, 0, 0, 0) !important;
   }
 }

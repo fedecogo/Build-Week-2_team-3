@@ -198,6 +198,17 @@ button {
   }
 }
 
+@media screen and (max-width: 767px) {
+  #music-player {
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  #music-player {
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+}
+
 #go-home-mobile,
 #search-mobile,
 #profile-mobile {
