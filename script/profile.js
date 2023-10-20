@@ -23,6 +23,7 @@ mainContainer.style.background = `linear-gradient(to bottom, #${localStorage.get
 
 // linear-gradient(to bottom, ${avgColor}, transparent)
 playlistContainer.innerHTML = localStorage.getItem("playlistHTML");
+const emptyButton = document.getElementById("empty-button");
 
 // ADD PLAYLIST
 
@@ -148,6 +149,7 @@ const modifyTitle = (e) => {
 const playlistDisplay = document.getElementById("show-playlist");
 console.log(playlistDisplay);
 const playlistDisplayContainer = document.createElement("div");
+playlistDisplayContainer.setAttribute("id", "playlist-display-container");
 playlistDisplay.appendChild(playlistDisplayContainer);
 const renderPlaylistDisplay = () => {
   playlistDisplayContainer.innerHTML = localStorage.getItem("playlist");
@@ -174,6 +176,15 @@ const renderPlaylistDisplay = () => {
 };
 
 renderPlaylistDisplay();
+
+// SVUOTA LA PLAYLIST PRINCIPALE
+
+const emptyPlaylist = () => {
+  playlistDisplayContainer.innerHTML = "";
+  localStorage.setItem("playlist", playlistDisplayContainer.innerHTML);
+};
+
+emptyButton.addEventListener("click", emptyPlaylist);
 
 // HOME BUTTON
 
