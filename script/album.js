@@ -1,10 +1,10 @@
 // funzione cerca url
 const adressBar = new URLSearchParams(location.search);
 const albumId = adressBar.get("query");
-console.log(albumId);
 const toggleButton = document.getElementById("toggleButton");
 const searchBar = document.getElementById("searchBar");
 const searchButton = document.getElementById("searchButton");
+let colorToConvert;
 
 //Funzione che serve a far partire la canzone al click sul div
 let currentSongIndex = 0;
@@ -24,7 +24,6 @@ const pageOnLoad = async (query) => {
     const onloadImg = data.tracks.data[0].album.cover;
     const onloadSongTitle = data.title;
     const onloadArtistName = data.tracks.data[0].artist.name;
-    console.log(data.tracks.data[0]);
 
     currentSongDiv.innerHTML = `
 <div id="current-song-image" class="p-2 d-flex align-items-center">
@@ -90,8 +89,6 @@ const getAlbum = function (query) {
       }
     })
     .then((data) => {
-      console.log(data);
-      console.log(data.artist.name);
       // Funzione per far si che al click del nome dell artista ti porta alla sua pagina artist
       const goToArtistBtn = document.getElementById("name-artist");
       const dataArtist = data.artist.name;
@@ -126,7 +123,7 @@ const getAlbum = function (query) {
       const time = (data.duration / 60).toFixed(2);
 
       nomegruppo.innerHTML = ``;
-      nomegruppo.innerHTML = ` <span class="fw-bold text-white "
+      nomegruppo.innerHTML = ` <span class="fw-bold "
       >${data.artist.name}</span
       >
       -${data.release_date} - ${data.nb_tracks} brani, ${time}min`;
@@ -156,17 +153,6 @@ const getAlbum = function (query) {
         tracksContainer.appendChild(canzone);
         generateImage();
       });
-      //       // prova
-      //       const divAudio = document.getElementById('appendi_qui')
-      //       const newDiv = document.createElement("div");
-      //       console.log(data.tracks.data[0].preview)
-      //         newDiv.innerHTML = `
-      //         <audio controls>
-      //   <source src="${data.tracks.data[0].preview}" type="audio/mpeg">
-      // </audio>
-      //         `
-      //         // <audio controls><source src="${data.tracks.data[0].link}" type="audio/mpeg"></audio>
-      //         divAudio.appendChild(newDiv)
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -218,7 +204,6 @@ const getAlbum2 = function (query) {
       const card = document.createElement("div");
       card.innerHTML = `<a class="text-decoration-none text-white" href="album.html?query=${data.id}"><div class="d-flex align-items-center mt-2"><img src="${data.cover_medium}" width="30px" height="30px" /><p>${data.title}<p></div><a>`;
       app.appendChild(card);
-      console.log(data);
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -274,8 +259,6 @@ const getSong = function (query, i) {
       }
     })
     .then((data) => {
-      console.log(data);
-      console.log(data.tracks.data[i].album.cover);
       // cambio le immagini della st
       const getDivImg = document.getElementById("current-song-image");
       getDivImg.innerHTML = ``;
@@ -299,7 +282,6 @@ const getSong = function (query, i) {
       // prova
       const divAudio = document.getElementById("appendi_qui");
       const newDiv = document.createElement("div");
-      console.log(data.tracks.data[i].preview);
       divAudio.innerHTML = ``;
       newDiv.innerHTML = `
       <audio controls autoplay>
@@ -400,14 +382,13 @@ const pad = function (hex) {
 const generateImage = function () {
   // genero dinamicamente un tag <img /> in un <div> vuoto
   const imgForAvgColor = document.querySelector("#image img");
-  console.log(imgForAvgColor);
   urlAlbumCover = imgForAvgColor.src;
   let imageSrc = urlAlbumCover;
   const newContainer = document.createElement("div");
   newContainer.style.position = "absolute";
   newContainer.style.right = "3000px";
   const body = document.getElementsByTagName("body")[0];
-  console.log(body);
+
   body.appendChild(newContainer);
 
   // l'event listener "onload" nel tag <img /> si occupa di lanciare la funzione "start()" solamente
@@ -439,16 +420,63 @@ const start = function () {
   let mostRecurrentHex = pad(mostRecurrent);
 
   // console.log del risultato
-  console.log(mostRecurrentHex);
   const albumSection = Array.from(document.querySelectorAll("#color > div"));
   for (const section of albumSection) {
     section.classList.remove("bg-secondary");
     section.style.backgroundColor = `#${mostRecurrentHex}`;
   }
+  colorToConvert = `#${mostRecurrentHex}`;
+  console.log(colorToConvert);
 
-  console.log(albumSection);
+  // FUNZIONE PER LA LUMINOSITA'
+
+  const calcolaLuminosita = function (colore) {
+    let r, g, b;
+    if (colore.startsWith("rgb")) {
+      let match = colore.match(/(\d+), (\d+), (\d+)/);
+      r = parseInt(match[1]);
+      g = parseInt(match[2]);
+      b = parseInt(match[3]);
+    } else if (colore.startsWith("#")) {
+      r = parseInt(colore.slice(1, 3), 16);
+      g = parseInt(colore.slice(3, 5), 16);
+      b = parseInt(colore.slice(5, 7), 16);
+    }
+    // Calcola la luminosità utilizzando la formula
+    let luminosita = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    return luminosita;
+  };
+  console.log(calcolaLuminosita(colorToConvert));
+
+  let luminositaSfondo = calcolaLuminosita(colorToConvert);
+
+  const testo = document.getElementById("testo");
+  const noWhiteText = document.getElementById("no-white-text");
+
+  if (luminositaSfondo > 0.5) {
+    console.log("si");
+    noWhiteText.classList.remove("text-white");
+    noWhiteText.classList.add("text-black");
+    const textWhiteArray = Array.from(
+      noWhiteText.getElementsByClassName("text-white")
+    );
+    textWhiteArray.forEach((element) => {
+      element.classList.remove("text-white");
+      element.classList.add("text-black");
+    });
+  } else {
+    console.log("no");
+    noWhiteText.classList.add("text-black");
+    noWhiteText.classList.remove("text-white");
+    const textWhiteArray = Array.from(
+      noWhiteText.getElementsByClassName("text-black")
+    );
+    textWhiteArray.forEach((element) => {
+      element.classList.add("text-white");
+      element.classList.remove("text-black");
+    });
+  }
 };
-
 const goHomeMobile = document.getElementById("go-home-mobile");
 goHomeMobile.addEventListener("click", () => {
   location.href = "./home.html";
@@ -489,3 +517,54 @@ const CursorState = () => {
 };
 
 CursorState();
+
+//
+
+// const isTooLightYIQ = function (hexcolor) {
+//   const r = parseInt(hexcolor.substr(0, 2), 16);
+//   const g = parseInt(hexcolor.substr(2, 2), 16);
+//   const b = parseInt(hexcolor.substr(4, 2), 16);
+//   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+//   return yiq >= 128;
+// };
+
+// const isTooDarkYIQ = function (hexcolor) {
+//   const r = parseInt(hexcolor.substr(0, 2), 16);
+//   const g = parseInt(hexcolor.substr(2, 2), 16);
+//   const b = parseInt(hexcolor.substr(4, 2), 16);
+//   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+//   return yiq < 128;
+// };
+
+// //
+// const verifyColor = isTooLightYIQ(colorToConvert) ? false : true;
+// console.log(verifyColor);
+// if (verifyColor) {
+//   console.log("too white");
+//   noWhiteText.classList.remove("text-white");
+//   noWhiteText.classList.add("text-black");
+//   const textWhiteArray = Array.from(
+//     noWhiteText.getElementsByClassName("text-white")
+//   );
+
+//   textWhiteArray.forEach((element) => {
+//     element.classList.remove("text-white");
+//     element.classList.add("text-black");
+//   });
+// } else {
+//   console.log("no");
+// }
+
+// } else if (isTooDarkYIQ(colorToConvert).ok) {
+//   console.log("too dark");
+//   noWhiteText.classList.toggle("text-black");
+//   noWhiteText.classList.toggle("text-white");
+//   const textWhiteArray = Array.from(
+//     noWhiteText.getElementsByClassName("text-black")
+//   );
+
+//   textWhiteArray.forEach((element) => {
+//     element.classList.toggle("text-black");
+//     element.classList.toggle("text-white");
+//   });
+// }
