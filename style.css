@@ -154,6 +154,14 @@ button {
     transform: translateY(0);
   }
 }
+#icone-del-belino .bi {
+  transition: font-size 0.4s;
+  font-size: 20px;
+  margin-right: 10px;
+}
+#icone-del-belino .bi:hover {
+  font-size: 30px;
+}
 @media screen and (max-width: 767px) {
   #icone-del-belino .bi {
     display: none;
@@ -163,6 +171,16 @@ button {
   #icone-del-belino .bi {
     display: none;
   }
+}
+
+#fullscreen-icon {
+  transition: font-size 0.4s;
+}
+#fullscreen-icon:hover {
+  font-size: 30px;
+}
+#fullscreen-icon.active {
+  color: #1ED760;
 }
 
 @media screen and (max-width: 767px) {

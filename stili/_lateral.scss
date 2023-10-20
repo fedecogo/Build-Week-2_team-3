@@ -156,13 +156,28 @@ button {
 }
 
 #icone-del-belino {
-  .bi {
+  
+  .bi {transition: font-size 0.4s;
+    &:hover {
+    font-size: 30px;
+  }
+    font-size: 20px;
+    margin-right: 10px;
     @media screen and (max-width: 767px) {
       display: none;
     }
     @media screen and (max-width: 576px) {
       display: none;
     }
+  }
+}
+#fullscreen-icon {
+  transition: font-size 0.4s;
+  &:hover {
+    font-size: 30px;
+  }
+  &.active {
+    color: $green-color;
   }
 }
 
