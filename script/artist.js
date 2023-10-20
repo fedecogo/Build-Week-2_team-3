@@ -76,6 +76,7 @@ const getArtist = function (query) {
       });
 
       const songDetails = document.getElementById("appendi_song");
+
       songDetails.innerHTML = "";
       let durataTotale0 = data.data[0].duration;
       let durataTotale1 = data.data[1].duration;
@@ -150,6 +151,7 @@ const getArtist = function (query) {
 
       const songDetailsHTML = `
     <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-1-top" onclick=getSong(${0})>
+  
     <div class="col-1 text-center">1</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[0].album.cover}" width="30px">
@@ -268,6 +270,45 @@ const getArtist = function (query) {
       const wallpaperImg = document.getElementById("wallpaper-img");
       wallpaperImg.style.backgroundImage = `url('${data.data[0].artist.picture_xl}')`;
 
+      // AGGIUNGE EVENTLISTENER A OGNI SINGOLA CANZONE
+      const addsMenuListener = function () {
+        const songs = Array.from(
+          document.querySelectorAll("#appendi_song .row")
+        );
+        console.log(songs);
+        for (const song of songs) {
+          const divToAppend = document.createElement("div");
+          divToAppend.classList.add(
+            "item-menu-artist",
+            "text-white",
+            "d-flex",
+            "flex-column",
+            "flex-start",
+            "d-none"
+          );
+          divToAppend.innerHTML = `
+              <p onclick="addToPlaylist(event)">Aggiungi alla playlist</p>
+              <p>Condividi</p>
+      `;
+          song.appendChild(divToAppend);
+        }
+        for (const song of songs) {
+          song.addEventListener("contextmenu", function (e) {
+            openItemMenu(e);
+          });
+        }
+      };
+      addsMenuListener();
+      // FUNZIONE PER APRIRE IL MENU
+      const openItemMenu = function (e) {
+        e.preventDefault();
+        const song = e.target.closest(".row");
+        const itemMenu = song.querySelector(".item-menu-artist");
+        itemMenu.classList.remove("d-none");
+        itemMenu.style.top = `${e.clientY}px`;
+        itemMenu.style.left = `${e.clientX}px`;
+      };
+
       // aggiiungere albumalla row
       // da sistemare card per album
       // chiedere a stefano se serve unaltra fatch con  https://striveschool-api.herokuapp.com/api/deezer/album/75621062
@@ -378,6 +419,42 @@ const getArtist = function (query) {
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
     });
+};
+
+const htmlToSave = document.createElement("div");
+
+// AGGIUNGE LA SINGOLA CANZONE ALLA PLAYLIST
+const addToPlaylist = function (e) {
+  const appendiSong = document.getElementById("appendi_song");
+  const htmlInsideAppendiSong = appendiSong.innerHTML;
+  const songToTarget = e.target.closest(".row");
+  const itemMenu = songToTarget.querySelector(".item-menu-artist");
+  const songToAppend = songToTarget;
+
+  htmlToSave.appendChild(songToAppend);
+  appendiSong.innerHTML = htmlInsideAppendiSong;
+  itemMenu.classList.add("d-none");
+  appendiSong.querySelectorAll(".item-menu-artist").forEach((menu) => {
+    menu.classList.add("d-none");
+  });
+  // aggiunge eventlistener per aprire il menu di nuovo, perché lo perde quando riscrivi l'html
+  const songs = Array.from(appendiSong.getElementsByClassName("row"));
+  console.log(songs);
+  const openItemMenu = function (e) {
+    e.preventDefault();
+    const song = e.target.closest(".row");
+    const itemMenu = song.querySelector(".item-menu-artist");
+    itemMenu.classList.remove("d-none");
+    itemMenu.style.top = `${e.clientY}px`;
+    itemMenu.style.left = `${e.clientX}px`;
+  };
+  songs.forEach((song) => {
+    song.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+      openItemMenu(e);
+    });
+  });
+  localStorage.setItem("playlist", htmlToSave.innerHTML);
 };
 
 getArtist(name_artist);
