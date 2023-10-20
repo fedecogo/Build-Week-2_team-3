@@ -428,6 +428,10 @@ const start = function () {
   colorToConvert = `#${mostRecurrentHex}`;
   console.log(colorToConvert);
 
+  const musicPlayer = document.getElementById("music-player");
+  musicPlayer.style.backgroundColor = colorToConvert;
+  // musicPlayer.style.background = `linear-gradient(to bottom, ${colorToConvert}, transparent)`;
+
   // FUNZIONE PER LA LUMINOSITA'
 
   const calcolaLuminosita = function (colore) {
@@ -454,6 +458,8 @@ const start = function () {
   const noWhiteText = document.getElementById("no-white-text");
 
   if (luminositaSfondo > 0.5) {
+    musicPlayer.classList.add("text-black");
+    musicPlayer.classList.remove("text-white");
     console.log("si");
     noWhiteText.classList.remove("text-white");
     noWhiteText.classList.add("text-black");
@@ -466,6 +472,8 @@ const start = function () {
     });
   } else {
     console.log("no");
+    musicPlayer.classList.add("text-white");
+    musicPlayer.classList.remove("text-black");
     noWhiteText.classList.add("text-black");
     noWhiteText.classList.remove("text-white");
     const textWhiteArray = Array.from(
