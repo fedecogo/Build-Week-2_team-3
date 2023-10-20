@@ -456,6 +456,7 @@ const addToPlaylist = function (e) {
     });
   });
   localStorage.setItem("playlist", htmlToSave.innerHTML);
+  e.stopPropagation();
 };
 
 getArtist(name_artist);
