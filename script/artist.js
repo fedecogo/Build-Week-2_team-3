@@ -422,6 +422,7 @@ const getArtist = function (query) {
 };
 
 const htmlToSave = document.createElement("div");
+htmlToSave.innerHTML = localStorage.getItem("playlist");
 
 // AGGIUNGE LA SINGOLA CANZONE ALLA PLAYLIST
 const addToPlaylist = function (e) {
