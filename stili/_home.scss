@@ -173,6 +173,7 @@
 #songIn {
   font-size: 2em;
   cursor: pointer;
+  transition: font-size 0.5s ease;
 
   &:hover {
     font-size: 2.5em;
@@ -223,6 +224,7 @@ audio::-webkit-media-controls-mute-button {
 #salvatore,
 #guido {
   cursor: pointer;
+  transition: background-color 0.4s;
 
   &:hover {
     font-weight: bold;
@@ -236,13 +238,13 @@ audio::-webkit-media-controls-mute-button {
   }
 }
 
-.dropdown-item {
+.dropdown-item {transition: background-color 0.4s;
   &:hover {
     background-color: #4d4d4d;
   }
 }
 
-#saveBut {
+#saveBut { transition: background-color 0.4s;
   &:hover {
     color: black;
     background-color: #757a78;
