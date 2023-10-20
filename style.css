@@ -181,7 +181,8 @@ button {
 }
 
 #go-home-mobile,
-#search-mobile {
+#search-mobile,
+#profile-mobile {
   cursor: pointer;
 }
 

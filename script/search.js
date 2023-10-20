@@ -103,3 +103,8 @@ const searchMobile = document.getElementById("search-mobile");
 searchMobile.addEventListener("click", () => {
   location.href = "./search.html";
 });
+
+const profileMobile = document.getElementById("profile-mobile");
+profileMobile.addEventListener("click", () => {
+  location.href = "./profile.html";
+});

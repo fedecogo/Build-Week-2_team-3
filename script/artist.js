@@ -596,6 +596,11 @@ searchMobile.addEventListener("click", () => {
   location.href = "./search.html";
 });
 
+const profileMobile = document.getElementById("profile-mobile");
+profileMobile.addEventListener("click", () => {
+  location.href = "./profile.html";
+});
+
 pageOnLoad(name_artist);
 
 const leftArrow = document.getElementsByClassName("bi-chevron-left")[0];

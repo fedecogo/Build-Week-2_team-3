@@ -120,7 +120,7 @@ const getAlbum = function (query) {
       />`;
       const titolo = document.getElementById("titolo-album");
       titolo.innerHTML = ``;
-      titolo.innerHTML = `${data.title} ` ;
+      titolo.innerHTML = `${data.title} `;
 
       const nomegruppo = document.getElementById("name-artist");
       const time = (data.duration / 60).toFixed(2);
@@ -457,6 +457,10 @@ goHomeMobile.addEventListener("click", () => {
 const searchMobile = document.getElementById("search-mobile");
 searchMobile.addEventListener("click", () => {
   location.href = "./search.html";
+});
+const profileMobile = document.getElementById("profile-mobile");
+profileMobile.addEventListener("click", () => {
+  location.href = "./profile.html";
 });
 
 pageOnLoad(albumId);
