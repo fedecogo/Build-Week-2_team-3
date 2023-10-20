@@ -23,6 +23,7 @@ mainContainer.style.background = `linear-gradient(to bottom, #${localStorage.get
 
 // linear-gradient(to bottom, ${avgColor}, transparent)
 playlistContainer.innerHTML = localStorage.getItem("playlistHTML");
+const emptyButton = document.getElementById("empty-button");
 
 // ADD PLAYLIST
 
@@ -174,6 +175,15 @@ const renderPlaylistDisplay = () => {
 };
 
 renderPlaylistDisplay();
+
+// SVUOTA LA PLAYLIST PRINCIPALE
+
+const emptyPlaylist = () => {
+  playlistDisplayContainer.innerHTML = "";
+  localStorage.setItem("playlist", playlistDisplayContainer.innerHTML);
+};
+
+emptyButton.addEventListener("click", emptyPlaylist);
 
 // HOME BUTTON
 
