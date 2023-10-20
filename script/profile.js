@@ -143,6 +143,38 @@ const modifyTitle = (e) => {
   });
 };
 
+// MOSTRA LA PLAYLIST PRINCIPALE
+
+const playlistDisplay = document.getElementById("show-playlist");
+console.log(playlistDisplay);
+const playlistDisplayContainer = document.createElement("div");
+playlistDisplay.appendChild(playlistDisplayContainer);
+const renderPlaylistDisplay = () => {
+  playlistDisplayContainer.innerHTML = localStorage.getItem("playlist");
+  const itemMenus =
+    playlistDisplayContainer.querySelectorAll(".item-menu-artist");
+  itemMenus.forEach((menu) => {
+    menu.remove();
+  });
+  const numberOfSong = playlistDisplayContainer.querySelectorAll(
+    ".row .col-1:nth-of-type(1)"
+  );
+  console.log(numberOfSong);
+
+  numberOfSong.forEach((song, i) => {
+    song.innerText = i + 1;
+  });
+
+  const songs = playlistDisplayContainer.querySelectorAll(".row");
+  songs.forEach((song) => {
+    console.log("ok");
+    song.removeAttribute("id");
+    song.classList.add("text-white");
+  });
+};
+
+renderPlaylistDisplay();
+
 // HOME BUTTON
 
 homeButton.addEventListener("click", () => {

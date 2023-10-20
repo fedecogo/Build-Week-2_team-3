@@ -56,27 +56,27 @@ const getArtist = function (query) {
       const h1Element = document.createElement("h1");
       h1Element.textContent = data.data[0].artist.name;
       contentRow.appendChild(h1Element);
-      const addSong = document.getElementById('addSongBtn')
+      const addSong = document.getElementById("addSongBtn");
       addSong.addEventListener("click", (e) => {
-        const card1 = document.getElementById("card1")
-        const card2 = document.getElementById("card2")
-        const card3 = document.getElementById("card3")
-        const card4 = document.getElementById("card4")
-        const card5 = document.getElementById("card5")
-        card1.classList.toggle("visually-hidden")
-        card2.classList.toggle("visually-hidden")
-        card3.classList.toggle("visually-hidden")
-        card4.classList.toggle("visually-hidden")
-        card5.classList.toggle("visually-hidden")
+        const card1 = document.getElementById("card1");
+        const card2 = document.getElementById("card2");
+        const card3 = document.getElementById("card3");
+        const card4 = document.getElementById("card4");
+        const card5 = document.getElementById("card5");
+        card1.classList.toggle("visually-hidden");
+        card2.classList.toggle("visually-hidden");
+        card3.classList.toggle("visually-hidden");
+        card4.classList.toggle("visually-hidden");
+        card5.classList.toggle("visually-hidden");
         if (e.target.textContent.trim() === "Visualizza altro") {
           e.target.textContent = "Visualizza di meno";
         } else {
           e.target.textContent = "Visualizza altro";
         }
-      })
-
+      });
 
       const songDetails = document.getElementById("appendi_song");
+
       songDetails.innerHTML = "";
       let durataTotale0 = data.data[0].duration;
       let durataTotale1 = data.data[1].duration;
@@ -108,22 +108,50 @@ const getArtist = function (query) {
       let secondi7 = durataTotale7 % 60;
       let secondi8 = durataTotale8 % 60;
       let secondi9 = durataTotale9 % 60;
-      let durataFormattata1 = minuti0.toString().padStart(2, '0') + ':' + secondi0.toString().padStart(2, '0');
-      let durataFormattata2 = minuti1.toString().padStart(2, '0') + ':' + secondi1.toString().padStart(2, '0');
-      let durataFormattata3 = minuti2.toString().padStart(2, '0') + ':' + secondi2.toString().padStart(2, '0');
-      let durataFormattata4 = minuti3.toString().padStart(2, '0') + ':' + secondi3.toString().padStart(2, '0');
-      let durataFormattata5 = minuti4.toString().padStart(2, '0') + ':' + secondi4.toString().padStart(2, '0');
-      let durataFormattata6 = minuti5.toString().padStart(2, '0') + ':' + secondi5.toString().padStart(2, '0');
-      let durataFormattata7 = minuti6.toString().padStart(2, '0') + ':' + secondi6.toString().padStart(2, '0');
-      let durataFormattata8 = minuti7.toString().padStart(2, '0') + ':' + secondi7.toString().padStart(2, '0');
-      let durataFormattata9 = minuti8.toString().padStart(2, '0') + ':' + secondi8.toString().padStart(2, '0');
-      let durataFormattata10 = minuti9.toString().padStart(2, '0') + ':' + secondi9.toString().padStart(2, '0');
-
-      
-
+      let durataFormattata1 =
+        minuti0.toString().padStart(2, "0") +
+        ":" +
+        secondi0.toString().padStart(2, "0");
+      let durataFormattata2 =
+        minuti1.toString().padStart(2, "0") +
+        ":" +
+        secondi1.toString().padStart(2, "0");
+      let durataFormattata3 =
+        minuti2.toString().padStart(2, "0") +
+        ":" +
+        secondi2.toString().padStart(2, "0");
+      let durataFormattata4 =
+        minuti3.toString().padStart(2, "0") +
+        ":" +
+        secondi3.toString().padStart(2, "0");
+      let durataFormattata5 =
+        minuti4.toString().padStart(2, "0") +
+        ":" +
+        secondi4.toString().padStart(2, "0");
+      let durataFormattata6 =
+        minuti5.toString().padStart(2, "0") +
+        ":" +
+        secondi5.toString().padStart(2, "0");
+      let durataFormattata7 =
+        minuti6.toString().padStart(2, "0") +
+        ":" +
+        secondi6.toString().padStart(2, "0");
+      let durataFormattata8 =
+        minuti7.toString().padStart(2, "0") +
+        ":" +
+        secondi7.toString().padStart(2, "0");
+      let durataFormattata9 =
+        minuti8.toString().padStart(2, "0") +
+        ":" +
+        secondi8.toString().padStart(2, "0");
+      let durataFormattata10 =
+        minuti9.toString().padStart(2, "0") +
+        ":" +
+        secondi9.toString().padStart(2, "0");
 
       const songDetailsHTML = `
     <div class="row mb-3 d-flex justify-content-between align-items-center" id="card-1-top" onclick=getSong(${0})>
+  
     <div class="col-1 text-center">1</div>
     <div class="col-1 text-center">
     <img class="me-1" src="${data.data[0].album.cover}" width="30px">
@@ -242,6 +270,45 @@ const getArtist = function (query) {
       const wallpaperImg = document.getElementById("wallpaper-img");
       wallpaperImg.style.backgroundImage = `url('${data.data[0].artist.picture_xl}')`;
 
+      // AGGIUNGE EVENTLISTENER A OGNI SINGOLA CANZONE
+      const addsMenuListener = function () {
+        const songs = Array.from(
+          document.querySelectorAll("#appendi_song .row")
+        );
+        console.log(songs);
+        for (const song of songs) {
+          const divToAppend = document.createElement("div");
+          divToAppend.classList.add(
+            "item-menu-artist",
+            "text-white",
+            "d-flex",
+            "flex-column",
+            "flex-start",
+            "d-none"
+          );
+          divToAppend.innerHTML = `
+              <p onclick="addToPlaylist(event)">Aggiungi alla playlist</p>
+              <p>Condividi</p>
+      `;
+          song.appendChild(divToAppend);
+        }
+        for (const song of songs) {
+          song.addEventListener("contextmenu", function (e) {
+            openItemMenu(e);
+          });
+        }
+      };
+      addsMenuListener();
+      // FUNZIONE PER APRIRE IL MENU
+      const openItemMenu = function (e) {
+        e.preventDefault();
+        const song = e.target.closest(".row");
+        const itemMenu = song.querySelector(".item-menu-artist");
+        itemMenu.classList.remove("d-none");
+        itemMenu.style.top = `${e.clientY}px`;
+        itemMenu.style.left = `${e.clientX}px`;
+      };
+
       // aggiiungere albumalla row
       // da sistemare card per album
       // chiedere a stefano se serve unaltra fatch con  https://striveschool-api.herokuapp.com/api/deezer/album/75621062
@@ -314,17 +381,15 @@ const getArtist = function (query) {
     
     `;
 
-
-
       newRow.innerHTML = newRowHTML;
-    //   const divAudio = document.getElementById("appendi_qui");
-    //   const newDiv = document.createElement("div");
-    //   newDiv.innerHTML = `
-    // <audio controls id="audio-player">
-    // <source src="${data.data[playTheRightSong].preview}" type="audio/mpeg">
-    // </audio>
-    // `;
-    //   divAudio.appendChild(newDiv);
+      //   const divAudio = document.getElementById("appendi_qui");
+      //   const newDiv = document.createElement("div");
+      //   newDiv.innerHTML = `
+      // <audio controls id="audio-player">
+      // <source src="${data.data[playTheRightSong].preview}" type="audio/mpeg">
+      // </audio>
+      // `;
+      //   divAudio.appendChild(newDiv);
 
       // CREAZIONE DINAMICA DEI BRANI CHE MI PIACCIONO
       const artistName = data.data[0].artist.name;
@@ -354,6 +419,42 @@ const getArtist = function (query) {
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
     });
+};
+
+const htmlToSave = document.createElement("div");
+
+// AGGIUNGE LA SINGOLA CANZONE ALLA PLAYLIST
+const addToPlaylist = function (e) {
+  const appendiSong = document.getElementById("appendi_song");
+  const htmlInsideAppendiSong = appendiSong.innerHTML;
+  const songToTarget = e.target.closest(".row");
+  const itemMenu = songToTarget.querySelector(".item-menu-artist");
+  const songToAppend = songToTarget;
+
+  htmlToSave.appendChild(songToAppend);
+  appendiSong.innerHTML = htmlInsideAppendiSong;
+  itemMenu.classList.add("d-none");
+  appendiSong.querySelectorAll(".item-menu-artist").forEach((menu) => {
+    menu.classList.add("d-none");
+  });
+  // aggiunge eventlistener per aprire il menu di nuovo, perché lo perde quando riscrivi l'html
+  const songs = Array.from(appendiSong.getElementsByClassName("row"));
+  console.log(songs);
+  const openItemMenu = function (e) {
+    e.preventDefault();
+    const song = e.target.closest(".row");
+    const itemMenu = song.querySelector(".item-menu-artist");
+    itemMenu.classList.remove("d-none");
+    itemMenu.style.top = `${e.clientY}px`;
+    itemMenu.style.left = `${e.clientX}px`;
+  };
+  songs.forEach((song) => {
+    song.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+      openItemMenu(e);
+    });
+  });
+  localStorage.setItem("playlist", htmlToSave.innerHTML);
 };
 
 getArtist(name_artist);
@@ -435,17 +536,20 @@ const albumbtn = document.getElementById("azz");
 albumbtn.addEventListener("click", () => {
   const via = document.getElementById("levate");
   via.classList.add("d-none");
-  
-  const numeriArrey = [1262260,1262014, 113728, 12047952, 1327607, 90153, 6415260, 59853252, 455130, 454043, 81314, 51350192, 59853992, 12207756];
 
-// Funzione per mescolare un array in modo casuale
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+  const numeriArrey = [
+    1262260, 1262014, 113728, 12047952, 1327607, 90153, 6415260, 59853252,
+    455130, 454043, 81314, 51350192, 59853992, 12207756,
+  ];
+
+  // Funzione per mescolare un array in modo casuale
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
-}
-shuffleArray(numeriArrey);
+  shuffleArray(numeriArrey);
   invocagetalbum(numeriArrey);
   const fakeVia = document.getElementById("albumlevate");
   fakeVia.classList.remove("d-none");
@@ -582,11 +686,13 @@ rightArrow.addEventListener("click", () => {
   CursorState();
 });
 
-let songIndex = 0
+let songIndex = 0;
 
 // funzione per riprodurre la song selezionata
 const getSong = function (i) {
-  fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${name_artist}`)
+  fetch(
+    `https://striveschool-api.herokuapp.com/api/deezer/search?q=${name_artist}`
+  )
     .then((res) => {
       if (res.ok) {
         return res.json();
@@ -624,7 +730,7 @@ const getSong = function (i) {
   </audio>
         `;
       divAudio.appendChild(newDiv);
-      songIndex= i
+      songIndex = i;
     })
     .catch((error) => {
       console.error("Si è verificato un errore:", error);
@@ -632,10 +738,10 @@ const getSong = function (i) {
 };
 
 // Funzione per far partire la prima song con il btn con id Song in
-      const buttonPlay = document.getElementById("songIn")
-      buttonPlay.addEventListener("click", ()=>{
-        getSong(songIndex)
-      })
+const buttonPlay = document.getElementById("songIn");
+buttonPlay.addEventListener("click", () => {
+  getSong(songIndex);
+});
 const CursorState = () => {
   if (history.length <= 1) {
     leftArrow.classList.add("not-allowed");
