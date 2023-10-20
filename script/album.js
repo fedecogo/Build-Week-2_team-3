@@ -518,56 +518,6 @@ const CursorState = () => {
 
 CursorState();
 
-//
-
-// const isTooLightYIQ = function (hexcolor) {
-//   const r = parseInt(hexcolor.substr(0, 2), 16);
-//   const g = parseInt(hexcolor.substr(2, 2), 16);
-//   const b = parseInt(hexcolor.substr(4, 2), 16);
-//   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
-//   return yiq >= 128;
-// };
-
-// const isTooDarkYIQ = function (hexcolor) {
-//   const r = parseInt(hexcolor.substr(0, 2), 16);
-//   const g = parseInt(hexcolor.substr(2, 2), 16);
-//   const b = parseInt(hexcolor.substr(4, 2), 16);
-//   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
-//   return yiq < 128;
-// };
-
-// //
-// const verifyColor = isTooLightYIQ(colorToConvert) ? false : true;
-// console.log(verifyColor);
-// if (verifyColor) {
-//   console.log("too white");
-//   noWhiteText.classList.remove("text-white");
-//   noWhiteText.classList.add("text-black");
-//   const textWhiteArray = Array.from(
-//     noWhiteText.getElementsByClassName("text-white")
-//   );
-
-//   textWhiteArray.forEach((element) => {
-//     element.classList.remove("text-white");
-//     element.classList.add("text-black");
-//   });
-// } else {
-//   console.log("no");
-// }
-
-// } else if (isTooDarkYIQ(colorToConvert).ok) {
-//   console.log("too dark");
-//   noWhiteText.classList.toggle("text-black");
-//   noWhiteText.classList.toggle("text-white");
-//   const textWhiteArray = Array.from(
-//     noWhiteText.getElementsByClassName("text-black")
-//   );
-
-//   textWhiteArray.forEach((element) => {
-//     element.classList.toggle("text-black");
-//     element.classList.toggle("text-white");
-//   });
-// }
 // funzione per full screen PER OGNI PAGINA
 const fullscreenIcon = document.getElementById("fullscreen-icon");
 fullscreenIcon.addEventListener("click", toggleFullScreen);
