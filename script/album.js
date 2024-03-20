@@ -1,3 +1,9 @@
+function myFunction() {
+  alert("⚠️IT⚠️: Questa applicazione non è Spotify! Si tratta semplicemente di un clone realizzato a fini didattici durante il corso Epicode.\n\n ⚠️EN⚠️: This application is not affiliated with Spotify. It is a clone developed solely for educational purposes during the Epicode course.");
+}
+myFunction()
+
+
 // funzione cerca url
 const adressBar = new URLSearchParams(location.search);
 const albumId = adressBar.get("query");
